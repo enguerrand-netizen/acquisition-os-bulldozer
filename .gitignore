@@ -1,0 +1,4 @@
+tool-results/
+*.bak
+.DS_Store
+__pycache__/

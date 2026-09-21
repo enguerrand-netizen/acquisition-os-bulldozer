@@ -1,0 +1,271 @@
+{
+ "map": {
+  "COMPUTER_SOFTWARE": "Logiciel",
+  "INFORMATION_TECHNOLOGY_AND_SERVICES": "Logiciel",
+  "INTERNET": "Logiciel",
+  "COMPUTER_NETWORK_SECURITY": "Logiciel",
+  "COMPUTER_HARDWARE": "Logiciel",
+  "MANAGEMENT_CONSULTING": "Conseil",
+  "ACCOUNTING": "Conseil",
+  "PROFESSIONAL_TRAINING_COACHING": "Conseil",
+  "LEGAL_SERVICES": "Conseil",
+  "LAW_PRACTICE": "Conseil",
+  "MARKETING_AND_ADVERTISING": "Conseil",
+  "PUBLIC_RELATIONS_AND_COMMUNICATIONS": "Conseil",
+  "DESIGN": "Conseil",
+  "STAFFING_AND_RECRUITING": "Conseil",
+  "HUMAN_RESOURCES": "Conseil",
+  "HIGHER_EDUCATION": "Enseignement",
+  "EDUCATION_MANAGEMENT": "Enseignement",
+  "E_LEARNING": "Enseignement",
+  "BANKING": "Banque & assurance",
+  "FINANCIAL_SERVICES": "Banque & assurance",
+  "INSURANCE": "Banque & assurance",
+  "CAPITAL_MARKETS": "Banque & assurance",
+  "INVESTMENT_MANAGEMENT": "Banque & assurance",
+  "INVESTMENT_BANKING": "Banque & assurance",
+  "VENTURE_CAPITAL_PRIVATE_EQUITY": "Banque & assurance",
+  "REAL_ESTATE": "Immobilier",
+  "COMMERCIAL_REAL_ESTATE": "Immobilier",
+  "FACILITIES_SERVICES": "Immobilier",
+  "CONSTRUCTION": "Construction",
+  "BUILDING_MATERIALS": "Construction",
+  "ARCHITECTURE_PLANNING": "Construction",
+  "CIVIL_ENGINEERING": "Construction",
+  "RETAIL": "Distribution & commerce",
+  "CONSUMER_GOODS": "Distribution & commerce",
+  "FOOD_BEVERAGES": "Distribution & commerce",
+  "FOOD_PRODUCTION": "Distribution & commerce",
+  "APPAREL_FASHION": "Distribution & commerce",
+  "COSMETICS": "Distribution & commerce",
+  "LUXURY_GOODS_JEWELRY": "Distribution & commerce",
+  "WHOLESALE": "Distribution & commerce",
+  "SUPERMARKETS": "Distribution & commerce",
+  "CONSUMER_ELECTRONICS": "Distribution & commerce",
+  "SPORTING_GOODS": "Distribution & commerce",
+  "HOSPITAL_HEALTH_CARE": "Santé",
+  "PHARMACEUTICALS": "Santé",
+  "MEDICAL_DEVICES": "Santé",
+  "HEALTH_WELLNESS_AND_FITNESS": "Santé",
+  "BIOTECHNOLOGY": "Santé",
+  "MEDICAL_PRACTICE": "Santé",
+  "UTILITIES": "Énergie & environnement",
+  "RENEWABLES_ENVIRONMENT": "Énergie & environnement",
+  "OIL_ENERGY": "Énergie & environnement",
+  "ENVIRONMENTAL_SERVICES": "Énergie & environnement",
+  "TRANSPORTATION_TRUCKING_RAILROAD": "Transport & logistique",
+  "LOGISTICS_AND_SUPPLY_CHAIN": "Transport & logistique",
+  "AIRLINES_AVIATION": "Transport & logistique",
+  "MARITIME": "Transport & logistique",
+  "AUTOMOTIVE": "Industrie",
+  "MECHANICAL_OR_INDUSTRIAL_ENGINEERING": "Industrie",
+  "ELECTRICAL_ELECTRONIC_MANUFACTURING": "Industrie",
+  "MINING_METALS": "Industrie",
+  "CHEMICALS": "Industrie",
+  "PLASTICS": "Industrie",
+  "MACHINERY": "Industrie",
+  "PAPER_FOREST_PRODUCTS": "Industrie",
+  "AVIATION_AEROSPACE": "Industrie",
+  "DEFENSE_SPACE": "Industrie",
+  "TELECOMMUNICATIONS": "Télécoms & médias",
+  "ONLINE_MEDIA": "Télécoms & médias",
+  "WIRELESS": "Télécoms & médias",
+  "ENTERTAINMENT": "Télécoms & médias",
+  "BROADCAST_MEDIA": "Télécoms & médias",
+  "PUBLISHING": "Télécoms & médias",
+  "MUSIC": "Télécoms & médias",
+  "LEISURE_TRAVEL_TOURISM": "Autres services",
+  "HOSPITALITY": "Autres services",
+  "CONSUMER_SERVICES": "Autres services",
+  "RESTAURANTS": "Autres services",
+  "GAMBLING_CASINOS": "Autres services",
+  "NON_PROFIT_ORGANIZATION_MANAGEMENT": "Autres services",
+  "GOVERNMENT_ADMINISTRATION": "Secteur public",
+  "PUBLIC_POLICY": "Secteur public",
+  "CIVIC_SOCIAL_ORGANIZATION": "Secteur public"
+ },
+ "cure": {
+  "317410706620": [
+   "Industrie",
+   "corrigé",
+   "classé UTILITIES au CRM ; Schneider fabrique de l'équipement électrique"
+  ],
+  "315914050757": [
+   "Logiciel",
+   "crm",
+   null
+  ],
+  "229907236085": [
+   "Énergie & environnement",
+   "corrigé",
+   "secteur vide au CRM"
+  ],
+  "229193587951": [
+   "Distribution & commerce",
+   "crm",
+   null
+  ],
+  "9770448590": [
+   "Autres services",
+   "corrigé",
+   "secteur vide au CRM ; restauration et services aux entreprises"
+  ],
+  "317411495156": [
+   "Banque & assurance",
+   "crm",
+   null
+  ],
+  "238621997284": [
+   "Distribution & commerce",
+   "crm",
+   null
+  ],
+  "92346012914": [
+   "Logiciel",
+   "crm",
+   null
+  ],
+  "342918544596": [
+   "Logiciel",
+   "crm",
+   null
+  ],
+  "36144254182": [
+   "Construction",
+   "crm",
+   null
+  ],
+  "316281698550": [
+   "Industrie",
+   "corrigé",
+   "secteur vide au CRM ; construction automobile"
+  ],
+  "18938276038": [
+   "Construction",
+   "crm",
+   null
+  ],
+  "162003232956": [
+   "Banque & assurance",
+   "corrigé",
+   "secteur vide au CRM"
+  ],
+  "36322852030": [
+   "Banque & assurance",
+   "crm",
+   null
+  ],
+  "140916864248": [
+   "Distribution & commerce",
+   "corrigé",
+   "secteur vide au CRM ; petit électroménager"
+  ],
+  "175301965003": [
+   "Conseil",
+   "corrigé",
+   "secteur vide au CRM ; Invent est l'entité conseil de Capgemini"
+  ],
+  "87436872902": [
+   "Santé",
+   "crm",
+   null
+  ],
+  "148704214225": [
+   "Industrie",
+   "corrigé",
+   "secteur vide au CRM ; constructeur automobile"
+  ],
+  "59663610043": [
+   "Conseil",
+   "crm",
+   null
+  ],
+  "315014441197": [
+   "Logiciel",
+   "crm",
+   null
+  ],
+  "14793944264": [
+   "Énergie & environnement",
+   "crm",
+   null
+  ],
+  "36289884362": [
+   "Industrie",
+   "crm",
+   null
+  ],
+  "19976068547": [
+   "Énergie & environnement",
+   "corrigé",
+   "secteur vide au CRM"
+  ],
+  "17818953714": [
+   "Transport & logistique",
+   "crm",
+   null
+  ],
+  "141529360630": [
+   "Banque & assurance",
+   "corrigé",
+   "secteur vide au CRM ; protection sociale"
+  ],
+  "316281711842": [
+   "Enseignement",
+   "crm",
+   null
+  ],
+  "316281684204": [
+   "Enseignement",
+   "corrigé",
+   "la fiche s'appelle « Rothschild & Co » au CRM mais ses 18 contacts sont tous @essca.eu / @essca.fr et son unique transaction s'appelle « ESSCA » : c'est l'ESSCA, une école de commerce, pas la banque d'affaires"
+  ],
+  "143877777655": [
+   "Santé",
+   "corrigé",
+   "secteur vide au CRM ; optique et santé visuelle"
+  ],
+  "174866082014": [
+   "Industrie",
+   "corrigé",
+   "secteur vide au CRM ; défense et aéronautique"
+  ],
+  "14624157398": [
+   "Distribution & commerce",
+   "crm",
+   null
+  ]
+ },
+ "familles_clients": {
+  "Distribution & commerce": 25,
+  "Banque & assurance": 33,
+  "Conseil": 45,
+  "Télécoms & médias": 7,
+  "Logiciel": 104,
+  "Énergie & environnement": 13,
+  "Immobilier": 13,
+  "Enseignement": 13,
+  "Autres services": 15,
+  "Construction": 12,
+  "Santé": 15,
+  "Industrie": 9,
+  "Transport & logistique": 3
+ },
+ "familles_clients_ca": {
+  "Distribution & commerce": 6338900,
+  "Banque & assurance": 2035670,
+  "Conseil": 2118255,
+  "Télécoms & médias": 522595,
+  "Logiciel": 5541849,
+  "Énergie & environnement": 834475,
+  "Immobilier": 1330550,
+  "Enseignement": 336750,
+  "Autres services": 613346,
+  "Construction": 797945,
+  "Santé": 886365,
+  "Industrie": 557420,
+  "Transport & logistique": 232150
+ },
+ "clients_sans_secteur": 181,
+ "clients_classes": 307
+}

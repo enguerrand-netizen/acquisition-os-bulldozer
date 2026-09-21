@@ -1,0 +1,695 @@
+{
+ "_meta": {
+  "portail": "Bulldozer 143561253 (eu1)",
+  "fenetre": {
+   "debut": "2024-09-21",
+   "fin": "2026-09-21",
+   "mois_partiels": [
+    "2024-09",
+    "2026-09"
+   ]
+  },
+  "champ_de_date": "hs_timestamp (date d'activite ; pour TASK c'est la DATE D'ECHEANCE, pas la date de creation)",
+  "types_couverts": [
+   "CALL",
+   "EMAIL",
+   "MEETING",
+   "TASK",
+   "NOTE"
+  ],
+  "type_manquant": "COMMUNICATION (LinkedIn / SMS / WhatsApp) est bloque par le MCP : ces volumes sont absents du comptage.",
+  "perimetre": "toutes les activites du portail, pas seulement celles liees a un deal du pipeline default",
+  "controle": "pour chaque type, la somme par mois egale la somme par proprietaire (verifie)"
+ },
+ "totaux_par_type": {
+  "CALL": 27722,
+  "EMAIL": 53722,
+  "MEETING": 7880,
+  "TASK": 48950,
+  "NOTE": 29839
+ },
+ "total_general": 168113,
+ "par_mois": [
+  {
+   "mois": "2024-09",
+   "partiel": true,
+   "CALL": 12,
+   "EMAIL": 347,
+   "MEETING": 77,
+   "TASK": 6,
+   "NOTE": 54,
+   "TOTAL": 496
+  },
+  {
+   "mois": "2024-10",
+   "partiel": false,
+   "CALL": 59,
+   "EMAIL": 1865,
+   "MEETING": 305,
+   "TASK": 23,
+   "NOTE": 2077,
+   "TOTAL": 4329
+  },
+  {
+   "mois": "2024-11",
+   "partiel": false,
+   "CALL": 50,
+   "EMAIL": 1548,
+   "MEETING": 249,
+   "TASK": 71,
+   "NOTE": 4390,
+   "TOTAL": 6308
+  },
+  {
+   "mois": "2024-12",
+   "partiel": false,
+   "CALL": 246,
+   "EMAIL": 1442,
+   "MEETING": 236,
+   "TASK": 110,
+   "NOTE": 2372,
+   "TOTAL": 4406
+  },
+  {
+   "mois": "2025-01",
+   "partiel": false,
+   "CALL": 217,
+   "EMAIL": 2232,
+   "MEETING": 263,
+   "TASK": 92,
+   "NOTE": 540,
+   "TOTAL": 3344
+  },
+  {
+   "mois": "2025-02",
+   "partiel": false,
+   "CALL": 1501,
+   "EMAIL": 2194,
+   "MEETING": 460,
+   "TASK": 495,
+   "NOTE": 407,
+   "TOTAL": 5057
+  },
+  {
+   "mois": "2025-03",
+   "partiel": false,
+   "CALL": 1534,
+   "EMAIL": 2318,
+   "MEETING": 430,
+   "TASK": 920,
+   "NOTE": 383,
+   "TOTAL": 5585
+  },
+  {
+   "mois": "2025-04",
+   "partiel": false,
+   "CALL": 768,
+   "EMAIL": 1652,
+   "MEETING": 378,
+   "TASK": 1282,
+   "NOTE": 229,
+   "TOTAL": 4309
+  },
+  {
+   "mois": "2025-05",
+   "partiel": false,
+   "CALL": 3418,
+   "EMAIL": 1556,
+   "MEETING": 251,
+   "TASK": 2782,
+   "NOTE": 1251,
+   "TOTAL": 9258
+  },
+  {
+   "mois": "2025-06",
+   "partiel": false,
+   "CALL": 2354,
+   "EMAIL": 3023,
+   "MEETING": 330,
+   "TASK": 1441,
+   "NOTE": 2284,
+   "TOTAL": 9432
+  },
+  {
+   "mois": "2025-07",
+   "partiel": false,
+   "CALL": 2617,
+   "EMAIL": 2999,
+   "MEETING": 297,
+   "TASK": 5064,
+   "NOTE": 1253,
+   "TOTAL": 12230
+  },
+  {
+   "mois": "2025-08",
+   "partiel": false,
+   "CALL": 195,
+   "EMAIL": 732,
+   "MEETING": 120,
+   "TASK": 489,
+   "NOTE": 161,
+   "TOTAL": 1697
+  },
+  {
+   "mois": "2025-09",
+   "partiel": false,
+   "CALL": 2660,
+   "EMAIL": 1824,
+   "MEETING": 347,
+   "TASK": 2576,
+   "NOTE": 389,
+   "TOTAL": 7796
+  },
+  {
+   "mois": "2025-10",
+   "partiel": false,
+   "CALL": 1115,
+   "EMAIL": 1812,
+   "MEETING": 379,
+   "TASK": 7408,
+   "NOTE": 584,
+   "TOTAL": 11298
+  },
+  {
+   "mois": "2025-11",
+   "partiel": false,
+   "CALL": 1259,
+   "EMAIL": 1846,
+   "MEETING": 389,
+   "TASK": 2141,
+   "NOTE": 617,
+   "TOTAL": 6252
+  },
+  {
+   "mois": "2025-12",
+   "partiel": false,
+   "CALL": 788,
+   "EMAIL": 2241,
+   "MEETING": 418,
+   "TASK": 1559,
+   "NOTE": 686,
+   "TOTAL": 5692
+  },
+  {
+   "mois": "2026-01",
+   "partiel": false,
+   "CALL": 1147,
+   "EMAIL": 3528,
+   "MEETING": 459,
+   "TASK": 1733,
+   "NOTE": 2947,
+   "TOTAL": 9814
+  },
+  {
+   "mois": "2026-02",
+   "partiel": false,
+   "CALL": 1426,
+   "EMAIL": 2995,
+   "MEETING": 415,
+   "TASK": 2582,
+   "NOTE": 2073,
+   "TOTAL": 9491
+  },
+  {
+   "mois": "2026-03",
+   "partiel": false,
+   "CALL": 1300,
+   "EMAIL": 4413,
+   "MEETING": 475,
+   "TASK": 1856,
+   "NOTE": 3208,
+   "TOTAL": 11252
+  },
+  {
+   "mois": "2026-04",
+   "partiel": false,
+   "CALL": 1096,
+   "EMAIL": 2830,
+   "MEETING": 387,
+   "TASK": 2494,
+   "NOTE": 1233,
+   "TOTAL": 8040
+  },
+  {
+   "mois": "2026-05",
+   "partiel": false,
+   "CALL": 376,
+   "EMAIL": 2229,
+   "MEETING": 316,
+   "TASK": 884,
+   "NOTE": 562,
+   "TOTAL": 4367
+  },
+  {
+   "mois": "2026-06",
+   "partiel": false,
+   "CALL": 1810,
+   "EMAIL": 2972,
+   "MEETING": 279,
+   "TASK": 3351,
+   "NOTE": 650,
+   "TOTAL": 9062
+  },
+  {
+   "mois": "2026-07",
+   "partiel": false,
+   "CALL": 1269,
+   "EMAIL": 2459,
+   "MEETING": 352,
+   "TASK": 7189,
+   "NOTE": 888,
+   "TOTAL": 12157
+  },
+  {
+   "mois": "2026-08",
+   "partiel": false,
+   "CALL": 503,
+   "EMAIL": 1215,
+   "MEETING": 96,
+   "TASK": 1954,
+   "NOTE": 277,
+   "TOTAL": 4045
+  },
+  {
+   "mois": "2026-09",
+   "partiel": true,
+   "CALL": 2,
+   "EMAIL": 1450,
+   "MEETING": 172,
+   "TASK": 448,
+   "NOTE": 324,
+   "TOTAL": 2396
+  }
+ ],
+ "par_proprietaire": [
+  {
+   "hubspot_owner_id": "1478185152",
+   "nom": "Jordan Chenevier-Truchet",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 32037,
+   "MEETING": 1292,
+   "TASK": 430,
+   "NOTE": 4535,
+   "TOTAL": 38294
+  },
+  {
+   "hubspot_owner_id": "1049537210",
+   "nom": "Paul Guinard-Terrin",
+   "actif": true,
+   "CALL": 10349,
+   "EMAIL": 4415,
+   "MEETING": 456,
+   "TASK": 7904,
+   "NOTE": 5062,
+   "TOTAL": 28186
+  },
+  {
+   "hubspot_owner_id": "29638582",
+   "nom": "Luc Pollit",
+   "actif": false,
+   "CALL": 5383,
+   "EMAIL": 724,
+   "MEETING": 91,
+   "TASK": 16525,
+   "NOTE": 1,
+   "TOTAL": 22724
+  },
+  {
+   "hubspot_owner_id": "1495290566",
+   "nom": "Léo Lacoste",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 7302,
+   "MEETING": 1700,
+   "TASK": 517,
+   "NOTE": 8932,
+   "TOTAL": 18451
+  },
+  {
+   "hubspot_owner_id": null,
+   "nom": "(non attribue)",
+   "actif": null,
+   "CALL": 125,
+   "EMAIL": 0,
+   "MEETING": 7,
+   "TASK": 4888,
+   "NOTE": 8856,
+   "TOTAL": 13876
+  },
+  {
+   "hubspot_owner_id": "31800797",
+   "nom": "Sylvain Massy",
+   "actif": false,
+   "CALL": 3314,
+   "EMAIL": 164,
+   "MEETING": 73,
+   "TASK": 5514,
+   "NOTE": 7,
+   "TOTAL": 9072
+  },
+  {
+   "hubspot_owner_id": "31033935",
+   "nom": "Pierre-Arnaud DESTREMAU",
+   "actif": false,
+   "CALL": 985,
+   "EMAIL": 3971,
+   "MEETING": 796,
+   "TASK": 470,
+   "NOTE": 2109,
+   "TOTAL": 8331
+  },
+  {
+   "hubspot_owner_id": "34846829",
+   "nom": "Paul Hauchecorne",
+   "actif": false,
+   "CALL": 2477,
+   "EMAIL": 2,
+   "MEETING": 50,
+   "TASK": 5478,
+   "NOTE": 0,
+   "TOTAL": 8007
+  },
+  {
+   "hubspot_owner_id": "29638449",
+   "nom": "Axel Lefort",
+   "actif": false,
+   "CALL": 2003,
+   "EMAIL": 266,
+   "MEETING": 25,
+   "TASK": 4015,
+   "NOTE": 19,
+   "TOTAL": 6328
+  },
+  {
+   "hubspot_owner_id": "1009979491",
+   "nom": "François Michard",
+   "actif": false,
+   "CALL": 946,
+   "EMAIL": 2505,
+   "MEETING": 444,
+   "TASK": 518,
+   "NOTE": 120,
+   "TOTAL": 4533
+  },
+  {
+   "hubspot_owner_id": "1495290567",
+   "nom": "Enguerrand Chalvon Demersay",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 1240,
+   "MEETING": 2427,
+   "TASK": 249,
+   "NOTE": 0,
+   "TOTAL": 3916
+  },
+  {
+   "hubspot_owner_id": "29264798",
+   "nom": "Heri Rajaobelison",
+   "actif": false,
+   "CALL": 1164,
+   "EMAIL": 77,
+   "MEETING": 0,
+   "TASK": 1569,
+   "NOTE": 0,
+   "TOTAL": 2810
+  },
+  {
+   "hubspot_owner_id": "77244725",
+   "nom": "Patricia Rafanomezantsoa",
+   "actif": false,
+   "CALL": 889,
+   "EMAIL": 78,
+   "MEETING": 0,
+   "TASK": 396,
+   "NOTE": 106,
+   "TOTAL": 1469
+  },
+  {
+   "hubspot_owner_id": "30664246",
+   "nom": "Adrien Poupinel-Descambres",
+   "actif": false,
+   "CALL": 87,
+   "EMAIL": 586,
+   "MEETING": 269,
+   "TASK": 367,
+   "NOTE": 50,
+   "TOTAL": 1359
+  },
+  {
+   "hubspot_owner_id": "29498680",
+   "nom": "Benoît Franqueville",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 6,
+   "MEETING": 89,
+   "TASK": 79,
+   "NOTE": 3,
+   "TOTAL": 177
+  },
+  {
+   "hubspot_owner_id": "2102399619",
+   "nom": "Eleana Tiedemann",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 39,
+   "MEETING": 96,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 135
+  },
+  {
+   "hubspot_owner_id": "32525677",
+   "nom": "Charlotte Nowak",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 113,
+   "MEETING": 10,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 123
+  },
+  {
+   "hubspot_owner_id": "1609947871",
+   "nom": "Thibaud Donzier",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 16,
+   "MEETING": 36,
+   "TASK": 23,
+   "NOTE": 38,
+   "TOTAL": 113
+  },
+  {
+   "hubspot_owner_id": "60507892",
+   "nom": "Gilles Santos",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 74,
+   "MEETING": 12,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 86
+  },
+  {
+   "hubspot_owner_id": "37154411",
+   "nom": "Pierre Labreze",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 66,
+   "MEETING": 4,
+   "TASK": 1,
+   "NOTE": 0,
+   "TOTAL": 71
+  },
+  {
+   "hubspot_owner_id": "32178512",
+   "nom": "Gab Hardy-Françon",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 14,
+   "MEETING": 2,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 16
+  },
+  {
+   "hubspot_owner_id": "62983911",
+   "nom": "David Ansillon",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 14,
+   "MEETING": 1,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 15
+  },
+  {
+   "hubspot_owner_id": "29131902",
+   "nom": "Magali GRIMALDI",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 7,
+   "MEETING": 0,
+   "TASK": 2,
+   "NOTE": 0,
+   "TOTAL": 9
+  },
+  {
+   "hubspot_owner_id": "1522514626",
+   "nom": "Ariel Rozenblum",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 0,
+   "MEETING": 0,
+   "TASK": 5,
+   "NOTE": 0,
+   "TOTAL": 5
+  },
+  {
+   "hubspot_owner_id": "77245082",
+   "nom": "Maelie GREVIN",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 4,
+   "MEETING": 0,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 4
+  },
+  {
+   "hubspot_owner_id": "1993704274",
+   "nom": "Léo MACHABERT",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 2,
+   "MEETING": 0,
+   "TASK": 0,
+   "NOTE": 0,
+   "TOTAL": 2
+  },
+  {
+   "hubspot_owner_id": "29354681",
+   "nom": "Tanguy Le Hir",
+   "actif": false,
+   "CALL": 0,
+   "EMAIL": 0,
+   "MEETING": 0,
+   "TASK": 0,
+   "NOTE": 1,
+   "TOTAL": 1
+  }
+ ],
+ "top10_proprietaires": [
+  {
+   "hubspot_owner_id": "1478185152",
+   "nom": "Jordan Chenevier-Truchet",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 32037,
+   "MEETING": 1292,
+   "TASK": 430,
+   "NOTE": 4535,
+   "TOTAL": 38294
+  },
+  {
+   "hubspot_owner_id": "1049537210",
+   "nom": "Paul Guinard-Terrin",
+   "actif": true,
+   "CALL": 10349,
+   "EMAIL": 4415,
+   "MEETING": 456,
+   "TASK": 7904,
+   "NOTE": 5062,
+   "TOTAL": 28186
+  },
+  {
+   "hubspot_owner_id": "29638582",
+   "nom": "Luc Pollit",
+   "actif": false,
+   "CALL": 5383,
+   "EMAIL": 724,
+   "MEETING": 91,
+   "TASK": 16525,
+   "NOTE": 1,
+   "TOTAL": 22724
+  },
+  {
+   "hubspot_owner_id": "1495290566",
+   "nom": "Léo Lacoste",
+   "actif": true,
+   "CALL": 0,
+   "EMAIL": 7302,
+   "MEETING": 1700,
+   "TASK": 517,
+   "NOTE": 8932,
+   "TOTAL": 18451
+  },
+  {
+   "hubspot_owner_id": null,
+   "nom": "(non attribue)",
+   "actif": null,
+   "CALL": 125,
+   "EMAIL": 0,
+   "MEETING": 7,
+   "TASK": 4888,
+   "NOTE": 8856,
+   "TOTAL": 13876
+  },
+  {
+   "hubspot_owner_id": "31800797",
+   "nom": "Sylvain Massy",
+   "actif": false,
+   "CALL": 3314,
+   "EMAIL": 164,
+   "MEETING": 73,
+   "TASK": 5514,
+   "NOTE": 7,
+   "TOTAL": 9072
+  },
+  {
+   "hubspot_owner_id": "31033935",
+   "nom": "Pierre-Arnaud DESTREMAU",
+   "actif": false,
+   "CALL": 985,
+   "EMAIL": 3971,
+   "MEETING": 796,
+   "TASK": 470,
+   "NOTE": 2109,
+   "TOTAL": 8331
+  },
+  {
+   "hubspot_owner_id": "34846829",
+   "nom": "Paul Hauchecorne",
+   "actif": false,
+   "CALL": 2477,
+   "EMAIL": 2,
+   "MEETING": 50,
+   "TASK": 5478,
+   "NOTE": 0,
+   "TOTAL": 8007
+  },
+  {
+   "hubspot_owner_id": "29638449",
+   "nom": "Axel Lefort",
+   "actif": false,
+   "CALL": 2003,
+   "EMAIL": 266,
+   "MEETING": 25,
+   "TASK": 4015,
+   "NOTE": 19,
+   "TOTAL": 6328
+  },
+  {
+   "hubspot_owner_id": "1009979491",
+   "nom": "François Michard",
+   "actif": false,
+   "CALL": 946,
+   "EMAIL": 2505,
+   "MEETING": 444,
+   "TASK": 518,
+   "NOTE": 120,
+   "TOTAL": 4533
+  }
+ ]
+}

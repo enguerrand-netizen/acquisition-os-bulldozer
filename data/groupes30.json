@@ -1,0 +1,403 @@
+{
+ "317410706620": {
+  "groupe": "Schneider Electric",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "315914050757": {
+  "groupe": "Contentsquare",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "229907236085": {
+  "groupe": "SUEZ",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "229193587951": {
+  "groupe": "L'Oréal",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "9770448590": {
+  "groupe": "Sodexo",
+  "entites": [
+   {
+    "id": "318635015379",
+    "nom": "Sodexo Live!",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 6701,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "sodexolive.com",
+    "note": null
+   }
+  ],
+  "entites_total": 2,
+  "clients_dans_le_groupe": []
+ },
+ "317411495156": {
+  "groupe": "VYV",
+  "entites": [
+   {
+    "id": "83477615824",
+    "nom": "Harmonie Mutuelle",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 7181,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "groupe-vyv.fr",
+    "note": null
+   }
+  ],
+  "entites_total": 2,
+  "clients_dans_le_groupe": []
+ },
+ "238621997284": {
+  "groupe": "LVMH",
+  "entites": [
+   {
+    "id": "178335810782",
+    "nom": "LVMH Fragrance Brands",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 1727,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "lvmh.fr",
+    "note": null
+   },
+   {
+    "id": "35685191921",
+    "nom": "Louis Vuitton",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 27424,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "louisvuitton.com",
+    "note": null
+   }
+  ],
+  "entites_total": 3,
+  "clients_dans_le_groupe": []
+ },
+ "92346012914": {
+  "groupe": "Berger-Levrault",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "342918544596": {
+  "groupe": "Sage",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "36144254182": {
+  "groupe": "Léon Grosse",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "316281698550": {
+  "groupe": "Stellantis",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "18938276038": {
+  "groupe": "Saint-Gobain",
+  "entites": [
+   {
+    "id": "49742811330",
+    "nom": "Saint-Gobain",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 100000,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "foundever.com",
+    "note": null
+   }
+  ],
+  "entites_total": 2,
+  "clients_dans_le_groupe": []
+ },
+ "162003232956": {
+  "groupe": "BNP Paribas",
+  "entites": [
+   {
+    "id": "360313010392",
+    "nom": "BNP Paribas Real Estate (fiche sans nom au CRM)",
+    "client": true,
+    "ca_signe": 39620.0,
+    "effectif": null,
+    "stage": "customer",
+    "provenance": "auto",
+    "domaine": "realestate.bnpparibas",
+    "note": null
+   },
+   {
+    "id": "132647804111",
+    "nom": "Arval BNP Paribas Group",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 8214,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "arval.com",
+    "note": null
+   },
+   {
+    "id": "317412133071",
+    "nom": "BNP Paribas Cardif",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 9387,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "bnpparibascardif.com",
+    "note": null
+   },
+   {
+    "id": "115228190938",
+    "nom": "BNP Paribas Personal Finance",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 14469,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "personal-finance.bnpparibas",
+    "note": null
+   }
+  ],
+  "entites_total": 5,
+  "clients_dans_le_groupe": [
+   {
+    "id": "360313010392",
+    "nom": "BNP Paribas Real Estate (fiche sans nom au CRM)",
+    "client": true,
+    "ca_signe": 39620.0,
+    "effectif": null,
+    "stage": "customer",
+    "provenance": "auto",
+    "domaine": "realestate.bnpparibas",
+    "note": null
+   }
+  ]
+ },
+ "36322852030": {
+  "groupe": "Société Générale",
+  "entites": [
+   {
+    "id": "168675795132",
+    "nom": "Société Générale Assurances",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 1753,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "societegenerale.com",
+    "note": null
+   }
+  ],
+  "entites_total": 2,
+  "clients_dans_le_groupe": []
+ },
+ "140916864248": {
+  "groupe": "Groupe SEB",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "175301965003": {
+  "groupe": "Capgemini",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "87436872902": {
+  "groupe": "Pierre Fabre",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "148704214225": {
+  "groupe": "Renault",
+  "entites": [
+   {
+    "id": "188452987117",
+    "nom": "Renault Group",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 51895,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "renaultgroup.com",
+    "note": null
+   }
+  ],
+  "entites_total": 2,
+  "clients_dans_le_groupe": []
+ },
+ "59663610043": {
+  "groupe": "KPMG",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "315014441197": {
+  "groupe": "La Poste",
+  "entites": [
+   {
+    "id": "10941420528",
+    "nom": "Geopost",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 1413,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "www.geopost.com",
+    "note": null
+   },
+   {
+    "id": "63126182077",
+    "nom": "La Poste Groupe",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 56081,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "lapostegroupe.com",
+    "note": null
+   }
+  ],
+  "entites_total": 3,
+  "clients_dans_le_groupe": []
+ },
+ "14793944264": {
+  "groupe": "TotalEnergies",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "36289884362": {
+  "groupe": "Michelin",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "19976068547": {
+  "groupe": "Veolia",
+  "entites": [
+   {
+    "id": "179305666804",
+    "nom": "Veolia Recyclage et Valorisation des Déchets",
+    "client": true,
+    "ca_signe": 67552.0,
+    "effectif": 286,
+    "stage": "customer",
+    "provenance": "auto",
+    "domaine": "veolia.fr",
+    "note": null
+   },
+   {
+    "id": "36338670819",
+    "nom": "Veolia",
+    "client": true,
+    "ca_signe": 37400.0,
+    "effectif": 49551,
+    "stage": "customer",
+    "provenance": "auto",
+    "domaine": "sarpindustries.fr",
+    "note": null
+   }
+  ],
+  "entites_total": 3,
+  "clients_dans_le_groupe": [
+   {
+    "id": "179305666804",
+    "nom": "Veolia Recyclage et Valorisation des Déchets",
+    "client": true,
+    "ca_signe": 67552.0,
+    "effectif": 286,
+    "stage": "customer",
+    "provenance": "auto",
+    "domaine": "veolia.fr",
+    "note": null
+   },
+   {
+    "id": "36338670819",
+    "nom": "Veolia",
+    "client": true,
+    "ca_signe": 37400.0,
+    "effectif": 49551,
+    "stage": "customer",
+    "provenance": "auto",
+    "domaine": "sarpindustries.fr",
+    "note": null
+   }
+  ]
+ },
+ "17818953714": {
+  "groupe": "Keolis",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "141529360630": {
+  "groupe": "Malakoff Humanis",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "316281711842": {
+  "groupe": "Galileo Global Education",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "316281684204": {
+  "groupe": "Rothschild & Co",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "143877777655": {
+  "groupe": "EssilorLuxottica",
+  "entites": [
+   {
+    "id": "153355576554",
+    "nom": "GRANDVISION FRANCE",
+    "client": false,
+    "ca_signe": 0.0,
+    "effectif": 1526,
+    "stage": "lead",
+    "provenance": "auto",
+    "domaine": "grandvisionfrance-recrute.fr",
+    "note": null
+   }
+  ],
+  "entites_total": 2,
+  "clients_dans_le_groupe": []
+ },
+ "174866082014": {
+  "groupe": "Thales",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ },
+ "14624157398": {
+  "groupe": "Pernod Ricard",
+  "entites": [],
+  "entites_total": 1,
+  "clients_dans_le_groupe": []
+ }
+}

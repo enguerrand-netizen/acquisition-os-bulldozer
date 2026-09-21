@@ -1,0 +1,4668 @@
+{
+ "methode": {
+  "fenetre_donnees": "extraction du 2026-09-21",
+  "precedence": [
+   "achat",
+   "technique",
+   "decideur",
+   "praticien",
+   "autre",
+   "inconnu"
+  ],
+  "principe": "Les deux sieges fonctionnels du comite (achat, technique) priment sur la seniorite ; ensuite la seniorite (decideur) prime sur l'execution (praticien). Chaque contact porte AUSSI un axe 'seniorite' (direction/operationnel) independant du role, pour que l'arbitrage soit reversible sans re-extraction.",
+  "normalisation": "minuscules, accents supprimes, ponctuation -> espace, correspondance sur frontiere de mot. Les intitules multiples concatenes (virgule, slash, pipe) sont evalues en entier : c'est le token de plus haute precedence trouve dans la chaine qui decide.",
+  "pieges_traites": [
+   "'social' seul ne vaut pas praticien ('juriste droit social', 'assistante sociale') : seuls 'social media', 'paid social', 'reseaux sociaux', 'community manager'... comptent.",
+   "'it'/'data'/'dev' neutralises quand l'intitule porte aussi 'digital', 'marketing', 'communication', 'commercial' ou 'business development' (ex. 'Responsable Marketing Digital & Data' -> praticien, pas technique).",
+   "'developpement commercial' n'est pas 'developpeur'.",
+   "frontiere de mot obligatoire : sans elle 'credit' matche 'it' et 'digital' matche 'it'."
+  ]
+ },
+ "effectifs_par_role": {
+  "decideur": 348,
+  "inconnu": 1452,
+  "praticien": 429,
+  "autre": 69,
+  "technique": 12,
+  "achat": 5
+ },
+ "effectifs_par_seniorite": {
+  "direction": 353,
+  "inconnu": 1452,
+  "operationnel": 510
+ },
+ "croisement_role_seniorite": {
+  "achat|direction": 2,
+  "achat|operationnel": 3,
+  "autre|operationnel": 69,
+  "decideur|direction": 348,
+  "inconnu|inconnu": 1452,
+  "praticien|operationnel": 429,
+  "technique|direction": 3,
+  "technique|operationnel": 9
+ },
+ "intitules_distincts": 764,
+ "arbitrages_signales": [
+  {
+   "jobtitle": "Manager Business Development et Engineering France,Directeur projet usines France,Directeur d’usine,Business Development &amp; engineering Manager / Resp travaux neufs et industrialisation,Health Safety Manager / Manager santé sécurité,Q&amp;E certification project &amp; lean manager / responsable projet certification ISO et lean manager,Production manager,Raws and packs supply &amp; quality pack manager/ Responsable approvisionnement et qualité emballage",
+   "role_retenu": "achat",
+   "seniorite": "direction",
+   "arbitrage": "fonction prioritaire sur seniorite : siege achat du comite",
+   "effectif": 1
+  },
+  {
+   "jobtitle": "Data Product Director",
+   "role_retenu": "technique",
+   "seniorite": "direction",
+   "arbitrage": "fonction prioritaire sur seniorite : siege technique du comite",
+   "effectif": 1
+  },
+  {
+   "jobtitle": "Contract Manufacturing Buyer - CMO/CDMO",
+   "role_retenu": "achat",
+   "seniorite": "direction",
+   "arbitrage": "fonction prioritaire sur seniorite : siege achat du comite",
+   "effectif": 1
+  },
+  {
+   "jobtitle": "Directeur des systèmes d'information MGEN groupe VYV / Directeur Général MGEN Technologies",
+   "role_retenu": "technique",
+   "seniorite": "direction",
+   "arbitrage": "fonction prioritaire sur seniorite : siege technique du comite",
+   "effectif": 1
+  },
+  {
+   "jobtitle": "Directeur des systèmes d'information",
+   "role_retenu": "technique",
+   "seniorite": "direction",
+   "arbitrage": "fonction prioritaire sur seniorite : siege technique du comite",
+   "effectif": 1
+  }
+ ],
+ "dictionnaire": {
+  "Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 9,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 7,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 6,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "CEO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 5,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO, Head of Marketing, Head of Growth.": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 5,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 5,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 5,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief Marketing Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 4,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing et communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 4,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable marketing opérationnel": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 4,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing, acquisition, growth…": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 4,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "CMO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 3,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing et Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 3,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 3,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Growth Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 3,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Head of Digital Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 3,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing &amp; Communication Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 3,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 3,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 3,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Social Media Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 3,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargé d'Affaires Professionnels": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée d'Affaires Professionnels": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chief Executive Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Co-founder": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing &amp; Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Enterprise Sales Growth Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Executive Chairman": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Global Head of Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Revenue Ops": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Manager, Marketing Science": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Marketing Business Partner": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Communications Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Coordinator": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Science": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Marketing and Communication Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Partner": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 2,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Product Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Product Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Acquisition": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Communication et Marketing Digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Opérationnel": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing et Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable SEO": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable communication marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable communications marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing et communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marque": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Sales &amp; Distribution Partnerships Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Account Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Talent Acquisition Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 2,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Account Based Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Account Development Executive": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Account Director,Account Manager,Responsable marketing Digital ,Chargée de projet marketing digital International,Chef de Projet Junior - Chargée Formation ,Chef de produit": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Account Executive": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Acheteur leader commodité": {
+   "role": "achat",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token achat/procurement"
+  },
+  "Acheteur-négociateur": {
+   "role": "achat",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token achat/procurement"
+  },
+  "Acquisition Success Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Adjointe au Maire - Politique de la Ville, l'ESS, la GUSP, Quartier 4 Chemins La Villette": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Adjunct professor in B-to-B marketing &amp; Head of e-business program": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Advanced Studies Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Agency Partnerships Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Amélioration continue et digitalisation": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Analyste SOC N2 - N3": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Apprentice Corporate Compliance and M&amp;A Consulting - Amundi Asset Management": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Assistant": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Assistant marketing et communication RH": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Assistante Brand Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Assistante Responsable Marque Darty": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Assistante cheffe de produit 2nde vie": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Assistante de Direction Siège": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Assistante de Direction et Etudes de Prix": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Assistante responsable marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Associate Direct Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Associé": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Auditeur financier": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "B2B Growth and Product Marketing Director,Senior Demand Generation Manager,Associate,Inbound Marketing - Team Lead,Head of Marketing &amp; Sales,Senior Demand Generation Manager,Marketing Automation Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "B2B Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "B2C Digital Tools Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Baking Marketing Support Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Blogger and Growth Manager - French": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand &amp; External Communications Manager - Global": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Business Lead - Zone Europe (Wunda-Starbucks chocolate-Nesquik- Culinary Solutions)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Director Yves Saint Laurent Beauty DACH": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Brand Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Manager Anaphylaxis - Ophthalmology": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Manager Cointreau &amp; Zubrowka": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Marketing Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Marketing Manager Building France - Responsable Marketing &amp; Marque Bâtiment France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Brand Shoot Producer (adidas)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "BtoB Automation Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Building Something New,Founder in residence,Head of Growth &amp; Operations - Freelance,Head of Growth &amp; Operations,Junior International Project Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Business Developement Manager IBM Data &amp; AI and Automation": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Business Development Manager Aerospace": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Business Development Manager BIW - Steels &amp; Solutions": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Business Development Manager Healthcare,Business Development Manager ,Directrice Commerciale,Commercial Manager,Responsable commercial": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Business dev / innovation manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Business development Manager EV TotalEnergies Charging Services": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "CBSO - Chief Business Support Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO BU Global Energy Management": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO ENGIE Soluções - Brasil": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO Engie GBS": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO Renewables Australia &amp; South-East Asia": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO Xina Solar One": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO, Founder, Dirigeant(e)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CEO: Oya Hybrid Energy": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CHARGÉ DE DÉVELOPPEMENT ACCOMPAGNEMENT": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "CHEFFE DE PROJET COMMUNICATION PRODUITS ET RESPONSABLE SOCIAL MEDIA WEBER ET CHRYSO": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "CMO &amp; Intercompany Management Specialist": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO France + Marketing Leader for UK, LATAM &amp; South Europe Region": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO a.i. und Mitglied der Geschäftsleitung": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO et CRO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO | Executive Committee Member": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO | Strategic Marketing Leader | Growth Driver": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CMO- International Marketing Director- Chief digital officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "CPMO": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "CPO": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "CRM, Digital Marketing &amp; Partnerships Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Campaign &amp; Communication Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Campaign Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Central Europe Butchers Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargé de clientèle Entreprises Haut de Segment Hauts de France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargé de communication interne": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargé de projets Marketing et Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargé de recherche auprès du directeur du développement culturel et du musée": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chargée Marketing Digital RH": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée d'Affaires Entreprises PME ETI - Drôme Ardèche": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée d'animation éditoriale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de Communication et partenariats": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de Marketing Opérationnel et digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de Recherches": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de campagne CRM": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de campagne marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de communication interne": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de développement commercial": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de marketing et communication international,Social Media Manager,Social media manager,Brand Manager,Social Media Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de marketing opérationnel,Chef de Produit,Apprenti chef de Produit Voix,Stage marketing digital et opérationnel,Bénévole étudiant Social Club,Animatrice Assistante Sanitaire": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de mission": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de projet": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée de webmarketing et communication digitale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée d’Animation Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chargée d’innovation en communication &amp; marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de Produit": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de Projet marketing digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de groupe Marketing International (marque ILE DE FRANCE)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de projet": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de projet Marketing digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de projet marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef de projet éditorial": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef des Ventes Wurth Group": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chef des ventes": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Cheffe de projets marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Cheffe de service - directrice adjointe au marketing et commercial": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Cheffe des ventes EPI": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Chief Business Development Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief Executive Officer - UK": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief Marketing Officer (CMO)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief Marketing and Communications Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief Product Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief Revenue Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief marketing and communication officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Chief of Staff to CMO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Client Executive - EDF Group": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Client Manager - Key Accounts": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Co-Founder": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Co-fondateur": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Commerciale des Solutions d'Incentive et Récompenses 🚀": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Communication Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Communication et Marketing Digital": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Communications &amp; Marketing Manager - France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Communications Specialist": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Community Manager Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Conducteur de travaux chez Dalkia": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Conseiller création et développement de la jeune entreprise": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Conseiller immobilier": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Consultant Expert en Transformation Digitale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Consultant Growth Marketing SR": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Consultant veille": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Consultante - Financial services": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Content &amp; SEO Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Content Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Content Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Contract Manufacturing Buyer - CMO/CDMO": {
+   "role": "achat",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "token achat/procurement"
+  },
+  "Control tower Director for Stellantis Inbound and Outbound flows": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Contrôleur permanent engagement": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Corporate Brand Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Corporate Marketing Director - Go to Market - Marketing Programs": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Country Brand Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Country Manager France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Creative Hub Manager | Global Brand Strategy, Campaigns &amp; Brand Experience": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Customer Advocacy Manager - Responsable des Programmes Clients Ambassadeurs Sage France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Customer Marketing Activation Manager - Tork,Product manager - DIM,Brand Manager - Toilet Paper (Kleenex),Junior Brand Manager - Child Care (Huggies®),Brand Manager Assistant – Deodorants (Unilever),Office Manager and accountant assistant": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Customer Success Manager (CSM) – Accompagnement digital &amp; onboarding clients TPE/PPME 👩‍💻": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "DIRECTEUR CONSEIL STRATEGIE MARKETING AVRIL Bto": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Data Center Marketing Manager - Europe": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Data Product Director": {
+   "role": "technique",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Data Staff Engineer": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Data/IA Transformation Leader": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Demand Gen": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Deputy Head of Digital Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Design System growth lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital &amp; Social media manager,Digital communication manager,Digital communication officer,External communication officer - Press relations &amp; Digital,Marketing and Communications Officer,Press Relations Assistant": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Analytics Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Communication Manager,Digital marketing &amp; communication,Communication online &amp; offline": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Design Agency - Business Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Gm": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Digital Group Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Manager - Naturactive": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Marketing &amp; CRM Manager (Ford, Peugeot, Opel, Citroën, DS, Alfa Romeo, Fiat, BYD)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Marketing Manager - PhD in Finance": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Marketing Manager,Marketing &amp; Communication Manager EU South &amp; MEA,Marketing &amp; Communication Manager France Benelux,Marketing Communication Manager,Marketing communication South Europe,Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Marketing Managerin": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Digital Media Manager | Centralized eD2C Europe Zone Helena Rubinstein &amp; Carita": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital Trafic Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital growth marketing manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Digital marketing manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Directeur Acquisition ,Head of Investments and partnerships,Responsable partenariats grands comptes,Consultant senior,Responsable marketing et acquisition": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Central en immobilier d'entreprise": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Conseil Pluri media": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Groupe du Developpement et des Offres": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing &amp; Communication Groupe": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing &amp; Ecommerce Loto Del Sur": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing &amp; Expérience Clients": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing Client - DSC": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing Industrial &amp; Process Automation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing Opérationnel": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing client &amp; Digital": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing digital et Experience client": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing et partenariats,Chief Digital Officer - Directeur du Digital,Responsable Marketing Digital branche B2B,Responsable Marketing Selfcare &amp; Managed Services,Program Director,Responsable de l’activité déploiement de produits Standards (Division Entreprise Neuf Cegetel),Chargé de Mission à la Direction du Support Technique Client": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing, Commercial &amp; Communication Casinos Barrière": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing, Digital &amp; Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing, Digital &amp; Expérience Clients,Consultant | CDO | COO | CMO | Manager de transition...,DIRECTEUR DIGITAL ET INNOVATION,CDO | CMO,DIRECTEUR E-BUSINESS": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Marketing, Partenariats &amp; Events": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Produit, Marketing et Innovation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Réseaux Sociaux / Influence / Social Listening": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur Transformation, Marketing et Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur adjoint Paris Randos Nature": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de Département CBRE | Advisory &amp; Transaction Services | Bureaux IDF ‎ Sud et Ouest": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de Territoire Bretagne Nord – Côtes d’Armor &amp; Côte d’Émeraude": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de clientèle digital": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de programme": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de projet - volet ESR - Programme France 2030 AVENIRs, Business Owner e-portfolio CoFolio": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de projets - Lead Delivery Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur de territoire LYON DAUPHINÉ BNP PARIBAS": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur des Applications - Artelia Digital Solution": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur des Opérations Commerciales &amp; Exploitation | Stratégie Digitale &amp; Croissance": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur des Ventes Comptes Nationaux,Directeur des Ventes Comptes Clés,Chef des Ventes Grands Comptes Nationaux,National Account Manager,Key Account Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur des systèmes d'information": {
+   "role": "technique",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Directeur des systèmes d'information MGEN groupe VYV / Directeur Général MGEN Technologies": {
+   "role": "technique",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Directeur du Développement - Membre du CODIR Région EST": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur du Développement Industriel": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur du développement commercial": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur du développement commercial et de Production / Co-gérant": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur délégué": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur e-commerce B2B": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur marketing Non-paint": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur marketing,Responsable emerchandising et webmarketing,Cofondatrice,Fondatrice,Directrice Déléguée (digital),Responsable marketing (études et User experience)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur opérationnel OUEST": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directeur scientifique Planning stratégique et marketing de l'innovation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Direction de la Stratégie": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director - Field &amp; Growth Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director M&amp;A, music catalogues, start-up studio": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director Marketing &amp; Customer Experience": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director Professional Marketing CI EMEA": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director business transformation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director of Brand Marketing &amp; Communications": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director, Head of eCommerce and Digital Export Solutions": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director, Marketing Science": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director, SEU and CEU Growth Marketing,Regional Marketing Manager,Marketing &amp; Communication Manager,Sales &amp; Marketing Specialist,Communication Specialist": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Director, Sustainability Strategy Consulting": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Accompagnement Développement Grand Collectif": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Campagnes Marketing &amp; Master Data Produits": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Campagnes digitales et Influence - Orange Business France": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Communication et Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Digital &amp; E-commerce - C Level Executive": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Digital &amp; Ecommerce": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Digital et Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Expérience Client": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Expérience Client, Digital et Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Générale Déléguée": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice ISCOM NICE": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing &amp; Business Growth | Stratégie, Transformation &amp; Impact,Directeur Marketing-Développement Advisory,Directeur Clients &amp; Industries,Business Development Operations Leader,Key Account Manager Secteur Public,Chargée de missions développement international": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing &amp; Communication (Management de Transition),Mentor, experte Marketing Digital, CX et CSM,Business Partner,Directrice Marketing, Communication et Expérience Clients (membre du CODIR),Responsable Marketing Client,Responsable Marketing Relationnel": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing &amp; Communication,Business Development Director,Media &amp; Business Manager,DIRECTRICE COMMERCIALE,DIR CONSEIL,Chef de marques": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing &amp; Expérience Clients (CMO)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing - Raja France": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Client et Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Clients": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Clients et Communication,Renault Trucks-Marketing Manager HD Trucks,Directrice marketing,Packaged Offers deployment Manager,Marketing and Communication Tools Coordinator,Zone Manager VN,Commercial training Project Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Communication et RSE": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Digital": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Food Service, Directrice des marques Arcoroc Chef&amp;Sommelier": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing Pôle peinture": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing digital, Communication et RSE": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing du pôle Territorial Île-de-France Est ,Responsable Marketing et Commercial Tramway T9 - Bus Seine Grand Orly,Cheffe de Projet Développement,Responsable service Marketing et Développement,Responsable Études et Développement": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing et Commercial": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing et Communication,Directrice adjointe Communication,Responsable de la Communication,Chargée de Communication,Assistante de Communication interne,Assistante - Communication interne": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing et Communications | Group Industrialization": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Marketing,Directrice Marketing &amp; Communication,Directrice Marketing,Directrice Marketing,Business Analyst": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Office Lab (Departement Marketing Opérationnel)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Population et Solidarité Ville de Mulhouse &amp; du CCAS de Mulhouse": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Ressources": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Sales Customer Care": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice Stratégie Commerciale &amp; Client": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice au Développement Produits mixtes et atypiques": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice conseil": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice de clientèle digital média,Responsable de clientèle plurimédia,Chargée de clientèle plurimédia,Chef de projet digital,Digital Project Manager \"Portails Sectoriels\"​": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice de la Fondation USPN": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice de la Marque et de la Marque Employeur @GroupeSOS": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice de la Promotion Commerciale auprès du membre du Comex le Directeur Commerce du groupe": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice de programme stratégique": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice des Activités NUXE SPA / NUXE SPA Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice digital et omnicanal chez IKKS | Développement commercial I Retail I Analyse de données I Finance": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice du Marketing et du Digital": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice du marketing opérationnel": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice exécutive": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing &amp; Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing &amp; communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing &amp; communication - Pro à Pro": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing et services support Document": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing omnicanal et data Groupe Beaumanoir": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Directrice marketing pôle Hospitality Groupe Septeo": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Distribution Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "E-Commerce Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "EA / PA to Olivier Brourhant, Chairman &amp; CEO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "EMEA Cloud Transformation Senior Marketing Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "EMEA Digital Acquisition Director ,EMEA Senior Digital Acquisition Manager, EMEA Digital Marketing Leader,Head of Digital Marketing,Digital Project Manager,Web Project Manager &amp; Community Manager,Assistant Marketing / commercial": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "EMEA Digital Marketing Manager - Running": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "EMEA Marketing Manager Winter Sports Equipment": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "EMEA Partner Field Marketing Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Enseignant": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Enseignante": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Enseignante a temps partiel en ligne": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Enseignante en Communication digitale &amp; webmarketing": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Enterprise Account Executive": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Enterprise Channel Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Entrepreneur - preparing something": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Event &amp; Brand experience manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Events &amp; Startup Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Events Manager &amp; Experience client - Field Marketing Xerox France/Belgique/Luxembourg": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Executive Assistant": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Expert Produit Poste de travail": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Experte CRO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Experte en Demand Gen Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "FSL program manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Field Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Field Marketing Manager EMEA": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Field Marketing Manager for South EMEA": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Field Marketing Specialist": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Field marketing manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Fondateur": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Fondatrice et CEO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Formateur - 123Workspace": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Formateur,Global Complete Solutions Manager,Global Key Account Manager,Global Marketing Manager - Energy,Cash Initiative Project Leader,Technical Manager - Applications Expert": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Founder &amp; CEO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "GM &amp; VP, Commercial - North America": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "General Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Gestionnaire Immobilier - Pôle Habitat": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Gestionnaire baux commerciaux IMMOBILIERE RHONE ALPES 3F sur 38, 69, 42, 01, 73 et 74": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Gestionnaire des marchés / Sinistres - Contentieux / Contract Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global &amp; Tech CRM Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Brand &amp; Innovation manager CPW": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Chief Brand Officier - Maison Perrier-Jouet &amp; Chateau Sainte-Marguerite": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Digital Communication Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Digital Marketing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Digital Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Director, Digital Growth - Apple": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Go-To-Market Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Head of Marketing - ODDO BHF Asset Management &amp; Private Assets": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Head of Marketing Innovations l YOPLAIT I FRANCE UK IRELAND BELGIUM": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Head of Media and Performance Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Marketing Director - GUCCI Beauty / BURBERRY Beauty / MARC JACOBS Beauty": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Marketing Director Lancaster skincare &amp; suncare": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Marketing Innovation Manager DS3": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Marketing Manager, PUMA Basketball": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Marketing Product Manager - Eau Thermale Avène": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Senior Commercial Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Social Media Manager &amp; Growth Marketing - Digital Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global Strategy &amp; Equity Director - Boursin": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Global Trade Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Global marketing manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Graphics Product &amp; Business Development manager,Technical &amp; Industrialisation Manager,Business Development Manager,Business Development Manager,Business Development Manager,Product Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Group Account Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Group CEO and Board Member": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Group Chief Financial Officer": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Group Communications and Marketing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Group Head of Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Group Integrated Marketing Communications Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Group Product Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Group customer experience director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Growth &amp; Marketing Manager France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Growth Marketer": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Growth Marketer Expert,Growth Marketer Specialist,Chargée de webmarketing et référencement,Chargée de marketing digital,Chargée de webmarketing,Cheffe de projet webmarketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Growth Marketing Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Growth Marketing Manager,Growth Marketing Manager,Growth Marketer,Growth hacker": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Growth Specialist": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Growth manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Guest lecturer,Head of Marketing &amp; Communication,Transition Management &amp; Digital Transformation,Director, Global Digital Marketing &amp; Communications,Principal, External Communications, EMEA and New Markets,Senior External Communications, EMEA (France, Benelux, Turkey, South Africa)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "HEAD OF GLOBAL MARKETING Comptoir des Cotonniers &amp; Princesse Tam-Tam": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head Coach( Director) Brand for House of Innovation Paris": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head Of Digital Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of AI strategy and governance": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Acquisition": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of B2B Marketing France &amp; French-speaking Africa": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Brand and Marketing France": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Brand, Content &amp; Social Media - EMEA": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Business Development": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Business Development &amp; Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of CRM": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Communication &amp; Digital Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Communications": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Customer Vertical Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Digital Marketing and Media": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Digital Marketing, Communication and Customer Experience": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Direct Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Downstream Marketing EMEA (Europe, Middle East and Africa)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of E-commerce D2C": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of EMEA Channel Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of EMEA Field Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Fire Safety Technoplatform - NEXANS": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Growth Marketing Digital &amp; Data": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of International Media &amp; Marketing Activation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Key Accounts &amp; Category Management": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of M &amp; A": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing &amp; Business Intelligence": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing &amp; Communications, Digital Platform Services": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing &amp; Communications, France": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing - Events &amp; Collaterals,Associée,Responsable marketing,Responsable communication &amp; marketing,Chargée de communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing B2B - leboncoin immobilier": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing Channels": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing Europe | Uber for Business": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing France et International": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing NAOS Brand": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing Switzerland": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing and Branding": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing and Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing, BD &amp; Communication - France,Head of Communications,Marketing and Business Development Manager,CEO and founder at Les Belles Heures,Marketing and Business Development Specialist": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing, Business-IT, France": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Marketing, evian FRANCE": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Product Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Revenue Operations": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Sales &amp; Business Development MID-EU": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Social Media": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Strategic Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Strategy and Development - Offer, Marketing and Communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Targett": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Trafic Acquisition": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of Website performance": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of customer marketing France - Tork brand": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of digital marketing and communications": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of growth marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of marketing and communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Head of strategy and innovation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Humans and Brands CMI director / Strategic projects insights director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Hôte du podcast Landsgeminde": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "I Lead, Commercial Service Partners": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Impact 360 : Marketing, Communication &amp; Ecosystèmes de partenaires": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Independent Management Consultant": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Influencer Marketing Manager @Google Pixel": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Ingénieur tests logiciels": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Ingénieure commerciale Est Déchets Dangereux - marché Terres Polluées - Suez IWS Minérals": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Ingénieure d'affaires - RETAIL &amp; PUBLIC": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Inside Account Manager - France/Switzerland Commercial Accounts": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Inspecteur Conseil avec Mandataire d’Assurance - Membre du Club Excellence": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Inspecteur général": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Institutional Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "International Brands Manager Assistant": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "International Marketing Leader": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "International Marketing Manager - L'Artisan Parfumeur": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "International Marketing Manager Medical IT Solutions - MedTech Europe": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Investisseurs": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Key Account Sales Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "LATAM Market Establishment Lead The Magnum Ice Cream Company": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Lead - Growth Strategy": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Lead CRO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Lead Digital &amp; Product Analytics": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Lead digital marketing &amp; ops": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Local Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Loyalty &amp; Rewards Project Manager - SEPHORA": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "MANAGER ACCELERATEUR": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "MANAGER COMMUNAUTES HUB": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "MARKETING ET COMMUNICATION MANAGER": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Manager Acquisition Digitale et Efficacité Commerciale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Manager Business Development et Engineering France,Directeur projet usines France,Directeur d’usine,Business Development &amp; engineering Manager / Resp travaux neufs et industrialisation,Health Safety Manager / Manager santé sécurité,Q&amp;E certification project &amp; lean manager / responsable projet certification ISO et lean manager,Production manager,Raws and packs supply &amp; quality pack manager/ Responsable approvisionnement et qualité emballage": {
+   "role": "achat",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "token achat/procurement"
+  },
+  "Manager Change &amp; Marketing CRM": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Manager Chargés d'Affaires AURA": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Manager Marketing Clients": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Manager Marketing Science": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Managing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Managing Director France, Spain, Portugal": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Managing Director, Global Marketing and Commercial Excellence, Branded Ambient BU": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Manufacturing Quality Director, Deputy Responsible Pharmacist": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Market Area Marketing Manager southern Europe": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing &amp; Communication manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing &amp; Communications Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing &amp; Event Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing &amp; Market Development Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Automation": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Marketing Communication Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Director - Clients &amp; Markets": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director - EMEA, APAC, LATAM": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director Capgemini Engineering": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director DUGAS and Global Marketing Director Clan Campbell": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director Digital (Media, CRM, Influence, PR)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director EMEA&amp;India,Senior Director of Marketing Communications Danfoss Cooling Segment,Communication Director Danfoss Commercial Compressors,Marketing Communication Manager,Head of Communication,International New Business Development": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director France &amp; BeNeLux,Senior Marketing Manager France,Regional Marketing Manager France,Marketing Team Leader North of France,Co-fondateur et Marketing Manager,Marketing Manager,Field Marketing Specialist,Création et réalisation": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director France Tom Ford, Balmain &amp; Jo Malone London": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director North &amp; Eastern Europe": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director Retail and Out Of Home France, member of Direction Comittee": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director UK &amp; Ireland": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director for Strategic Partners Southern Europe &amp; Strategic Partner Oracle global,Marketing Manager,Cofounder,Intervenant Marketing outils CRM,Practice Director - Salesforce Marketing Cloud / Docusign CLM,Marketing and communication director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director | 3DVIA | WW Consumers Acquisition, Branding &amp; Revenue Growth @HomeByMe": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Director, Western Europe": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Group Manager - Marketing | Business &amp; Sales | Pricing, Data &amp; Digital Performance": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager &amp; Business Developer": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager (McDonalds)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager - Dairy - EMEA": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager - MIP Markets": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager - Pole Beauté (Batiste, Hero Cosmetique)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager B2B": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager CAM Software": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager South Europe - Institutional": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager US/Canada &amp; China": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager Wenger": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager l Luxury, Social Media, Insights &amp; IA": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager, Cargo Inspection Systems": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Manager, Industrial Head protection, EMEA chez MSA - The Safety Company": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing Project Officer": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing Supervisor": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Marketing and Communications Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing and Sales Support Manager France &amp; Italy": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing director, Defense and Mission-Critical Systems": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Marketing manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing manager brand &amp; Corporate communications": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing manager,Responsable du pôle communication,Vice-responsable du pôle visites": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Marketing, BD &amp; Communications Executive": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Marketing, Events and Communications Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Medical Marketing Director,Medical team leader,Concepteur redacteur medical,Procréation Médicalement Assistée,Doctoral Student,ASSISTANT INGENIEUR": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Medical Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Medical Product marketing and Acne Product Manager,Medical Product Manager,Oncology Research Manager,Ingénieur recherche/développement,Ingénieur recherche/développement,Technicienne animalier": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Membre": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Middle East eCommerce Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Missions de conseil en stratégie marketing et commerciale": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Objectif principal": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "PM": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "PMO": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "PR Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Pan European Cine &amp; Video Marketing Team Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Part-Time CMO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Partner Marketing Manager, EMEA": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Performance Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Performance Media Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Pharma Biotech Strategic Collaboration &amp; Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Portfolio marketing manager Foodservice CE": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Pricing and Offer Marketing Leader": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Product Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Product Management Intern": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Product Marketing Manager - Accountants Market": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Product Owner senior": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Product VP": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Professeur agrégé de Biotechnologies et Génie Biologique": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Professeur des universités": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Programs Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Project &amp; Bid Manager / Business development Manager,Project Manager / Project Engineering Manager,Product Architect,Product Architect": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Project Manager - Strategy and Business Development Middle East &amp; Africa,Cross carline strategy &amp; Energy transition leader-Middle East &amp; Africa,Performance &amp; economy senior pilot ,Operations Manager,Business Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Prosumer Strategy Leader": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Président": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "QSR Marketing Category Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "R&amp;D Portfolio Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "RESPONSABLE ACCOMPAGNEMNT BIOTECH ECOTECH HUB": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "RESPONSABLE PROJET DIGITAL": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Real Estate Development Project Manager,Real Estate Developer,Founder and CEO,Teaching Assistant in Real Estate Management,Head of Corporate Events": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Regional MarCom Manager Western Europe": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Regional Marketing Manager Africa &amp; SE Asia": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Regional Marketing Manager France,Junior Marketing Manager France &amp; DACH,Junior Marketing Manager France &amp; DACH,Chargée marketing,Emploi étudiant,Emploi étudiant,Emploi étudiant": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Reputation Risk Analyst": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Resp marketing": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Responnsable d'exploitation": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Responsable Acquisition Multicanal": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Acquisition et Conversion": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Affaires Sociales": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Agap2 IT Méditerranée": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Responsable Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Communication &amp; Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Communication &amp; Marketing FR": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Communication (Pôle Edito/ Direction Communication Interne et Externe)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Communication et Marque Employeur": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Communication et Webmarketing e-business": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Communication interne, externe et Marketing Digital chez Chryso &amp; Weber France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Digital &amp; Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Distribution et Digital,Chief Marketing Officer @ Macif Avantages,Responsable marketing et e-commerce,Responsable marketing,Responsable Marketing et Expérience Client": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Développement Commercial": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable E-commerce et Marketing Digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Edition Contenus &amp; Média": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Etat-Major Marketing - Asset Management &amp; Trading": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing &amp; Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing &amp; Communication - Assistante de Direction / Mandataire commerciale": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Marketing &amp; Communication - Executive Education,Director of Education &amp; Office Manager,Community Manager Director,Executive Marketing Director,Founder - Marketing agency": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Marketing &amp; Communication,Chargée de Marketing &amp; Communication ,Responsable Marketing &amp; Communication,Assistante commerciale,Chargée de Marketing &amp; Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing &amp; Offres": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing - Direction des Services aux Collectivités": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Marketing / Marketing Digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing 360° - La Mer": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Actifs Cosmétiques": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Aménagement ,Chef de produit Stand, Agencement, Signalétique ,Chef de projets marketing opérationnel ,Assistante Chef de Produits Animations et Responsable Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing CRM &amp; fidélisation,Responsable Marketing Relationnel CRM,Head of CRM,Responsable E-CRM &amp; Marketing Automation,Chef de Projet CRM &amp; Marketing Digital,Conseiller en Gestion de Patrimoine Banque Privée,Conseiller Privé": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Marketing Communication et E-commerce (BtC et BtB) - Retail": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Diabète &amp; Point of Care": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Digital &amp; Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Digital &amp; Expérience candidat": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Enseigne Trade": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing France &amp; Marketing Opérationnel International": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Insight": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Relation Client": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Réseaux Poids Lourds": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Startégique et Operationnel - Activité FRANCE": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Stratégique et Communication La Nouvelle Agriculture": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Sud-Est &amp; Est": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing Traitement de l’Air Systèmes,Chef de Groupe Climatisation / Air Conditioning Marketing Team Leader,Chef de Produit VRF,Assistant Chef de Produit Services Tertiaire,Technicien Bureau d'Etude,Technico-commercial spécialisé en éclairage": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing digital, E-commerce et Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing et Communication Salons": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing et Prescription": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Marketing group": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Média Global": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Offre et Digital pour les marchés des Professionnels et de l'ESS - Groupe MACIF": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Performance Digitale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Produit Marketing Digital France &amp; Suisse,Chargé de marketing digital France &amp; Suisse,Responsable Marketing Digital,Chief Technical Officer,Co-gérant (acquis par Mediaschool en 2019),Responsable SEO / SMO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable Pédagogique": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Pôle Content marketing,Responsable stratégie social média - Social média manager,Chef de projet analyse stratégique,Chef de projet marketing stratégique,Responsable de projets Intelligence économique, e-marketing,Responsable veille et analyse commerciale,Gestionnaire de l'information,Chef de projet junior TIC - Gestion de l'information": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Pôle Développement Commercial,Responsable Développement Catégorie,Responsable Promotion des Ventes,Business Excellence Manager - Zone Europe,Chef de Projet CRM Trade ,Category Manager Enseigne Senior": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Pôle Performance marketing, digital, satisfaction et expérience clients - Thermor France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Relations Publiques, Partenariats et Influence De'Longhi France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable Vente &amp; Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable WebMarketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable acquisitions digital media": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable campagne marketing digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable communication &amp; marketing opérationnel": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable communication digitale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable communication marketing / Région Est Rhône Alpes": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable communications marketing,Assistante directeur adjoint communication,Chef de rang": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable de Pôle Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de communication digitale,Directrice de la communication,Chargée de relations clientèle et communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable de l'incubateur et du pôle entrepreneuriat": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de l'équipe Marketing Métiers - lead Technology &amp; Transformation": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de la Communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de la Formation + Digitale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de la cellule \"actualisation et labélisation des recommandations\"": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de la direction du business developpement,Ingénieur commercial business developpement,Ingénieur commercial,Chef du service de communication": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Responsable de l’offre SIRH": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de magasin": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de marché": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de marché France | Secteur Public et Privé Non Lucratif": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de projet": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de projets communication et marketing digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de projets digitaux": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable de projets et communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable des réseaux sociaux,Community Manager,Assistant Communication-Newbiz,Responsable de projet de communication,Chargé de Communication Digitale": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable du Pôle Conseils, Achats et Espaces Numériques - Paris et Campus": {
+   "role": "achat",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token achat/procurement"
+  },
+  "Responsable du Pôle Marketing Digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable du département « Etudes des Solutions de CyberSécurité » en Cloud et On-prem": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Responsable du pôle Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable département développement digital &amp; réseaux sociaux.,Responsable service développement digital &amp; réseaux sociaux ,Responsable service,Chargé de marketing opérationnel digital,Département des opérations clients": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable développement commercial": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable d’équipe Marketing KROHNE France,Responsable service clients,Responsable Produits,Technicien services,Agent technique polyvalent": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable e-commerce": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable expérience client": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable informatique": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Responsable marketing &amp; digital,Chef de projet marketing,Responsable adjointe,Animatrice Corner (En Alternance)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing &amp; e-commerce": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing - HubPharma": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing - Régie cinéma et home entertainment": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing et communication - Altarea Partenaires": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing et de l'offre santé,Responsable marketing stratégique et projets santé,Responsable marketing et communication,Responsable marketing stratégique,Responsable marketing - marché santé,Responsable déploiement,Chef de produit": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing indirect à l'international": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable marketing produits": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable médico-marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable partenaires": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable performance digitale et customer success": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable produit digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable pôle adhérents (relations adhérents, développement commercial, qualité, RSE)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable pôle digital": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable régionale Communication, Marketing et Relation client": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable sensibilisation cybersécurité": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Responsable seo": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Responsable, Pôle conception graphique &amp; vidéo": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Retail Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Retail Media Manager Europe (L'Oréal Luxe)": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Retail marketing promotion manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Revenue Operations CRM Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Revenue Operations Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Référent 3DExperience": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Régional Sales Director #web media #digital #web sites #SEO": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Sales Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Sales Director,Sales Director,Head of advertising,Responsable du marché commercial romand,Responsable marché régional romand,Cheffe de projets,Responsable Marché Rubriques,Content Manager": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Sales Specialist - Global Market Insights": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Sales Team leader": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Sales and Business Development Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Sales and Marketing Director, Lithium BU": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Search Engine Optimization Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Secrétaire Général CFE-CGC Afpa Www cc du": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Senior Account Manager France": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Brand &amp; Growth Marketing Director,Brand Marketing &amp; Growth Director,Brand Marketing Director,Head of Brand,Senior Brand Strategist,Digital Strategist,Account Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Senior Consultant - Marketing &amp; Data Strategy": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Digital Sales &amp; Marketing manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Field Marketing Manager France 🇫🇷": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Global Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Inbound Growth Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Investment Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Senior Manager, EMEA Field Marketing": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior MarCom Manager, International P&amp;R": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Marketing Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Marketing Manager Europe": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Partner": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Senior Partner Acquisition Specialist": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Senior Price Analyst and Offer Strategy Development": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Senior Product Director, Growth": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Senior Talent Acquisition Partner": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Senior Transition &amp; Transformation Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Social Media &amp; Community Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Social Media Lead": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Software Engineer Aprentice": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Solution Manager Retail": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Sponsorship &amp; Social Media Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Sr Marketing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Sr. Strategic Alliance Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Strategic Account Manager - Finance": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Strategic Lead, Content Marketing &amp; Digital Services": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Strategic Marketing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Strategy &amp; Marketing Director": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Superviseur marketing et communication Retail": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Tactical Workforce Planner": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Talent Acquisition - IT": {
+   "role": "technique",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "token IT/data/dev sans marqueur marketing/digital"
+  },
+  "Team Leader Digital Marketing - Bechtle France &amp; Bechtle Comsoft": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Team lead Marketing 360": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Team leader Marketing": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Technicien de développement et essais": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "Traffic Manager &amp; Cheffe de projet IA,Growth Inbound Marketer,Chef de projet SEO,Content Manager,Rédactrice SEO,Stagiaire RSE / Communication Interne,Stagiaire ressources humaines": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Traffic Manager / SEO": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "UX/UI Engineer &amp; Design Trainer": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "VP Marketing EMEA &amp; APJ": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "VP Operations, Projects and HSE Networks Americas &amp; CEO ESOM (Engie Soluções Operação e Manutenção)": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "VP Product &amp; Marketing - Smart Biometrics": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "VP | Head Media, Data &amp; Digital marketing,VP - Head Media, CRM &amp; Digital incl. E-Commerce Europe,E-Commerce Director Europe,Chief of Staff to the global Chief of Sales &amp; Marketing Officer,Global Senior Manager Sales &amp; Marketing,Marketing Director Opel Austria,Head of Digital Marketing &amp; CRM @ PSA Switzerland &amp; Austria,Digital Marketing, Social Media &amp; CRM Manager Peugeot Switzerland,Marketing Coordinator": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Vice President Global Alliances Keyrus Group &amp; Strategic initiatives": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Vice President, Communications": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Vice President, Global Digital Marketing": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Visiting Professor,Animatrice,Associée,Directrice marketing, communication &amp; RSE,Directrice marketing &amp; communication,Responsable communication marketing (membre du comité de direction),Responsable web,Responsable de magasin,Diététicienne nutritionniste 🥦": {
+   "role": "decideur",
+   "seniorite": "direction",
+   "effectif": 1,
+   "motif": "marqueur de direction (C-level / VP / Head of / directeur)"
+  },
+  "Wealth Manager": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "aa": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "chef de groupe marketing,chef de produit marketing MDD": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "cheffe de projet marketing digital sea social media": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "lol": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "responsable web communication": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  },
+  "Étudiant": {
+   "role": "autre",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "aucun marqueur reconnu"
+  },
+  "​Lab Water Marketing Communications Manager - Europe": {
+   "role": "praticien",
+   "seniorite": "operationnel",
+   "effectif": 1,
+   "motif": "marqueur operationnel (responsable / manager / charge de / growth ...)"
+  }
+ }
+}

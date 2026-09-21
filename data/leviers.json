@@ -1,0 +1,5433 @@
+{
+  "_meta": {
+    "genere_le": "2026-09-21",
+    "projet": "Bulldozer Interne",
+    "customerId": "533c1f8f-bcc2-4e95-a3ee-4e630b86dbbf",
+    "projectId": "b09bf643-e087-4e6c-8415-f9ee96e5cc94",
+    "mode": "lecture seule - aucune creation, modification, suppression, demarrage ni mise en pause",
+    "regles_de_releve": [
+      "La metrique `leads` de l'OS est fausse : elle est exclue de tout ce fichier, ainsi que `cpl` qui en derive.",
+      "L'agregat AD_TIME_GRANULARITY_ALL est corrompu : il n'a jamais ete lu. Tous les totaux et mensuels sont recomposes en additionnant les lignes datees (DAILY).",
+      "Aucun trou n'est comble par une estimation. Un levier sans donnee est declare disponible=false.",
+      "L'engagement organique LinkedIn est lu sur le POST, pas sur l'annonce."
+    ],
+    "appels_en_erreur": [
+      {
+        "outil": "bdzGetAdAnalytics",
+        "parametres": "pageSize=1000",
+        "message": "400 Bad Request - Page size must not exceed 200",
+        "suite": "repris en pages de 200"
+      }
+    ],
+    "acces_refuses_403_ou_equivalent": [
+      "13 comptes publicitaires LinkedIn clients : readAccess/writeAccess DENIED, 'organization 404' au controle du 2026-09-16. Attendu (comptes clients), pas un bug de requete.",
+      "Compte Meta 'Hosman - Bulldozer' : import en erreur, 'Ad account owner has NOT grant ads_management or ads_read permission'. Compte client.",
+      "Compte LinkedIn BULLDOZER : pageAccess DENIED sur urn:li:organization:74995178 - c'est ce qui explique l'absence de posts de la page entreprise."
+    ]
+  },
+  "paid_linkedin": {
+    "disponible": true,
+    "source": "Bulldozer OS - bdzListRegisteredAdAccounts, bdzListAdLayer1, bdzGetAdAnalytics (LAYER_1_ALL et LAYER_3_ALL, granularite DAILY)",
+    "periode_couverte": "2026-01-01 -> 2026-09-20 (compte BULLDOZER). Fraicheur : dataThrough 2026-09-20, dernier import reussi 2026-09-21T02:00:18Z, upToDate=true",
+    "donnees": {
+      "compte_principal": {
+        "adAccountId": "99567c90-5662-4568-aa1b-88fd727cbf1c",
+        "adAccount": "urn:li:sponsoredAccount:511718129",
+        "nom": "BULLDOZER",
+        "devise": "EUR",
+        "readAccess": "GRANTED",
+        "accountRole": "CAMPAIGN_MANAGER",
+        "refreshEnabled": true,
+        "socialEnabled": false,
+        "page_liee": "urn:li:organization:74995178 (pageAccess DENIED)",
+        "campagnes_referencees": 62,
+        "campagnes_avec_metriques": 18,
+        "total_recompose": {
+          "depense_eur": 34193.29,
+          "impressions": 4724760,
+          "clics": 160650,
+          "ctr": 0.034,
+          "cpc_eur": 0.2128,
+          "cpm_eur": 7.237,
+          "lignes_datees": 909
+        },
+        "par_mois": [
+          {
+            "mois": "2026-01",
+            "depense_eur": 1174.02,
+            "impressions": 91167,
+            "clics": 1129,
+            "lignes_datees": 28,
+            "ctr": 0.01238,
+            "cpc_eur": 1.0399,
+            "cpm_eur": 12.8777
+          },
+          {
+            "mois": "2026-02",
+            "depense_eur": 5789.47,
+            "impressions": 357336,
+            "clics": 6717,
+            "lignes_datees": 112,
+            "ctr": 0.0188,
+            "cpc_eur": 0.8619,
+            "cpm_eur": 16.2018
+          },
+          {
+            "mois": "2026-03",
+            "depense_eur": 3042.9,
+            "impressions": 287166,
+            "clics": 4752,
+            "lignes_datees": 115,
+            "ctr": 0.01655,
+            "cpc_eur": 0.6403,
+            "cpm_eur": 10.5963
+          },
+          {
+            "mois": "2026-04",
+            "depense_eur": 4434.46,
+            "impressions": 647815,
+            "clics": 9444,
+            "lignes_datees": 129,
+            "ctr": 0.01458,
+            "cpc_eur": 0.4696,
+            "cpm_eur": 6.8453
+          },
+          {
+            "mois": "2026-05",
+            "depense_eur": 4039.28,
+            "impressions": 489638,
+            "clics": 8327,
+            "lignes_datees": 121,
+            "ctr": 0.01701,
+            "cpc_eur": 0.4851,
+            "cpm_eur": 8.2495
+          },
+          {
+            "mois": "2026-06",
+            "depense_eur": 3980.19,
+            "impressions": 684571,
+            "clics": 15591,
+            "lignes_datees": 95,
+            "ctr": 0.02277,
+            "cpc_eur": 0.2553,
+            "cpm_eur": 5.8141
+          },
+          {
+            "mois": "2026-07",
+            "depense_eur": 4050.19,
+            "impressions": 673989,
+            "clics": 32492,
+            "lignes_datees": 108,
+            "ctr": 0.04821,
+            "cpc_eur": 0.1247,
+            "cpm_eur": 6.0093
+          },
+          {
+            "mois": "2026-08",
+            "depense_eur": 5070.59,
+            "impressions": 1082290,
+            "clics": 61050,
+            "lignes_datees": 133,
+            "ctr": 0.05641,
+            "cpc_eur": 0.0831,
+            "cpm_eur": 4.6851
+          },
+          {
+            "mois": "2026-09",
+            "depense_eur": 2612.19,
+            "impressions": 410788,
+            "clics": 21148,
+            "lignes_datees": 68,
+            "ctr": 0.05148,
+            "cpc_eur": 0.1235,
+            "cpm_eur": 6.359
+          }
+        ],
+        "par_campagne": [
+          {
+            "l1Id": "71f39b94-db1c-4a7e-bab2-b5b8776f2ed5",
+            "nom": "TLG II BOFU",
+            "statut": "ACTIVE",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-02-13",
+            "derniere_diffusion": "2026-09-20",
+            "jours_diffuses": 191,
+            "depense_eur": 10898.15,
+            "impressions": 2157477,
+            "clics": 41495,
+            "ctr": 0.01923,
+            "cpc_eur": 0.2626,
+            "cpm_eur": 5.0513
+          },
+          {
+            "l1Id": "456cb44c-5526-4a29-bafd-5f933c8755d8",
+            "nom": "RTG",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-03-31",
+            "derniere_diffusion": "2026-09-07",
+            "jours_diffuses": 126,
+            "depense_eur": 5825.28,
+            "impressions": 383437,
+            "clics": 4018,
+            "ctr": 0.01048,
+            "cpc_eur": 1.4498,
+            "cpm_eur": 15.1923
+          },
+          {
+            "l1Id": "728c9c55-880f-49de-be30-571e8a84f04d",
+            "nom": "SPRINT 1 II TOFU",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-01-01",
+            "derniere_diffusion": "2026-05-07",
+            "jours_diffuses": 109,
+            "depense_eur": 3346.14,
+            "impressions": 382130,
+            "clics": 8978,
+            "ctr": 0.02349,
+            "cpc_eur": 0.3727,
+            "cpm_eur": 8.7565
+          },
+          {
+            "l1Id": "9e748103-8c41-4651-a2fd-07d5ab9e3401",
+            "nom": "ACQUISITION CEO",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-02-02",
+            "derniere_diffusion": "2026-08-22",
+            "jours_diffuses": 51,
+            "depense_eur": 2679.21,
+            "impressions": 384532,
+            "clics": 6635,
+            "ctr": 0.01725,
+            "cpc_eur": 0.4038,
+            "cpm_eur": 6.9675
+          },
+          {
+            "l1Id": "e2f88277-dd25-4df7-bbc1-016f113da2ac",
+            "nom": "ACQUISITION CMO",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-01-15",
+            "derniere_diffusion": "2026-06-04",
+            "jours_diffuses": 81,
+            "depense_eur": 2160.23,
+            "impressions": 91477,
+            "clics": 1110,
+            "ctr": 0.01213,
+            "cpc_eur": 1.9462,
+            "cpm_eur": 23.615
+          },
+          {
+            "l1Id": "34bd325f-ad8e-4fb5-ba57-451cd140d6d5",
+            "nom": "TL - ADS - JORDAN",
+            "statut": "ACTIVE",
+            "objectif": "ENGAGEMENT",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-07-12",
+            "derniere_diffusion": "2026-09-20",
+            "jours_diffuses": 71,
+            "depense_eur": 1741.05,
+            "impressions": 544884,
+            "clics": 78695,
+            "ctr": 0.14443,
+            "cpc_eur": 0.0221,
+            "cpm_eur": 3.1953
+          },
+          {
+            "l1Id": "0d918242-f046-4ee1-8a39-948faad72664",
+            "nom": "TLG - BOFU",
+            "statut": "ACTIVE",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-07-24",
+            "derniere_diffusion": "2026-09-20",
+            "jours_diffuses": 59,
+            "depense_eur": 1724.66,
+            "impressions": 340398,
+            "clics": 9075,
+            "ctr": 0.02666,
+            "cpc_eur": 0.19,
+            "cpm_eur": 5.0666
+          },
+          {
+            "l1Id": "975c956f-3dd5-4d39-b538-cfd5e634f840",
+            "nom": "Retargeting bulldozer",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-08-22",
+            "derniere_diffusion": "2026-09-10",
+            "jours_diffuses": 20,
+            "depense_eur": 1247.83,
+            "impressions": 79480,
+            "clics": 1014,
+            "ctr": 0.01276,
+            "cpc_eur": 1.2306,
+            "cpm_eur": 15.7
+          },
+          {
+            "l1Id": "3c5e6e26-80f1-4856-81e3-571a76f6ddb6",
+            "nom": "TDT - Formation",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-02-07",
+            "derniere_diffusion": "2026-05-07",
+            "jours_diffuses": 26,
+            "depense_eur": 1132.72,
+            "impressions": 79799,
+            "clics": 585,
+            "ctr": 0.00733,
+            "cpc_eur": 1.9363,
+            "cpm_eur": 14.1947
+          },
+          {
+            "l1Id": "907c0dfb-c1e9-43e6-a491-66d3894e2b28",
+            "nom": "Acquisition",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-03-31",
+            "derniere_diffusion": "2026-07-30",
+            "jours_diffuses": 38,
+            "depense_eur": 987.1,
+            "impressions": 106848,
+            "clics": 1888,
+            "ctr": 0.01767,
+            "cpc_eur": 0.5228,
+            "cpm_eur": 9.2384
+          },
+          {
+            "l1Id": "a0dd6eae-b38f-4bef-a1a0-5ee1ef95d30d",
+            "nom": "AWARNESS",
+            "statut": "PAUSED",
+            "objectif": "BRAND_AWARENESS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-02-06",
+            "derniere_diffusion": "2026-07-11",
+            "jours_diffuses": 94,
+            "depense_eur": 748.62,
+            "impressions": 94268,
+            "clics": 6471,
+            "ctr": 0.06864,
+            "cpc_eur": 0.1157,
+            "cpm_eur": 7.9414
+          },
+          {
+            "l1Id": "9e190a74-bdfc-4ee9-8b14-135dae1c2e30",
+            "nom": "RTG bulldozer",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-07-12",
+            "derniere_diffusion": "2026-07-21",
+            "jours_diffuses": 10,
+            "depense_eur": 414.08,
+            "impressions": 18481,
+            "clics": 179,
+            "ctr": 0.00969,
+            "cpc_eur": 2.3133,
+            "cpm_eur": 22.4057
+          },
+          {
+            "l1Id": "0dc99c7d-a398-4bf4-a830-5144e9b718c6",
+            "nom": "Test traction",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-02-18",
+            "derniere_diffusion": "2026-05-12",
+            "jours_diffuses": 9,
+            "depense_eur": 403.52,
+            "impressions": 15912,
+            "clics": 98,
+            "ctr": 0.00616,
+            "cpc_eur": 4.1176,
+            "cpm_eur": 25.3595
+          },
+          {
+            "l1Id": "58f4134b-5530-4ec4-b5b1-3b76ac38fa67",
+            "nom": "TDT - Nona",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-06-06",
+            "derniere_diffusion": "2026-06-07",
+            "jours_diffuses": 2,
+            "depense_eur": 343.64,
+            "impressions": 5767,
+            "clics": 34,
+            "ctr": 0.0059,
+            "cpc_eur": 10.1071,
+            "cpm_eur": 59.5873
+          },
+          {
+            "l1Id": "6e7463fe-d4c5-44d5-a822-a480c7909fe2",
+            "nom": "Retargeting V2",
+            "statut": "PAUSED",
+            "objectif": "WEBSITE_CONVERSIONS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-09-10",
+            "derniere_diffusion": "2026-09-15",
+            "jours_diffuses": 6,
+            "depense_eur": 281.28,
+            "impressions": 22389,
+            "clics": 68,
+            "ctr": 0.00304,
+            "cpc_eur": 4.1365,
+            "cpm_eur": 12.5633
+          },
+          {
+            "l1Id": "fe52d2b7-d7b2-4ab7-8073-89e1c3fa307c",
+            "nom": "POST SPONSO",
+            "statut": "PAUSED",
+            "objectif": "ENGAGEMENT",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-04-21",
+            "derniere_diffusion": "2026-05-28",
+            "jours_diffuses": 11,
+            "depense_eur": 134.77,
+            "impressions": 4722,
+            "clics": 270,
+            "ctr": 0.05718,
+            "cpc_eur": 0.4991,
+            "cpm_eur": 28.5409
+          },
+          {
+            "l1Id": "7bfee3f7-1eb4-476b-b52a-2b8050b12a6b",
+            "nom": "Message Sponsorise - ICP Marketing",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-09-13",
+            "derniere_diffusion": "2026-09-15",
+            "jours_diffuses": 3,
+            "depense_eur": 70.96,
+            "impressions": 0,
+            "clics": 0,
+            "ctr": null,
+            "cpc_eur": null,
+            "cpm_eur": null
+          },
+          {
+            "l1Id": "bc039bb6-0525-4e2e-b259-e5e0161dd2aa",
+            "nom": "Test notoriete",
+            "statut": "PAUSED",
+            "objectif": "BRAND_AWARENESS",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": null,
+            "active_to": null,
+            "premiere_diffusion": "2026-04-22",
+            "derniere_diffusion": "2026-04-23",
+            "jours_diffuses": 2,
+            "depense_eur": 54.05,
+            "impressions": 12759,
+            "clics": 37,
+            "ctr": 0.0029,
+            "cpc_eur": 1.4608,
+            "cpm_eur": 4.2362
+          }
+        ],
+        "creatives_01_21_09_2026": {
+          "note": "Fenetre echantillon ; la serie complete par creative existe sur toute la periode (3459 lignes jour x creative disponibles via LAYER_3_ALL).",
+          "creas_distinctes": 35,
+          "lignes_datees": 300,
+          "total_recompose": {
+            "depense_eur": 2612.19,
+            "impressions": 410788,
+            "clics": 21148,
+            "ctr": 0.05148,
+            "cpc_eur": 0.1235,
+            "cpm_eur": 6.359,
+            "lignes_datees": 300
+          },
+          "detail": [
+            {
+              "l3Id": "cc293fee-5e69-4c1b-a522-3fc9c7221d7f",
+              "type": "UNKNOWN",
+              "depense_eur": 526.16,
+              "impressions": 113977,
+              "clics": 2995,
+              "ctr": 0.02628,
+              "cpc_eur": 0.1757,
+              "cpm_eur": 4.6164
+            },
+            {
+              "l3Id": "5ea1f035-42f1-46bb-9275-39cd3d490653",
+              "type": "UNKNOWN",
+              "depense_eur": 465.91,
+              "impressions": 86288,
+              "clics": 2119,
+              "ctr": 0.02456,
+              "cpc_eur": 0.2199,
+              "cpm_eur": 5.3994
+            },
+            {
+              "l3Id": "3d920a77-fa37-4d51-9ab0-e90cb8c8b6ac",
+              "type": "UNKNOWN",
+              "depense_eur": 465.6,
+              "impressions": 111707,
+              "clics": 12151,
+              "ctr": 0.10878,
+              "cpc_eur": 0.0383,
+              "cpm_eur": 4.1681
+            },
+            {
+              "l3Id": "f4c4e547-73ef-4488-9797-b8352c24ec08",
+              "type": "IMAGE",
+              "depense_eur": 133.83,
+              "impressions": 4122,
+              "clics": 95,
+              "ctr": 0.02305,
+              "cpc_eur": 1.4087,
+              "cpm_eur": 32.4665
+            },
+            {
+              "l3Id": "e73d8636-edb4-43f9-aa79-bf6a0e1de25b",
+              "type": "IMAGE",
+              "depense_eur": 123.55,
+              "impressions": 4132,
+              "clics": 103,
+              "ctr": 0.02493,
+              "cpc_eur": 1.1995,
+              "cpm_eur": 29.9003
+            },
+            {
+              "l3Id": "938b9faf-edf8-4266-98dd-f455d3469a58",
+              "type": "UNKNOWN",
+              "depense_eur": 100.11,
+              "impressions": 21010,
+              "clics": 2548,
+              "ctr": 0.12128,
+              "cpc_eur": 0.0393,
+              "cpm_eur": 4.7649
+            },
+            {
+              "l3Id": "0702c459-c8e6-4f00-b338-c7223a574e2d",
+              "type": "VIDEO",
+              "depense_eur": 95.14,
+              "impressions": 8204,
+              "clics": 26,
+              "ctr": 0.00317,
+              "cpc_eur": 3.6591,
+              "cpm_eur": 11.5965
+            },
+            {
+              "l3Id": "9fddaab6-5579-4acc-877d-898aa81bf7bb",
+              "type": "MESSAGE",
+              "depense_eur": 70.96,
+              "impressions": 0,
+              "clics": 0,
+              "ctr": null,
+              "cpc_eur": null,
+              "cpm_eur": null
+            },
+            {
+              "l3Id": "90b2958d-5657-42b2-af21-3eea2561131c",
+              "type": "VIDEO",
+              "depense_eur": 70.53,
+              "impressions": 3972,
+              "clics": 19,
+              "ctr": 0.00478,
+              "cpc_eur": 3.7121,
+              "cpm_eur": 17.7566
+            },
+            {
+              "l3Id": "784e73cf-dbba-48ce-9999-400e71e48677",
+              "type": "VIDEO",
+              "depense_eur": 59.31,
+              "impressions": 5057,
+              "clics": 10,
+              "ctr": 0.00198,
+              "cpc_eur": 5.9312,
+              "cpm_eur": 11.7288
+            },
+            {
+              "l3Id": "747f7320-a63c-4c6c-b546-bd755ef8a003",
+              "type": "VIDEO",
+              "depense_eur": 56.3,
+              "impressions": 5156,
+              "clics": 13,
+              "ctr": 0.00252,
+              "cpc_eur": 4.3308,
+              "cpm_eur": 10.9194
+            },
+            {
+              "l3Id": "645029e4-3fcf-4b38-8e19-fcfdedae33e6",
+              "type": "UNKNOWN",
+              "depense_eur": 47.14,
+              "impressions": 3696,
+              "clics": 33,
+              "ctr": 0.00893,
+              "cpc_eur": 1.4285,
+              "cpm_eur": 12.7543
+            },
+            {
+              "l3Id": "dc382118-5a2c-41e7-b834-cb6010285bf2",
+              "type": "UNKNOWN",
+              "depense_eur": 44.5,
+              "impressions": 12197,
+              "clics": 277,
+              "ctr": 0.02271,
+              "cpc_eur": 0.1607,
+              "cpm_eur": 3.6485
+            },
+            {
+              "l3Id": "c151c2bb-b81d-4fae-b593-72fdd5cc131e",
+              "type": "IMAGE",
+              "depense_eur": 36.62,
+              "impressions": 1674,
+              "clics": 24,
+              "ctr": 0.01434,
+              "cpc_eur": 1.5259,
+              "cpm_eur": 21.8773
+            },
+            {
+              "l3Id": "9540e6ae-f0be-417f-8e87-dc00c6cd3e20",
+              "type": "IMAGE",
+              "depense_eur": 35.03,
+              "impressions": 1884,
+              "clics": 21,
+              "ctr": 0.01115,
+              "cpc_eur": 1.668,
+              "cpm_eur": 18.5921
+            },
+            {
+              "l3Id": "ef160ba5-5750-4aec-829b-767c0e750800",
+              "type": "IMAGE",
+              "depense_eur": 30.76,
+              "impressions": 1739,
+              "clics": 24,
+              "ctr": 0.0138,
+              "cpc_eur": 1.2816,
+              "cpm_eur": 17.6875
+            },
+            {
+              "l3Id": "af614514-5757-49ce-9900-4fc4fa528d6f",
+              "type": "IMAGE",
+              "depense_eur": 28.47,
+              "impressions": 1603,
+              "clics": 23,
+              "ctr": 0.01435,
+              "cpc_eur": 1.238,
+              "cpm_eur": 17.7624
+            },
+            {
+              "l3Id": "c00d1349-b9b1-406c-8b33-ee5b0a025d72",
+              "type": "IMAGE",
+              "depense_eur": 26.22,
+              "impressions": 1717,
+              "clics": 26,
+              "ctr": 0.01514,
+              "cpc_eur": 1.0085,
+              "cpm_eur": 15.2712
+            },
+            {
+              "l3Id": "4bd0ca73-a59c-4e47-b41f-e079796c3240",
+              "type": "UNKNOWN",
+              "depense_eur": 24.99,
+              "impressions": 4819,
+              "clics": 46,
+              "ctr": 0.00955,
+              "cpc_eur": 0.5432,
+              "cpm_eur": 5.1847
+            },
+            {
+              "l3Id": "d09ef600-def0-4e6c-8b9e-907e467a46d3",
+              "type": "IMAGE",
+              "depense_eur": 24.48,
+              "impressions": 1333,
+              "clics": 20,
+              "ctr": 0.015,
+              "cpc_eur": 1.2239,
+              "cpm_eur": 18.3633
+            },
+            {
+              "l3Id": "b1f876b3-ae70-4a95-8c7c-439a9f48b37b",
+              "type": "IMAGE",
+              "depense_eur": 22.67,
+              "impressions": 1083,
+              "clics": 19,
+              "ctr": 0.01754,
+              "cpc_eur": 1.1934,
+              "cpm_eur": 20.9367
+            },
+            {
+              "l3Id": "2431144a-c405-4056-9a41-25b5cb68837d",
+              "type": "UNKNOWN",
+              "depense_eur": 22.58,
+              "impressions": 1594,
+              "clics": 15,
+              "ctr": 0.00941,
+              "cpc_eur": 1.5053,
+              "cpm_eur": 14.1655
+            },
+            {
+              "l3Id": "abf070bf-888d-4551-913b-6a06891d8b58",
+              "type": "UNKNOWN",
+              "depense_eur": 21.47,
+              "impressions": 1050,
+              "clics": 19,
+              "ctr": 0.0181,
+              "cpc_eur": 1.1302,
+              "cpm_eur": 20.4517
+            },
+            {
+              "l3Id": "8599c825-e696-42a0-9561-a3facbfec340",
+              "type": "UNKNOWN",
+              "depense_eur": 17.76,
+              "impressions": 1219,
+              "clics": 10,
+              "ctr": 0.0082,
+              "cpc_eur": 1.7764,
+              "cpm_eur": 14.5724
+            },
+            {
+              "l3Id": "3a3978e7-be8d-4f39-b6b3-379d68aafd34",
+              "type": "IMAGE",
+              "depense_eur": 13.59,
+              "impressions": 3504,
+              "clics": 68,
+              "ctr": 0.01941,
+              "cpc_eur": 0.1999,
+              "cpm_eur": 3.8789
+            },
+            {
+              "l3Id": "480cd169-3a0c-4f8a-b240-6ead14feb359",
+              "type": "UNKNOWN",
+              "depense_eur": 13.04,
+              "impressions": 2429,
+              "clics": 54,
+              "ctr": 0.02223,
+              "cpc_eur": 0.2415,
+              "cpm_eur": 5.3699
+            },
+            {
+              "l3Id": "104f7565-8240-404e-a952-83546dbd6a25",
+              "type": "UNKNOWN",
+              "depense_eur": 10.33,
+              "impressions": 2111,
+              "clics": 184,
+              "ctr": 0.08716,
+              "cpc_eur": 0.0561,
+              "cpm_eur": 4.8929
+            },
+            {
+              "l3Id": "f79ffaec-9786-49c1-bd4e-e16e85f8003e",
+              "type": "UNKNOWN",
+              "depense_eur": 9.46,
+              "impressions": 782,
+              "clics": 7,
+              "ctr": 0.00895,
+              "cpc_eur": 1.3511,
+              "cpm_eur": 12.0946
+            },
+            {
+              "l3Id": "d3613092-ea1b-4e8d-adba-2c7c74caa4de",
+              "type": "UNKNOWN",
+              "depense_eur": 4.86,
+              "impressions": 303,
+              "clics": 6,
+              "ctr": 0.0198,
+              "cpc_eur": 0.8097,
+              "cpm_eur": 16.0346
+            },
+            {
+              "l3Id": "cf3a4273-fa24-46c6-91c3-1330e83801d2",
+              "type": "UNKNOWN",
+              "depense_eur": 4.63,
+              "impressions": 1662,
+              "clics": 163,
+              "ctr": 0.09807,
+              "cpc_eur": 0.0284,
+              "cpm_eur": 2.7842
+            },
+            {
+              "l3Id": "b612b7e7-3a27-4092-97a3-786eaeb64001",
+              "type": "UNKNOWN",
+              "depense_eur": 3.47,
+              "impressions": 136,
+              "clics": 1,
+              "ctr": 0.00735,
+              "cpc_eur": 3.4659,
+              "cpm_eur": 25.4845
+            },
+            {
+              "l3Id": "7c55f838-d584-4dde-9f12-790509f7adf7",
+              "type": "UNKNOWN",
+              "depense_eur": 1.35,
+              "impressions": 379,
+              "clics": 26,
+              "ctr": 0.0686,
+              "cpc_eur": 0.0518,
+              "cpm_eur": 3.5545
+            },
+            {
+              "l3Id": "a579bb28-84c9-42c2-ad96-948b9fed8db0",
+              "type": "IMAGE",
+              "depense_eur": 0.83,
+              "impressions": 140,
+              "clics": 3,
+              "ctr": 0.02143,
+              "cpc_eur": 0.2781,
+              "cpm_eur": 5.9599
+            },
+            {
+              "l3Id": "c88e54b2-8566-47a9-960a-1d996458af29",
+              "type": "UNKNOWN",
+              "depense_eur": 0.53,
+              "impressions": 109,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 4.9072
+            },
+            {
+              "l3Id": "baf90c07-85be-4cf0-80c2-19056034efda",
+              "type": "UNKNOWN",
+              "depense_eur": 0.0,
+              "impressions": 0,
+              "clics": 0,
+              "ctr": null,
+              "cpc_eur": null,
+              "cpm_eur": null
+            }
+          ]
+        }
+      },
+      "autres_comptes_linkedin_du_projet": {
+        "Traction (urn:li:sponsoredAccount:514957465)": {
+          "adAccountId": "18f50c01-caed-442c-bde8-834883fcdf16",
+          "nature": "tests de traction (TDT) pour clients/prospects, pas l'acquisition de l'agence",
+          "readAccess": "DENIED (organization 404) mais historique deja importe",
+          "devise_renvoyee": "XXX (non resolue)",
+          "periode": "2025-12-11 -> 2026-05-28",
+          "lignes_datees": 48,
+          "total_recompose": {
+            "depense": 6717.16,
+            "devise": "XXX (non resolue)",
+            "impressions": 250101,
+            "clics": 1720
+          },
+          "par_mois": [
+            {
+              "mois": "2025-12",
+              "depense_eur": 474.28,
+              "impressions": 5197,
+              "clics": 34,
+              "lignes_datees": 3,
+              "ctr": 0.00654,
+              "cpc_eur": 13.9494,
+              "cpm_eur": 91.2603
+            },
+            {
+              "mois": "2026-01",
+              "depense_eur": 1345.87,
+              "impressions": 50778,
+              "clics": 738,
+              "lignes_datees": 13,
+              "ctr": 0.01453,
+              "cpc_eur": 1.8237,
+              "cpm_eur": 26.505
+            },
+            {
+              "mois": "2026-02",
+              "depense_eur": 1543.47,
+              "impressions": 60010,
+              "clics": 434,
+              "lignes_datees": 11,
+              "ctr": 0.00723,
+              "cpc_eur": 3.5564,
+              "cpm_eur": 25.7202
+            },
+            {
+              "mois": "2026-03",
+              "depense_eur": 1414.7,
+              "impressions": 79264,
+              "clics": 307,
+              "lignes_datees": 12,
+              "ctr": 0.00387,
+              "cpc_eur": 4.6081,
+              "cpm_eur": 17.848
+            },
+            {
+              "mois": "2026-05",
+              "depense_eur": 1938.84,
+              "impressions": 54852,
+              "clics": 207,
+              "lignes_datees": 9,
+              "ctr": 0.00377,
+              "cpc_eur": 9.3664,
+              "cpm_eur": 35.3468
+            }
+          ]
+        },
+        "Traction Deuxieme (urn:li:sponsoredAccount:516731106)": {
+          "adAccountId": "ef708409-3359-445c-b3f1-b214eecf3b4c",
+          "nature": "tests de traction (TDT) pour clients/prospects",
+          "readAccess": "DENIED (organization 404) mais historique deja importe",
+          "devise_renvoyee": "XXX (non resolue)",
+          "lignes_datees": 92,
+          "total_recompose": {
+            "depense": 8751.33,
+            "devise": "XXX (non resolue)",
+            "impressions": 367461,
+            "clics": 2915
+          },
+          "par_mois": [
+            {
+              "mois": "2025-12",
+              "depense_eur": 494.61,
+              "impressions": 40915,
+              "clics": 464,
+              "lignes_datees": 7,
+              "ctr": 0.01134,
+              "cpc_eur": 1.066,
+              "cpm_eur": 12.0887
+            },
+            {
+              "mois": "2026-01",
+              "depense_eur": 1265.51,
+              "impressions": 42472,
+              "clics": 388,
+              "lignes_datees": 16,
+              "ctr": 0.00914,
+              "cpc_eur": 3.2616,
+              "cpm_eur": 29.7963
+            },
+            {
+              "mois": "2026-02",
+              "depense_eur": 4048.5,
+              "impressions": 125994,
+              "clics": 1074,
+              "lignes_datees": 44,
+              "ctr": 0.00852,
+              "cpc_eur": 3.7696,
+              "cpm_eur": 32.1325
+            },
+            {
+              "mois": "2026-03",
+              "depense_eur": 698.19,
+              "impressions": 11272,
+              "clics": 58,
+              "lignes_datees": 8,
+              "ctr": 0.00515,
+              "cpc_eur": 12.0378,
+              "cpm_eur": 61.9402
+            },
+            {
+              "mois": "2026-04",
+              "depense_eur": 480.0,
+              "impressions": 22993,
+              "clics": 172,
+              "lignes_datees": 4,
+              "ctr": 0.00748,
+              "cpc_eur": 2.7907,
+              "cpm_eur": 20.8759
+            },
+            {
+              "mois": "2026-05",
+              "depense_eur": 1637.26,
+              "impressions": 99890,
+              "clics": 376,
+              "lignes_datees": 12,
+              "ctr": 0.00376,
+              "cpc_eur": 4.3544,
+              "cpm_eur": 16.3906
+            },
+            {
+              "mois": "2026-07",
+              "depense_eur": 127.26,
+              "impressions": 23925,
+              "clics": 383,
+              "lignes_datees": 1,
+              "ctr": 0.01601,
+              "cpc_eur": 0.3323,
+              "cpm_eur": 5.3191
+            }
+          ]
+        },
+        "- (urn:li:sponsoredAccount:515441114)": {
+          "adAccountId": "4751f355-2f91-4e42-97b6-fb0f7dcbf1ec",
+          "devise": "USD",
+          "readAccess": "GRANTED",
+          "lignes_datees": 0,
+          "constat": "compte enregistre et rafraichi, mais AUCUNE ligne d'analytics"
+        },
+        "13 comptes clients (I2A, EcoXpert-Schneider, Ecolotrans x2, Gulplug, Vakario, Digital Day, Paco, D2A, Germinal, Pedrito, Linksium, Moji, Nicolas Windpassinger, Jordan's Ad Account)": {
+          "constat": "readAccess/writeAccess DENIED, erreur 'organization 404' au dernier controle du 2026-09-16. Hors perimetre acquisition Bulldozer."
+        }
+      }
+    },
+    "reserves": [
+      "Metrique `leads` NON FIABLE (piege verifie de l'OS) : volontairement exclue de tout ce releve. Idem `cpl` qui en derive.",
+      "Aucun total n'a ete lu sur l'agregat AD_TIME_GRANULARITY_ALL (corrompu) : tous les totaux et mensuels sont recomposes en additionnant les lignes datees (granularite DAILY).",
+      "Le ciblage n'est present dans aucun objet de couche 1/2/3 : il n'a jamais ete importe.",
+      "Sur LinkedIn : reach, frequency, reactions et comments sont null sur 100 % des lignes (jamais importes). Sur Meta ils SONT renseignes (reach, frequency, reactions, comments, thruPlays, videoPlays, hookRate).",
+      "Le compte Meta 'Bulldozer' melange les campagnes d'acquisition de l'agence ET les tests de traction (TDT) menes pour des clients/prospects. Aucun champ ne distingue les deux : seul le nom de campagne permet de filtrer.",
+      "Le compte 'BULLDOZER' comporte 62 campagnes referencees mais seulement 18 ont des metriques : le reste est constitue de brouillons, de tests MCP/QA ([MCP TEST], TEST-BULLDOZER-OS-QA-*, 'de', 'dede', 'test') et de campagnes jamais diffusees.",
+      "4 campagnes sont marquees AD_STATUS_REMOVED (residus de tests MCP du 2026-08-24).",
+      "Les noms de campagne LinkedIn ont ete repris de bdzListAdLayer1 (62 campagnes, page unique) ; les 18 identifiants porteurs de metriques y sont tous presents.",
+      "La campagne 'Message Sponsorise - ICP Marketing' affiche 70,96 EUR de depense pour 0 impression et 0 clic (message sponsorise : la depense se lit sur sends/opens, tous a 0 ici)."
+    ]
+  },
+  "paid_meta": {
+    "disponible": true,
+    "source": "Bulldozer OS - bdzListRegisteredAdAccounts, bdzListAdLayer1, bdzGetAdAnalytics (LAYER_1_ALL et LAYER_3_ALL, granularite DAILY)",
+    "periode_couverte": "2025-10-31 -> 2026-09-20 (compte Bulldozer). Fraicheur : dataThrough 2026-09-20, dernier import reussi 2026-09-21T02:03:46Z, upToDate=true",
+    "donnees": {
+      "compte_principal": {
+        "adAccountId": "0ecad557-21bb-4f2a-bdd9-b99eda421e84",
+        "adAccount": "231961352837525",
+        "nom": "Bulldozer",
+        "devise": "EUR",
+        "readAccess": "GRANTED",
+        "writeAccess": "GRANTED",
+        "accountRole": "DRAFT,ANALYZE,ADVERTISE,MANAGE",
+        "refreshEnabled": true,
+        "socialEnabled": true,
+        "pages": [
+          "114509361615190 Bulldozer Collective",
+          "806336442560999 RealGen"
+        ],
+        "campagnes_referencees": 356,
+        "campagnes_avec_metriques": 174,
+        "total_recompose": {
+          "depense_eur": 30804.69,
+          "impressions": 3352771,
+          "clics": 52040,
+          "ctr": 0.01552,
+          "cpc_eur": 0.5919,
+          "cpm_eur": 9.1878,
+          "lignes_datees": 796
+        },
+        "par_mois": [
+          {
+            "mois": "2025-10",
+            "depense_eur": 369.21,
+            "impressions": 24119,
+            "clics": 245,
+            "lignes_datees": 5,
+            "ctr": 0.01016,
+            "cpc_eur": 1.507,
+            "cpm_eur": 15.3078
+          },
+          {
+            "mois": "2025-11",
+            "depense_eur": 9392.99,
+            "impressions": 464024,
+            "clics": 7501,
+            "lignes_datees": 114,
+            "ctr": 0.01617,
+            "cpc_eur": 1.2522,
+            "cpm_eur": 20.2425
+          },
+          {
+            "mois": "2025-12",
+            "depense_eur": 1408.04,
+            "impressions": 96924,
+            "clics": 2819,
+            "lignes_datees": 82,
+            "ctr": 0.02908,
+            "cpc_eur": 0.4995,
+            "cpm_eur": 14.5273
+          },
+          {
+            "mois": "2026-01",
+            "depense_eur": 2572.11,
+            "impressions": 142156,
+            "clics": 2408,
+            "lignes_datees": 118,
+            "ctr": 0.01694,
+            "cpc_eur": 1.0682,
+            "cpm_eur": 18.0936
+          },
+          {
+            "mois": "2026-02",
+            "depense_eur": 3284.04,
+            "impressions": 341920,
+            "clics": 5318,
+            "lignes_datees": 106,
+            "ctr": 0.01555,
+            "cpc_eur": 0.6175,
+            "cpm_eur": 9.6047
+          },
+          {
+            "mois": "2026-03",
+            "depense_eur": 2011.85,
+            "impressions": 127564,
+            "clics": 3626,
+            "lignes_datees": 78,
+            "ctr": 0.02842,
+            "cpc_eur": 0.5548,
+            "cpm_eur": 15.7713
+          },
+          {
+            "mois": "2026-04",
+            "depense_eur": 2099.08,
+            "impressions": 159329,
+            "clics": 3043,
+            "lignes_datees": 49,
+            "ctr": 0.0191,
+            "cpc_eur": 0.6898,
+            "cpm_eur": 13.1745
+          },
+          {
+            "mois": "2026-05",
+            "depense_eur": 2231.16,
+            "impressions": 141145,
+            "clics": 2827,
+            "lignes_datees": 52,
+            "ctr": 0.02003,
+            "cpc_eur": 0.7892,
+            "cpm_eur": 15.8076
+          },
+          {
+            "mois": "2026-06",
+            "depense_eur": 2256.86,
+            "impressions": 168118,
+            "clics": 3846,
+            "lignes_datees": 64,
+            "ctr": 0.02288,
+            "cpc_eur": 0.5868,
+            "cpm_eur": 13.4243
+          },
+          {
+            "mois": "2026-07",
+            "depense_eur": 2205.69,
+            "impressions": 145277,
+            "clics": 2851,
+            "lignes_datees": 55,
+            "ctr": 0.01962,
+            "cpc_eur": 0.7737,
+            "cpm_eur": 15.1827
+          },
+          {
+            "mois": "2026-08",
+            "depense_eur": 1167.55,
+            "impressions": 1205586,
+            "clics": 8636,
+            "lignes_datees": 35,
+            "ctr": 0.00716,
+            "cpc_eur": 0.1352,
+            "cpm_eur": 0.9685
+          },
+          {
+            "mois": "2026-09",
+            "depense_eur": 1806.11,
+            "impressions": 336609,
+            "clics": 8920,
+            "lignes_datees": 38,
+            "ctr": 0.0265,
+            "cpc_eur": 0.2025,
+            "cpm_eur": 5.3656
+          }
+        ],
+        "par_campagne_top40": [
+          {
+            "l1Id": "21360701-d07d-4afc-a7ac-e5858549c5d7",
+            "nom": "RUN II Bulldozer II NE PAS TOUCHER II",
+            "statut": "PAUSED",
+            "objectif": "SALES",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-03-31T17:50:28Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-03-31",
+            "derniere_diffusion": "2026-09-07",
+            "jours_diffuses": 146,
+            "depense_eur": 4835.81,
+            "impressions": 1727185,
+            "clics": 18347,
+            "ctr": 0.01062,
+            "cpc_eur": 0.2636,
+            "cpm_eur": 2.7998
+          },
+          {
+            "l1Id": "ce172d87-bd98-4699-b10a-4eba8ccd980d",
+            "nom": "RUN - Bulldozer metro - Copie",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 30.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-01-20T11:02:00Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-01-20",
+            "derniere_diffusion": "2026-07-08",
+            "jours_diffuses": 104,
+            "depense_eur": 2162.69,
+            "impressions": 117313,
+            "clics": 1869,
+            "ctr": 0.01593,
+            "cpc_eur": 1.1571,
+            "cpm_eur": 18.4352
+          },
+          {
+            "l1Id": "9c1fe84f-4af1-431c-ba5b-b63cfbab0dfd",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - (Test métiers) | 5 – Copy",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-11-14T17:47:49Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-14",
+            "derniere_diffusion": "2025-11-19",
+            "jours_diffuses": 6,
+            "depense_eur": 1971.56,
+            "impressions": 100766,
+            "clics": 1866,
+            "ctr": 0.01852,
+            "cpc_eur": 1.0566,
+            "cpm_eur": 19.5657
+          },
+          {
+            "l1Id": "cc6f916c-d5bd-4f5b-93d4-eb209cd37227",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - (Test métiers) | 6",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-11-22T07:03:15Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-22",
+            "derniere_diffusion": "2025-11-25",
+            "jours_diffuses": 4,
+            "depense_eur": 1129.98,
+            "impressions": 41304,
+            "clics": 503,
+            "ctr": 0.01218,
+            "cpc_eur": 2.2465,
+            "cpm_eur": 27.3576
+          },
+          {
+            "l1Id": "4bece7b2-fa2e-4c2d-9892-3d9dd452b1af",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - (Test métiers) - 1",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-10-30T09:23:59Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-10-31",
+            "derniere_diffusion": "2025-11-07",
+            "jours_diffuses": 8,
+            "depense_eur": 1007.83,
+            "impressions": 54076,
+            "clics": 1040,
+            "ctr": 0.01923,
+            "cpc_eur": 0.9691,
+            "cpm_eur": 18.6373
+          },
+          {
+            "l1Id": "1e8f311e-8e95-48db-ad91-49e9e6a0afe6",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - (Test métiers) - 3",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-11-06T17:59:41Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-06",
+            "derniere_diffusion": "2025-11-13",
+            "jours_diffuses": 8,
+            "depense_eur": 851.43,
+            "impressions": 29429,
+            "clics": 476,
+            "ctr": 0.01617,
+            "cpc_eur": 1.7887,
+            "cpm_eur": 28.9317
+          },
+          {
+            "l1Id": "bda33b92-b3fb-41d5-bc6b-5d473c04ab36",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - (Test métiers) - 2",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-11-06T17:59:41Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-06",
+            "derniere_diffusion": "2025-11-13",
+            "jours_diffuses": 8,
+            "depense_eur": 845.27,
+            "impressions": 29591,
+            "clics": 499,
+            "ctr": 0.01686,
+            "cpc_eur": 1.6939,
+            "cpm_eur": 28.5651
+          },
+          {
+            "l1Id": "9e9b239a-c329-4b7b-ba8d-89f8e3524e22",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - Générique - Winneur",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-10-31T12:24:04Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-10-31",
+            "derniere_diffusion": "2025-11-07",
+            "jours_diffuses": 8,
+            "depense_eur": 676.85,
+            "impressions": 43079,
+            "clics": 838,
+            "ctr": 0.01945,
+            "cpc_eur": 0.8077,
+            "cpm_eur": 15.7118
+          },
+          {
+            "l1Id": "0f9b3278-9fab-4d18-be97-3ad2a235d137",
+            "nom": "Bulldozer OS — MCP — Conversion site — Sept 2026",
+            "statut": "ACTIVE",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2026-09-07T09:01:29Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-09-07",
+            "derniere_diffusion": "2026-09-20",
+            "jours_diffuses": 14,
+            "depense_eur": 675.2,
+            "impressions": 116285,
+            "clics": 6329,
+            "ctr": 0.05443,
+            "cpc_eur": 0.1067,
+            "cpm_eur": 5.8064
+          },
+          {
+            "l1Id": "b30ff380-dd44-4a06-b4fd-4ed88c03068f",
+            "nom": "TDT Gérofinance",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 90.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-04-28T14:59:20Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-04-28",
+            "derniere_diffusion": "2026-05-08",
+            "jours_diffuses": 8,
+            "depense_eur": 627.33,
+            "impressions": 21336,
+            "clics": 388,
+            "ctr": 0.01819,
+            "cpc_eur": 1.6168,
+            "cpm_eur": 29.4024
+          },
+          {
+            "l1Id": "24ecdc52-4981-4105-97c3-5c792ac5b210",
+            "nom": "TDT - Veolia",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-02-12T12:52:57Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-02-12",
+            "derniere_diffusion": "2026-02-18",
+            "jours_diffuses": 6,
+            "depense_eur": 587.4,
+            "impressions": 76854,
+            "clics": 597,
+            "ctr": 0.00777,
+            "cpc_eur": 0.9839,
+            "cpm_eur": 7.6431
+          },
+          {
+            "l1Id": "ad437768-e812-4655-96a2-972a0e3fe6dd",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold – 3",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-10-31T12:23:39Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-10-31",
+            "derniere_diffusion": "2025-11-06",
+            "jours_diffuses": 7,
+            "depense_eur": 540.49,
+            "impressions": 34852,
+            "clics": 578,
+            "ctr": 0.01658,
+            "cpc_eur": 0.9351,
+            "cpm_eur": 15.5081
+          },
+          {
+            "l1Id": "15518de0-4256-4cf4-8e2d-aa14b76ce83c",
+            "nom": "TDT - Tolemail - Copie 2",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 150.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2025-11-13T08:41:37Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-13",
+            "derniere_diffusion": "2025-11-17",
+            "jours_diffuses": 5,
+            "depense_eur": 518.12,
+            "impressions": 41950,
+            "clics": 407,
+            "ctr": 0.0097,
+            "cpc_eur": 1.273,
+            "cpm_eur": 12.3509
+          },
+          {
+            "l1Id": "c7f2fe86-0c93-48b9-a139-52a3a04e8ccd",
+            "nom": "TDT - CBA/Ruche/AgatheYou",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 120.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-03-12T09:19:50Z",
+            "active_to": "2026-03-16T11:00:00Z",
+            "premiere_diffusion": "2026-03-12",
+            "derniere_diffusion": "2026-03-15",
+            "jours_diffuses": 4,
+            "depense_eur": 420.45,
+            "impressions": 31438,
+            "clics": 707,
+            "ctr": 0.02249,
+            "cpc_eur": 0.5947,
+            "cpm_eur": 13.3739
+          },
+          {
+            "l1Id": "6fc94f79-e448-48c1-a735-3b9b9ae4c497",
+            "nom": "TDT - Homeys - Copie",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-01-21T20:22:26Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-01-21",
+            "derniere_diffusion": "2026-02-04",
+            "jours_diffuses": 10,
+            "depense_eur": 385.43,
+            "impressions": 15425,
+            "clics": 181,
+            "ctr": 0.01173,
+            "cpc_eur": 2.1294,
+            "cpm_eur": 24.9874
+          },
+          {
+            "l1Id": "96d0328c-ea5e-4f64-8d7a-e7d95811095a",
+            "nom": "TDT - Weekoff - Copie",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 75.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-01-21T21:30:26Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-01-21",
+            "derniere_diffusion": "2026-02-02",
+            "jours_diffuses": 9,
+            "depense_eur": 361.34,
+            "impressions": 14608,
+            "clics": 352,
+            "ctr": 0.0241,
+            "cpc_eur": 1.0265,
+            "cpm_eur": 24.7358
+          },
+          {
+            "l1Id": "b0c655d0-60ea-4d14-9f6d-37d1837acb85",
+            "nom": "TDT - Star Aid",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 120.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-02-26T18:24:40Z",
+            "active_to": "2026-03-01T19:00:00Z",
+            "premiere_diffusion": "2026-02-26",
+            "derniere_diffusion": "2026-03-01",
+            "jours_diffuses": 4,
+            "depense_eur": 359.17,
+            "impressions": 28032,
+            "clics": 469,
+            "ctr": 0.01673,
+            "cpc_eur": 0.7658,
+            "cpm_eur": 12.8129
+          },
+          {
+            "l1Id": "86cc9547-e69f-498e-990b-b36a51a26fb8",
+            "nom": "TDT - Dimarc - Copie",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-01-21T20:13:40Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-01-21",
+            "derniere_diffusion": "2026-01-28",
+            "jours_diffuses": 8,
+            "depense_eur": 355.6,
+            "impressions": 15964,
+            "clics": 252,
+            "ctr": 0.01579,
+            "cpc_eur": 1.4111,
+            "cpm_eur": 22.2751
+          },
+          {
+            "l1Id": "41777ba7-ff17-41a2-8d57-86587864359c",
+            "nom": "TDT - LLM – Copy",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-06-07T17:50:08Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-06-07",
+            "derniere_diffusion": "2026-06-11",
+            "jours_diffuses": 5,
+            "depense_eur": 353.54,
+            "impressions": 8867,
+            "clics": 530,
+            "ctr": 0.05977,
+            "cpc_eur": 0.6671,
+            "cpm_eur": 39.8714
+          },
+          {
+            "l1Id": "b49e237f-3744-4229-833c-e9d79c62b046",
+            "nom": "TDT Cafeyn",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 120.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-04-08T16:10:48Z",
+            "active_to": "2026-04-11T15:00:00Z",
+            "premiere_diffusion": "2026-04-08",
+            "derniere_diffusion": "2026-04-11",
+            "jours_diffuses": 4,
+            "depense_eur": 346.27,
+            "impressions": 45649,
+            "clics": 388,
+            "ctr": 0.0085,
+            "cpc_eur": 0.8924,
+            "cpm_eur": 7.5855
+          },
+          {
+            "l1Id": "33d4b0aa-eb5c-4b90-acba-2110e4f10430",
+            "nom": "TDT Eigrene",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 150.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-05-20T09:21:09Z",
+            "active_to": "2026-05-22T16:00:00Z",
+            "premiere_diffusion": "2026-05-20",
+            "derniere_diffusion": "2026-05-24",
+            "jours_diffuses": 4,
+            "depense_eur": 338.01,
+            "impressions": 25117,
+            "clics": 259,
+            "ctr": 0.01031,
+            "cpc_eur": 1.3051,
+            "cpm_eur": 13.4574
+          },
+          {
+            "l1Id": "38eeaa42-9178-443d-8060-2a53b4412cf2",
+            "nom": "Carrefour Pro - Club Pro - Angle probleme A2 - Vos achats pro",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-09-03T09:28:15Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-09-03",
+            "derniere_diffusion": "2026-09-09",
+            "jours_diffuses": 7,
+            "depense_eur": 330.6,
+            "impressions": 8823,
+            "clics": 124,
+            "ctr": 0.01405,
+            "cpc_eur": 2.6661,
+            "cpm_eur": 37.4702
+          },
+          {
+            "l1Id": "04319683-731e-44ab-b36d-a7ae7ef34117",
+            "nom": "TDT - VOX paris – Copy 2",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-04-14T12:15:25Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-04-14",
+            "derniere_diffusion": "2026-04-17",
+            "jours_diffuses": 4,
+            "depense_eur": 322.27,
+            "impressions": 10849,
+            "clics": 490,
+            "ctr": 0.04517,
+            "cpc_eur": 0.6577,
+            "cpm_eur": 29.705
+          },
+          {
+            "l1Id": "fc3df1d9-88d1-4068-acbc-ccf10511bd79",
+            "nom": "Carrefour Pro - Club Pro - Angle offre A1 - Adhesion 100% gratuite",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-09-03T09:30:03Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-09-03",
+            "derniere_diffusion": "2026-09-09",
+            "jours_diffuses": 7,
+            "depense_eur": 321.24,
+            "impressions": 8698,
+            "clics": 66,
+            "ctr": 0.00759,
+            "cpc_eur": 4.8673,
+            "cpm_eur": 36.9326
+          },
+          {
+            "l1Id": "a756a0a7-ee27-457a-af8f-c41ba084d349",
+            "nom": "TDT - Familiar – Copy",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-07-16T20:13:29Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-07-16",
+            "derniere_diffusion": "2026-07-20",
+            "jours_diffuses": 5,
+            "depense_eur": 299.12,
+            "impressions": 11591,
+            "clics": 151,
+            "ctr": 0.01303,
+            "cpc_eur": 1.9809,
+            "cpm_eur": 25.8062
+          },
+          {
+            "l1Id": "46534598-e63c-4cbc-b595-4c35ddf5ad36",
+            "nom": "TDT - Familiar – Copy",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-07-16T20:13:27Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-07-16",
+            "derniere_diffusion": "2026-07-20",
+            "jours_diffuses": 5,
+            "depense_eur": 297.52,
+            "impressions": 14779,
+            "clics": 202,
+            "ctr": 0.01367,
+            "cpc_eur": 1.4729,
+            "cpm_eur": 20.1313
+          },
+          {
+            "l1Id": "159dd987-bdb9-42a8-b5cd-b4053027aba1",
+            "nom": "TDT - Zapptax",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2025-10-30T15:58:40Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-10-31",
+            "derniere_diffusion": "2025-11-06",
+            "jours_diffuses": 6,
+            "depense_eur": 294.21,
+            "impressions": 11108,
+            "clics": 253,
+            "ctr": 0.02278,
+            "cpc_eur": 1.1629,
+            "cpm_eur": 26.4863
+          },
+          {
+            "l1Id": "4588da95-983a-4cce-bf38-b93dfce727f4",
+            "nom": "TDT Vertuoza",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 75.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-02-02T11:15:50Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-02-02",
+            "derniere_diffusion": "2026-02-06",
+            "jours_diffuses": 5,
+            "depense_eur": 291.56,
+            "impressions": 34826,
+            "clics": 420,
+            "ctr": 0.01206,
+            "cpc_eur": 0.6942,
+            "cpm_eur": 8.3719
+          },
+          {
+            "l1Id": "e19ba03a-ea77-4f73-921f-9449e1b12bef",
+            "nom": "RUN BULLDOZER",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-07-07T10:19:31Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-07-07",
+            "derniere_diffusion": "2026-07-13",
+            "jours_diffuses": 7,
+            "depense_eur": 282.29,
+            "impressions": 14421,
+            "clics": 258,
+            "ctr": 0.01789,
+            "cpc_eur": 1.0941,
+            "cpm_eur": 19.5749
+          },
+          {
+            "l1Id": "fd23cec0-001d-4f16-836b-5873cc57efca",
+            "nom": "TDT Ruji",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": {
+              "value": 350.0,
+              "currency": "EUR"
+            },
+            "active_from": "2025-11-06T21:23:36Z",
+            "active_to": "2025-11-09T21:14:00Z",
+            "premiere_diffusion": "2025-11-06",
+            "derniere_diffusion": "2025-11-09",
+            "jours_diffuses": 4,
+            "depense_eur": 281.15,
+            "impressions": 13987,
+            "clics": 242,
+            "ctr": 0.0173,
+            "cpc_eur": 1.1618,
+            "cpm_eur": 20.1008
+          },
+          {
+            "l1Id": "4ced02dd-dd5c-40c4-96a1-3225a220dc5c",
+            "nom": "TDT - Nona",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 100.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-06-06T14:38:53Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-06-06",
+            "derniere_diffusion": "2026-06-08",
+            "jours_diffuses": 3,
+            "depense_eur": 278.02,
+            "impressions": 14096,
+            "clics": 244,
+            "ctr": 0.01731,
+            "cpc_eur": 1.1394,
+            "cpm_eur": 19.7233
+          },
+          {
+            "l1Id": "385e3f98-544c-4040-af7a-52d8a32e717f",
+            "nom": "TDT Waat B2C",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2025-11-25T17:03:25Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-25",
+            "derniere_diffusion": "2025-12-01",
+            "jours_diffuses": 7,
+            "depense_eur": 276.95,
+            "impressions": 10817,
+            "clics": 186,
+            "ctr": 0.0172,
+            "cpc_eur": 1.489,
+            "cpm_eur": 25.6032
+          },
+          {
+            "l1Id": "f5ce3180-46ac-42c0-bc93-d61b147930fc",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold - (Test métiers) | 5",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-11-14T17:44:51Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-14",
+            "derniere_diffusion": "2025-11-15",
+            "jours_diffuses": 2,
+            "depense_eur": 276.59,
+            "impressions": 11261,
+            "clics": 174,
+            "ctr": 0.01545,
+            "cpc_eur": 1.5896,
+            "cpm_eur": 24.5618
+          },
+          {
+            "l1Id": "0fcb199f-c0ab-4a16-b817-28cf1adda173",
+            "nom": "TDT Jeune Afrique",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 120.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-07-08T14:55:32Z",
+            "active_to": "2026-07-11T18:00:00Z",
+            "premiere_diffusion": "2026-07-08",
+            "derniere_diffusion": "2026-07-10",
+            "jours_diffuses": 3,
+            "depense_eur": 273.23,
+            "impressions": 16051,
+            "clics": 514,
+            "ctr": 0.03202,
+            "cpc_eur": 0.5316,
+            "cpm_eur": 17.0226
+          },
+          {
+            "l1Id": "171c7324-0e58-42f4-b97d-f1f9de9dfc67",
+            "nom": "Client_AEnergie - Sprint 3 : Achat groupé - Cold (Test Breton)",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": null,
+            "budget_total": null,
+            "active_from": "2025-11-06T16:37:45Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-11-06",
+            "derniere_diffusion": "2025-11-13",
+            "jours_diffuses": 6,
+            "depense_eur": 265.01,
+            "impressions": 16089,
+            "clics": 242,
+            "ctr": 0.01504,
+            "cpc_eur": 1.0951,
+            "cpm_eur": 16.4715
+          },
+          {
+            "l1Id": "952ef6b3-3fab-4006-ae74-dff452238913",
+            "nom": "TDT  - La trace",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 75.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2025-12-11T22:56:24Z",
+            "active_to": null,
+            "premiere_diffusion": "2025-12-12",
+            "derniere_diffusion": "2025-12-15",
+            "jours_diffuses": 4,
+            "depense_eur": 255.05,
+            "impressions": 32155,
+            "clics": 1250,
+            "ctr": 0.03887,
+            "cpc_eur": 0.204,
+            "cpm_eur": 7.9319
+          },
+          {
+            "l1Id": "1c251ed2-2ffc-4944-a9c7-7f42ab6bc15c",
+            "nom": "Sunology - Achat groupé - Breton",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-01-16T11:17:44Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-01-16",
+            "derniere_diffusion": "2026-01-20",
+            "jours_diffuses": 5,
+            "depense_eur": 223.45,
+            "impressions": 14509,
+            "clics": 122,
+            "ctr": 0.00841,
+            "cpc_eur": 1.8316,
+            "cpm_eur": 15.4008
+          },
+          {
+            "l1Id": "50d5aace-01d9-440d-881d-f59dee55e409",
+            "nom": "TDT louveinvest - AG – Copy",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 50.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-03-06T15:14:06Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-03-06",
+            "derniere_diffusion": "2026-03-11",
+            "jours_diffuses": 6,
+            "depense_eur": 216.21,
+            "impressions": 12017,
+            "clics": 158,
+            "ctr": 0.01315,
+            "cpc_eur": 1.3684,
+            "cpm_eur": 17.992
+          },
+          {
+            "l1Id": "f19c8ed9-d325-4a1c-9a08-3d47b823bf82",
+            "nom": "TDT - Phily",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 125.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-05-25T09:03:02Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-05-25",
+            "derniere_diffusion": "2026-05-27",
+            "jours_diffuses": 3,
+            "depense_eur": 214.14,
+            "impressions": 10228,
+            "clics": 95,
+            "ctr": 0.00929,
+            "cpc_eur": 2.2541,
+            "cpm_eur": 20.9366
+          },
+          {
+            "l1Id": "2febd7a8-91e0-4765-bb02-7ff12b28e57c",
+            "nom": "TDT - BSA partner - Copie",
+            "statut": "PAUSED",
+            "objectif": "LEAD_GENERATION",
+            "budget_quotidien": {
+              "value": 75.0,
+              "currency": "EUR"
+            },
+            "budget_total": null,
+            "active_from": "2026-02-10T21:54:18Z",
+            "active_to": null,
+            "premiere_diffusion": "2026-02-10",
+            "derniere_diffusion": "2026-02-14",
+            "jours_diffuses": 5,
+            "depense_eur": 213.19,
+            "impressions": 71636,
+            "clics": 739,
+            "ctr": 0.01032,
+            "cpc_eur": 0.2885,
+            "cpm_eur": 2.976
+          }
+        ],
+        "campagnes_avec_metriques_total": 174,
+        "creatives_01_21_09_2026": {
+          "note": "Fenetre echantillon ; la serie complete par creative existe sur toute la periode (3769 lignes jour x creative disponibles via LAYER_3_ALL).",
+          "creas_distinctes": 51,
+          "lignes_datees": 199,
+          "total_recompose": {
+            "depense_eur": 1806.11,
+            "impressions": 336609,
+            "clics": 8920,
+            "ctr": 0.0265,
+            "cpc_eur": 0.2025,
+            "cpm_eur": 5.3656,
+            "lignes_datees": 199
+          },
+          "detail": [
+            {
+              "l3Id": "c78916c1-c479-47f5-9666-7947881370d1",
+              "type": "VIDEO",
+              "depense_eur": 398.76,
+              "impressions": 93940,
+              "clics": 5183,
+              "ctr": 0.05517,
+              "cpc_eur": 0.0769,
+              "cpm_eur": 4.2448,
+              "reach_somme_jours": 72699,
+              "reactions": 35,
+              "thruPlays": 12803,
+              "videoPlays": 31683
+            },
+            {
+              "l3Id": "7cc1dd85-f1e7-4642-b87b-5ce9c595582a",
+              "type": "IMAGE",
+              "depense_eur": 345.78,
+              "impressions": 97870,
+              "clics": 1558,
+              "ctr": 0.01592,
+              "cpc_eur": 0.2219,
+              "cpm_eur": 3.5331,
+              "reach_somme_jours": 69449,
+              "reactions": 31,
+              "thruPlays": 0,
+              "videoPlays": 4
+            },
+            {
+              "l3Id": "136eda4a-764c-4c53-95f6-7dbb42db273b",
+              "type": "IMAGE",
+              "depense_eur": 318.34,
+              "impressions": 8391,
+              "clics": 118,
+              "ctr": 0.01406,
+              "cpc_eur": 2.6978,
+              "cpm_eur": 37.9383,
+              "reach_somme_jours": 5869,
+              "reactions": 6,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "1c42f026-2035-43da-a734-066987dac258",
+              "type": "VIDEO",
+              "depense_eur": 195.6,
+              "impressions": 17316,
+              "clics": 685,
+              "ctr": 0.03956,
+              "cpc_eur": 0.2855,
+              "cpm_eur": 11.2959,
+              "reach_somme_jours": 14757,
+              "reactions": 9,
+              "thruPlays": 1764,
+              "videoPlays": 10544
+            },
+            {
+              "l3Id": "ff7b4463-0e5e-44ad-96de-bb7a3460f00f",
+              "type": "IMAGE",
+              "depense_eur": 80.66,
+              "impressions": 1232,
+              "clics": 9,
+              "ctr": 0.00731,
+              "cpc_eur": 8.9622,
+              "cpm_eur": 65.4708,
+              "reach_somme_jours": 873,
+              "reactions": 1,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "160f62a5-f919-47cb-a5c9-1d603181aa30",
+              "type": "IMAGE",
+              "depense_eur": 67.5,
+              "impressions": 2668,
+              "clics": 20,
+              "ctr": 0.0075,
+              "cpc_eur": 3.375,
+              "cpm_eur": 25.2999,
+              "reach_somme_jours": 1829,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "21aafc5a-5552-4fbf-80aa-e58d7bcff95c",
+              "type": "IMAGE",
+              "depense_eur": 62.68,
+              "impressions": 1331,
+              "clics": 12,
+              "ctr": 0.00902,
+              "cpc_eur": 5.2233,
+              "cpm_eur": 47.0924,
+              "reach_somme_jours": 1034,
+              "reactions": 2,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "c0a17e91-4bc5-4934-af8b-28c8c33fe936",
+              "type": "VIDEO",
+              "depense_eur": 43.54,
+              "impressions": 3222,
+              "clics": 406,
+              "ctr": 0.12601,
+              "cpc_eur": 0.1072,
+              "cpm_eur": 13.5133,
+              "reach_somme_jours": 2587,
+              "reactions": 0,
+              "thruPlays": 1104,
+              "videoPlays": 3097
+            },
+            {
+              "l3Id": "ebf4dff2-d66e-4af7-bd4c-82b97b121174",
+              "type": "IMAGE",
+              "depense_eur": 35.27,
+              "impressions": 2596,
+              "clics": 8,
+              "ctr": 0.00308,
+              "cpc_eur": 4.4087,
+              "cpm_eur": 13.5863,
+              "reach_somme_jours": 2077,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 48
+            },
+            {
+              "l3Id": "896ab130-b97f-45bd-b82f-5b953f6b9ae4",
+              "type": "IMAGE",
+              "depense_eur": 32.36,
+              "impressions": 72473,
+              "clics": 532,
+              "ctr": 0.00734,
+              "cpc_eur": 0.0608,
+              "cpm_eur": 0.4465,
+              "reach_somme_jours": 17227,
+              "reactions": 0,
+              "thruPlays": 800,
+              "videoPlays": 1100
+            },
+            {
+              "l3Id": "a73a0b2d-3a17-44bc-a1aa-63333446a9da",
+              "type": "IMAGE",
+              "depense_eur": 29.62,
+              "impressions": 1422,
+              "clics": 7,
+              "ctr": 0.00492,
+              "cpc_eur": 4.2314,
+              "cpm_eur": 20.8298,
+              "reach_somme_jours": 1110,
+              "reactions": 1,
+              "thruPlays": 0,
+              "videoPlays": 1
+            },
+            {
+              "l3Id": "3182102d-65fb-4bcc-8108-7017edcb7e78",
+              "type": "IMAGE",
+              "depense_eur": 26.06,
+              "impressions": 840,
+              "clics": 7,
+              "ctr": 0.00833,
+              "cpc_eur": 3.7229,
+              "cpm_eur": 31.0238,
+              "reach_somme_jours": 612,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "4fa609be-8751-42c4-9f7d-18025683bfb9",
+              "type": "IMAGE",
+              "depense_eur": 24.83,
+              "impressions": 448,
+              "clics": 4,
+              "ctr": 0.00893,
+              "cpc_eur": 6.2075,
+              "cpm_eur": 55.4241,
+              "reach_somme_jours": 351,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "77552ef3-3c1d-4ab5-b142-756e845a0c31",
+              "type": "IMAGE",
+              "depense_eur": 16.57,
+              "impressions": 424,
+              "clics": 2,
+              "ctr": 0.00472,
+              "cpc_eur": 8.285,
+              "cpm_eur": 39.0802,
+              "reach_somme_jours": 321,
+              "reactions": 1,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "1311f458-86d0-476c-9dfd-65f4fd71731a",
+              "type": "IMAGE",
+              "depense_eur": 14.21,
+              "impressions": 439,
+              "clics": 8,
+              "ctr": 0.01822,
+              "cpc_eur": 1.7763,
+              "cpm_eur": 32.369,
+              "reach_somme_jours": 275,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "b4739ddb-934e-46e9-90f0-622daf825446",
+              "type": "IMAGE",
+              "depense_eur": 12.94,
+              "impressions": 731,
+              "clics": 3,
+              "ctr": 0.0041,
+              "cpc_eur": 4.3133,
+              "cpm_eur": 17.7018,
+              "reach_somme_jours": 615,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 1
+            },
+            {
+              "l3Id": "02e0e847-609a-45b7-a001-dd8d84c42d5c",
+              "type": "VIDEO",
+              "depense_eur": 12.69,
+              "impressions": 579,
+              "clics": 9,
+              "ctr": 0.01554,
+              "cpc_eur": 1.41,
+              "cpm_eur": 21.9171,
+              "reach_somme_jours": 516,
+              "reactions": 1,
+              "thruPlays": 45,
+              "videoPlays": 533
+            },
+            {
+              "l3Id": "16390ea0-5b52-41a8-8878-af01e8ca3265",
+              "type": "VIDEO",
+              "depense_eur": 9.43,
+              "impressions": 424,
+              "clics": 6,
+              "ctr": 0.01415,
+              "cpc_eur": 1.5717,
+              "cpm_eur": 22.2406,
+              "reach_somme_jours": 358,
+              "reactions": 1,
+              "thruPlays": 23,
+              "videoPlays": 398
+            },
+            {
+              "l3Id": "a8059872-5a78-44a1-8094-980a9c50c8c7",
+              "type": "IMAGE",
+              "depense_eur": 8.51,
+              "impressions": 176,
+              "clics": 2,
+              "ctr": 0.01136,
+              "cpc_eur": 4.255,
+              "cpm_eur": 48.3523,
+              "reach_somme_jours": 138,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "6fa491d9-61a4-44e7-b954-95c1bfb24ad2",
+              "type": "IMAGE",
+              "depense_eur": 7.83,
+              "impressions": 218,
+              "clics": 3,
+              "ctr": 0.01376,
+              "cpc_eur": 2.61,
+              "cpm_eur": 35.9174,
+              "reach_somme_jours": 132,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "60f1a573-fbef-4384-be80-48bd6752b559",
+              "type": "IMAGE",
+              "depense_eur": 6.3,
+              "impressions": 10773,
+              "clics": 39,
+              "ctr": 0.00362,
+              "cpc_eur": 0.1615,
+              "cpm_eur": 0.5848,
+              "reach_somme_jours": 2637,
+              "reactions": 1,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "26d5927b-4561-4dd5-9d19-141181aa9e19",
+              "type": "IMAGE",
+              "depense_eur": 5.66,
+              "impressions": 127,
+              "clics": 2,
+              "ctr": 0.01575,
+              "cpc_eur": 2.83,
+              "cpm_eur": 44.5669,
+              "reach_somme_jours": 84,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "ce99b2ac-4048-4138-894c-e671751517a1",
+              "type": "IMAGE",
+              "depense_eur": 5.25,
+              "impressions": 11271,
+              "clics": 224,
+              "ctr": 0.01987,
+              "cpc_eur": 0.0234,
+              "cpm_eur": 0.4658,
+              "reach_somme_jours": 4099,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "4ec3db79-ba83-47d2-934d-8848649a62ec",
+              "type": "VIDEO",
+              "depense_eur": 5.01,
+              "impressions": 229,
+              "clics": 34,
+              "ctr": 0.14847,
+              "cpc_eur": 0.1474,
+              "cpm_eur": 21.8777,
+              "reach_somme_jours": 156,
+              "reactions": 0,
+              "thruPlays": 25,
+              "videoPlays": 219
+            },
+            {
+              "l3Id": "08317e0b-3cfc-4c3e-90d2-8214a216403d",
+              "type": "VIDEO",
+              "depense_eur": 4.83,
+              "impressions": 255,
+              "clics": 3,
+              "ctr": 0.01176,
+              "cpc_eur": 1.61,
+              "cpm_eur": 18.9412,
+              "reach_somme_jours": 236,
+              "reactions": 0,
+              "thruPlays": 10,
+              "videoPlays": 237
+            },
+            {
+              "l3Id": "dfb12efb-4c8c-4fb8-86aa-a966879c6019",
+              "type": "IMAGE",
+              "depense_eur": 3.58,
+              "impressions": 127,
+              "clics": 3,
+              "ctr": 0.02362,
+              "cpc_eur": 1.1933,
+              "cpm_eur": 28.189,
+              "reach_somme_jours": 97,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "e3ba226b-1ecc-4ee1-90b6-b150427bf11a",
+              "type": "IMAGE",
+              "depense_eur": 3.55,
+              "impressions": 135,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 26.2963,
+              "reach_somme_jours": 115,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "841a55b7-e34e-49ad-a069-480b9586d639",
+              "type": "VIDEO",
+              "depense_eur": 2.86,
+              "impressions": 122,
+              "clics": 2,
+              "ctr": 0.01639,
+              "cpc_eur": 1.43,
+              "cpm_eur": 23.4426,
+              "reach_somme_jours": 109,
+              "reactions": 0,
+              "thruPlays": 12,
+              "videoPlays": 114
+            },
+            {
+              "l3Id": "fe357b35-03e1-45d1-99eb-600c79b57dcf",
+              "type": "IMAGE",
+              "depense_eur": 2.82,
+              "impressions": 47,
+              "clics": 1,
+              "ctr": 0.02128,
+              "cpc_eur": 2.82,
+              "cpm_eur": 60.0,
+              "reach_somme_jours": 38,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "7a7a9129-2491-41ec-8d70-742053408ac9",
+              "type": "IMAGE",
+              "depense_eur": 2.67,
+              "impressions": 1827,
+              "clics": 6,
+              "ctr": 0.00328,
+              "cpc_eur": 0.445,
+              "cpm_eur": 1.4614,
+              "reach_somme_jours": 707,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "df3572ec-3d68-4adf-bde1-322270f063d1",
+              "type": "IMAGE",
+              "depense_eur": 2.41,
+              "impressions": 66,
+              "clics": 1,
+              "ctr": 0.01515,
+              "cpc_eur": 2.41,
+              "cpm_eur": 36.5152,
+              "reach_somme_jours": 53,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "efe77871-9118-4d93-85bf-17d71ee7a361",
+              "type": "VIDEO",
+              "depense_eur": 2.24,
+              "impressions": 180,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 12.4444,
+              "reach_somme_jours": 165,
+              "reactions": 0,
+              "thruPlays": 4,
+              "videoPlays": 161
+            },
+            {
+              "l3Id": "2f9a4515-4f44-4a22-ac1e-a5b282045bb4",
+              "type": "IMAGE",
+              "depense_eur": 2.19,
+              "impressions": 101,
+              "clics": 3,
+              "ctr": 0.0297,
+              "cpc_eur": 0.73,
+              "cpm_eur": 21.6832,
+              "reach_somme_jours": 76,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "dba3533c-c810-4784-b98c-ee395ae70f66",
+              "type": "IMAGE",
+              "depense_eur": 1.73,
+              "impressions": 48,
+              "clics": 1,
+              "ctr": 0.02083,
+              "cpc_eur": 1.73,
+              "cpm_eur": 36.0417,
+              "reach_somme_jours": 44,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "c2e78336-44f9-4f56-bd12-6a916a0b0f0b",
+              "type": "IMAGE",
+              "depense_eur": 1.66,
+              "impressions": 77,
+              "clics": 1,
+              "ctr": 0.01299,
+              "cpc_eur": 1.66,
+              "cpm_eur": 21.5584,
+              "reach_somme_jours": 66,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "80dc2b37-5479-4041-bb96-d40f80ba8695",
+              "type": "IMAGE",
+              "depense_eur": 1.25,
+              "impressions": 671,
+              "clics": 6,
+              "ctr": 0.00894,
+              "cpc_eur": 0.2083,
+              "cpm_eur": 1.8629,
+              "reach_somme_jours": 330,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "af4fe04d-5e2e-4561-9bee-a9efbe939b17",
+              "type": "IMAGE",
+              "depense_eur": 1.23,
+              "impressions": 30,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 41.0,
+              "reach_somme_jours": 26,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "a3e649e5-53fb-4bb6-99c0-0cf22ac4ab99",
+              "type": "IMAGE",
+              "depense_eur": 1.18,
+              "impressions": 38,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 31.0526,
+              "reach_somme_jours": 32,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "95d6e113-c221-4362-8b3f-6cfcb8ec2824",
+              "type": "IMAGE",
+              "depense_eur": 1.15,
+              "impressions": 10,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 115.0,
+              "reach_somme_jours": 10,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "e4c415c3-f5e6-4231-bd08-7d76251bd5ec",
+              "type": "IMAGE",
+              "depense_eur": 1.01,
+              "impressions": 1645,
+              "clics": 4,
+              "ctr": 0.00243,
+              "cpc_eur": 0.2525,
+              "cpm_eur": 0.614,
+              "reach_somme_jours": 667,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "48e42834-64f6-4078-be60-f61615d266c6",
+              "type": "IMAGE",
+              "depense_eur": 0.92,
+              "impressions": 23,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 40.0,
+              "reach_somme_jours": 20,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "22345907-f743-4406-afd7-3896fd495b14",
+              "type": "IMAGE",
+              "depense_eur": 0.62,
+              "impressions": 15,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 41.3333,
+              "reach_somme_jours": 13,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "ae446bef-9899-4942-b778-f4bf8417ffa3",
+              "type": "IMAGE",
+              "depense_eur": 0.58,
+              "impressions": 20,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 29.0,
+              "reach_somme_jours": 17,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "1d33afdd-3042-4eab-a8f3-c314a4e8e2b1",
+              "type": "IMAGE",
+              "depense_eur": 0.42,
+              "impressions": 33,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 12.7273,
+              "reach_somme_jours": 28,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "a0b7ee9f-1165-499d-b8cc-e1c913a09c1e",
+              "type": "IMAGE",
+              "depense_eur": 0.41,
+              "impressions": 1906,
+              "clics": 4,
+              "ctr": 0.0021,
+              "cpc_eur": 0.1025,
+              "cpm_eur": 0.2151,
+              "reach_somme_jours": 568,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "e88cbedf-c4dc-4ff1-a145-edcf5c4b1f0a",
+              "type": "IMAGE",
+              "depense_eur": 0.39,
+              "impressions": 15,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 26.0,
+              "reach_somme_jours": 12,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "a6a1ab00-cd79-4664-8369-8010e6bdc880",
+              "type": "IMAGE",
+              "depense_eur": 0.3,
+              "impressions": 39,
+              "clics": 2,
+              "ctr": 0.05128,
+              "cpc_eur": 0.15,
+              "cpm_eur": 7.6923,
+              "reach_somme_jours": 32,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "639f29d4-a0e1-466c-99e5-4d2da60437e3",
+              "type": "IMAGE",
+              "depense_eur": 0.24,
+              "impressions": 15,
+              "clics": 1,
+              "ctr": 0.06667,
+              "cpc_eur": 0.24,
+              "cpm_eur": 16.0,
+              "reach_somme_jours": 14,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "791e309c-0d9a-4780-bd44-3fb85cf9c222",
+              "type": "IMAGE",
+              "depense_eur": 0.23,
+              "impressions": 6,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 38.3333,
+              "reach_somme_jours": 6,
+              "reactions": 0,
+              "thruPlays": 0,
+              "videoPlays": 0
+            },
+            {
+              "l3Id": "cadc020f-7cb6-4fb8-a88b-db5fcdf44ec1",
+              "type": "VIDEO",
+              "depense_eur": 0.16,
+              "impressions": 16,
+              "clics": 0,
+              "ctr": 0.0,
+              "cpc_eur": null,
+              "cpm_eur": 10.0,
+              "reach_somme_jours": 14,
+              "reactions": 0,
+              "thruPlays": 1,
+              "videoPlays": 13
+            },
+            {
+              "l3Id": "de388e9d-af25-4dd0-9e94-9633cbb24a35",
+              "type": "VIDEO",
+              "depense_eur": 0.08,
+              "impressions": 2,
+              "clics": 1,
+              "ctr": 0.5,
+              "cpc_eur": 0.08,
+              "cpm_eur": 40.0,
+              "reach_somme_jours": 2,
+              "reactions": 0,
+              "thruPlays": 1,
+              "videoPlays": 2
+            }
+          ]
+        }
+      },
+      "autre_compte_meta": {
+        "Hosman - Bulldozer (1055156549968263)": {
+          "adAccountId": "9a4dbb22-a2c9-47bb-94d6-be65068476bb",
+          "nature": "compte CLIENT (Hosman), hors acquisition Bulldozer",
+          "lignes_datees_disponibles": 893,
+          "constat": "gele : dataThrough 2026-06-04, refreshEnabled=false, dernier import en ERREUR (2026-09-02). Erreur API : 'Ad account owner has NOT grant ads_management or ads_read permission'. Devise renvoyee XXX."
+        }
+      }
+    },
+    "reserves": [
+      "Metrique `leads` NON FIABLE (piege verifie de l'OS) : volontairement exclue de tout ce releve. Idem `cpl` qui en derive.",
+      "Aucun total n'a ete lu sur l'agregat AD_TIME_GRANULARITY_ALL (corrompu) : tous les totaux et mensuels sont recomposes en additionnant les lignes datees (granularite DAILY).",
+      "Le ciblage n'est present dans aucun objet de couche 1/2/3 : il n'a jamais ete importe.",
+      "Sur LinkedIn : reach, frequency, reactions et comments sont null sur 100 % des lignes (jamais importes). Sur Meta ils SONT renseignes (reach, frequency, reactions, comments, thruPlays, videoPlays, hookRate).",
+      "Le compte Meta 'Bulldozer' melange les campagnes d'acquisition de l'agence ET les tests de traction (TDT) menes pour des clients/prospects. Aucun champ ne distingue les deux : seul le nom de campagne permet de filtrer.",
+      "Sur les 174 campagnes porteuses de metriques, une large part sont des TDT clients/prospects (Client_AEnergie, TDT Veolia, TDT Gerofinance, TDT Carrefour Pro, TDT - Familiar, TDT Assurpoil...). Les campagnes d'acquisition propres a l'agence sont identifiables par leur nom : 'RUN II Bulldozer II NE PAS TOUCHER', 'RUN - Bulldozer metro', 'RUN BULLDOZER', 'RUN leadform - Bulldozer', 'GTM - BULLDOZER - FR/US', 'SPRINT n II Media Bulldozer II ...', 'Bulldozer OS - MCP - Conversion site - Sept 2026'. Le cockpit doit appliquer ce filtre, l'OS ne le fournit pas.",
+      "Le releve par campagne fourni ici est limite aux 40 premieres par depense (sur 174) pour tenir dans le fichier ; la requete est reproductible pour les 174.",
+      "Conversions Meta : le champ `conversions` est null sur les lignes relevees de ce compte (aucune conversion mesuree sur la periode, pas zero conversion reelle). Ne pas le presenter comme 0.",
+      "Pic d'impressions en 2026-08 (1 205 586 impressions pour 1 167,55 EUR, CPM 0,97 EUR) : ordre de grandeur atypique, a verifier avant publication."
+    ]
+  },
+  "social_linkedin": {
+    "disponible": true,
+    "source": "Bulldozer OS - bdzListLinkedInPosts, bdzListLinkedInCompanies, bdzListLinkedInRefreshConfigs",
+    "periode_couverte": "2026-06-03 -> 2026-09-17 (16 posts stockes, profil Jordan Chenevier). Rafraichissement quotidien actif, dernier passage 2026-09-20T12:00Z",
+    "donnees": {
+      "page_entreprise": {
+        "url": "https://www.linkedin.com/company/bulldozer-collective/",
+        "companyId": 74995178,
+        "nom": "Bulldozer",
+        "followerCount": 11491,
+        "employeeCount": 161,
+        "employeeCountRangeMin": 2,
+        "employeeCountRangeMax": 10,
+        "hq": "Paris, France",
+        "industry": "Technology, Information and Internet",
+        "specialities": [
+          "seo",
+          "paid",
+          "outbound",
+          "data",
+          "growth",
+          "marketing",
+          "demand generation"
+        ],
+        "updatedAt": "2026-09-21T10:57:32Z",
+        "posts_de_la_page_stockes": 0
+      },
+      "configs_de_rafraichissement": [
+        {
+          "cible": "https://www.linkedin.com/in/jordanchenevier",
+          "type": "PEOPLE",
+          "periodicite": "DAILY",
+          "enabled": true,
+          "lastRefreshedAt": "2026-09-20T12:00:00Z",
+          "nextRefreshAt": "2026-09-21T12:00:00Z"
+        },
+        {
+          "cible": "https://www.linkedin.com/in/enguerrand-chalvon-demersay",
+          "type": "PEOPLE",
+          "periodicite": "DAILY",
+          "enabled": true,
+          "lastRefreshedAt": "2026-09-20T12:00:00Z",
+          "nextRefreshAt": "2026-09-21T12:00:00Z",
+          "posts_stockes": 0
+        }
+      ],
+      "posts": {
+        "profil": "https://www.linkedin.com/in/jordanchenevier",
+        "nombre": 16,
+        "total_reactions": 1455,
+        "total_commentaires": 311,
+        "total_partages": 15,
+        "detail": [
+          {
+            "date": "2026-09-17T14:01:37.076Z",
+            "urn": "urn:li:activity:7506269298282160128",
+            "auteur": "Loïc BURDET-AULAS",
+            "reactions": 2,
+            "commentaires": 0,
+            "partages": 1,
+            "repost": false,
+            "texte_200": "Et si votre stratégie IA automatisait... les mauvaises choses ?\n\nC'est LA question que tout dirigeant devrait se poser en 2026.\n\nParce qu'on voit partout la même chose :\n- Des entreprises qui aut"
+          },
+          {
+            "date": "2026-09-17T07:01:09.056Z",
+            "urn": "urn:li:activity:7506245846276026369",
+            "auteur": "Jordan Chenevier-Truchet",
+            "reactions": 46,
+            "commentaires": 3,
+            "partages": 1,
+            "repost": false,
+            "texte_200": "Il a fait poster Blaise Matuidi sur un outil de prospection B2B, et ce n'était même pas sa campagne la plus folle. Masterclass d'audace marketing 👇\n\nJe vous présente Frédéric Mathieu, CMO de FullEnri"
+          },
+          {
+            "date": "2026-09-16T07:01:11.040Z",
+            "urn": "urn:li:activity:7505883466732068864",
+            "auteur": "Jordan Chenevier-Truchet",
+            "reactions": 45,
+            "commentaires": 5,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "Les inscriptions pour Rise sont ouvertes 🎉 \n\nOn monte ce projet depuis le printemps avec l'équipe. C'est notre premier flagship : mardi 17 novembre, de 13h à 19h, au \"Dernier Étage\" à Paris 18.\n\n> 30"
+          },
+          {
+            "date": "2026-06-18T15:03:26.194Z",
+            "urn": "urn:li:activity:7473389921660047361",
+            "auteur": "Jordan Chenevier-Truchet",
+            "reactions": 49,
+            "commentaires": 10,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "Yesterday at VivaTech, I showed what the future of marketing teams looks like. Hint: it won't look anything like what you have today.\n\nWe still organize marketing by channel: content, paid, SEO, desig"
+          },
+          {
+            "date": "2026-06-18T07:01:11.492Z",
+            "urn": "urn:li:activity:7473268560723664896",
+            "auteur": "Jordan Chenevier-Truchet",
+            "reactions": 294,
+            "commentaires": 151,
+            "partages": 2,
+            "repost": false,
+            "texte_200": "Hier à VivaTech, j'ai montré à quoi ressemble le futur des équipes marketing. Indice : plus du tout à celle que vous avez aujourd'hui.\n\nOn organise encore le marketing par canal : content, paid, SEO, "
+          },
+          {
+            "date": "2026-06-16T07:01:15.861Z",
+            "urn": "urn:li:activity:7472543803317559297",
+            "auteur": null,
+            "reactions": 56,
+            "commentaires": 10,
+            "partages": 1,
+            "repost": false,
+            "texte_200": "Deux Cas d'Or du Digital à Montréal il y a quelques semaines. Et je suis fier comme tout :)\n\nLe travail mené pour ComAve a été primé deux fois : or en Vidéo en ligne, et or en Contenus & Médias sociau"
+          },
+          {
+            "date": "2026-06-15T07:01:00.148Z",
+            "urn": "urn:li:activity:7472181349546725376",
+            "auteur": null,
+            "reactions": 99,
+            "commentaires": 8,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "On m'a redemandé de monter sur la scène de VivaTech cette année. Cette fois, avec une thèse que beaucoup ne vont pas aimer 😅\n\n1️⃣ Mercredi, 15h30, Exec Arena : je défends l'idée que la plupart des boî"
+          },
+          {
+            "date": "2026-06-12T07:00:37.143Z",
+            "urn": "urn:li:activity:7471094089459916800",
+            "auteur": null,
+            "reactions": 114,
+            "commentaires": 11,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "Rappel car je vois beaucoup de bêtises : la \"Demand Gen\" n'est PAS de la \"Lead Gen\".\n\nAvec la \"Demand Gen\", on cherche à distribuer du contenu gratuit (\"ungated\") pour développer la notoriété de la ma"
+          },
+          {
+            "date": "2026-06-11T13:04:28.784Z",
+            "urn": "urn:li:activity:7470823270133420032",
+            "auteur": null,
+            "reactions": 28,
+            "commentaires": 3,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "He says marketing's job is to make sales easier. That belief took him from product guy to CMO of a billion-dollar company 👇\n\nMeet Dave Kellogg. 30 years in SaaS marketing, former CMO, former CEO, now "
+          },
+          {
+            "date": "2026-06-11T07:01:14.255Z",
+            "urn": "urn:li:activity:7470731857253355520",
+            "auteur": null,
+            "reactions": 71,
+            "commentaires": 13,
+            "partages": 1,
+            "repost": false,
+            "texte_200": "Pour lui, un bon marketer n'a qu'un rôle : rendre la vie des commerciaux plus simple. Une idée que beaucoup de CMO détestent 👇\n\nJe vous présente Dave Kellogg. 30 ans de marketing SaaS, ex-CMO, ex-CEO,"
+          },
+          {
+            "date": "2026-06-10T07:00:47.929Z",
+            "urn": "urn:li:activity:7470369358968688640",
+            "auteur": null,
+            "reactions": 159,
+            "commentaires": 14,
+            "partages": 3,
+            "repost": false,
+            "texte_200": "Chers marketeux, je vous partage un énorme conseil de carrière : essayez d'écrire un email hebdo à votre boss.\n\nC'est la façon la plus simple de manager vers le haut, et c'est vraiment bon pour vous.\n"
+          },
+          {
+            "date": "2026-06-09T07:01:08.029Z",
+            "urn": "urn:li:activity:7470007055408525314",
+            "auteur": null,
+            "reactions": 158,
+            "commentaires": 23,
+            "partages": 4,
+            "repost": false,
+            "texte_200": "Ça fait des mois qu'on prépare ça en silence. Aujourd'hui je peux enfin le dire 🎉\n\nLe 17 novembre, Bulldozer lance son tout premier flagship : Rise.\n\nUne journée pour réunir les meilleurs leaders mark"
+          },
+          {
+            "date": "2026-06-08T07:01:01.653Z",
+            "urn": "urn:li:activity:7469644640799879168",
+            "auteur": null,
+            "reactions": 54,
+            "commentaires": 7,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "⚡️ NEWS : Cette année, on organise une soirée en parallèle de VivaTech.\n\nLe 17 juin au soir, premier jour du salon, je réunis un cercle restreint de responsables marketing autour d'une question que be"
+          },
+          {
+            "date": "2026-06-05T07:00:52.848Z",
+            "urn": "urn:li:activity:7468557440272297984",
+            "auteur": null,
+            "reactions": 133,
+            "commentaires": 20,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "Je suis convaincu qu'un bon CMO n'est pas le même selon le stade de l'entreprise.\n\nTrois grands piliers en marketing :\n\n(1) Revenue Marketing (demand gen, pipeline, growth, ops, metrics, data) ;\n(2) C"
+          },
+          {
+            "date": "2026-06-04T07:01:01.058Z",
+            "urn": "urn:li:activity:7468195086841823233",
+            "auteur": null,
+            "reactions": 46,
+            "commentaires": 7,
+            "partages": 0,
+            "repost": false,
+            "texte_200": "Le bon signal d'achat arrive toujours. Sauf qu'il atterrit dans le CRM, pas dans la tête du commercial.\n\nUn compte rouvre un deal, visite la page pricing, change de DAF. Le CRM l'enregistre. Le commer"
+          },
+          {
+            "date": "2026-06-03T07:01:15.732Z",
+            "urn": "urn:li:activity:7467832760523706368",
+            "auteur": null,
+            "reactions": 101,
+            "commentaires": 26,
+            "partages": 2,
+            "repost": false,
+            "texte_200": "On a branché un agent IA sur notre site pendant 90 jours. Retour honnête.\n\nL'agent, c'est Rose (https://lnkd.in/dXGzCaut). 14 418 visiteurs, 542 conversations, 18 rendez-vous calés.\n\nLe volume, on s'e"
+          }
+        ]
+      }
+    },
+    "reserves": [
+      "AUCUN post de la PAGE entreprise Bulldozer n'est stocke. Les deux seules configs de rafraichissement visent des profils de PERSONNES. Un ecran 'posts de la page Bulldozer' ne peut pas etre alimente en l'etat.",
+      "Le profil d'Enguerrand Chalvon Demersay a une config de rafraichissement active depuis le 2026-08-29 mais 0 post stocke.",
+      "Le releve suit le piege connu : l'engagement organique est lu sur le POST (numLikes / numComments / numShares), pas sur l'annonce. Les reactions cote annonce LinkedIn sont null.",
+      "1 post sur 16 n'est pas de Jordan : il est signe Loic BURDET-AULAS (post tiers capte par le scrape du profil). Le filtrer sur actorLink avant tout calcul d'engagement.",
+      "actorName/actorLink sont null sur 11 posts sur 16 (champ non renseigne lors du scrape), ce qui rend le filtre ci-dessus partiellement inoperant.",
+      "Trou de collecte : rien entre le 2026-06-18 et le 2026-09-16.",
+      "Incoherence sur la fiche entreprise : employeeCount=161 mais employeeCountRangeMin/Max = 2-10.",
+      "Aucune metrique d'impression/portee organique : LinkedIn ne les expose pas ici, seulement reactions, commentaires et partages."
+    ]
+  },
+  "outbound_lemlist": {
+    "disponible": true,
+    "source": "Bulldozer OS - bdzListLemlistCampaigns, bdzListLemlistSequences, bdzListLemlistLeads (sync horaire)",
+    "periode_couverte": "campagnes creees du 2024-01-04 au 2026-09-07 (108 campagnes). Aucune campagne en cours d'envoi.",
+    "donnees": {
+      "campagnes_total": 108,
+      "repartition_par_statut": {
+        "draft": 42,
+        "archived": 46,
+        "ended": 20
+      },
+      "campagnes_en_cours": 0,
+      "campagnes_avec_sequenceId": 100,
+      "campagnes_en_erreur_hasError": 89,
+      "etapes_de_sequence": {
+        "disponible": true,
+        "exemple_verifie": {
+          "campagne": "Campagne ICP1 Tiers 1",
+          "campaignId": "e634434b-604a-4ee5-84d7-2447264b5e07",
+          "sequenceId": "seq_ncX76mQtXs7uxDxgk",
+          "niveaux": 1,
+          "nombre_etapes": 1,
+          "etapes": [
+            {
+              "index": 1,
+              "type": "LEMLIST_STEP_TYPE_EMAIL",
+              "delai": 0,
+              "sujet": "",
+              "message": "corps HTML complet renvoye par l'API"
+            }
+          ]
+        },
+        "note": "bdzListLemlistSequences renvoie bien les etapes (type, delai, index, sujet, message) pour les campagnes qui portent un sequenceId."
+      },
+      "nombre_de_leads": {
+        "disponible": false,
+        "constat": "bdzListLemlistLeads renvoie totalElement=0 sur les 4 campagnes testees (1 draft recente + 3 'ended' qui ont reellement tourne : [Marketing director][Gmail][February], [Marketing director][Outlook][February], Followers CMO BTEC). Aucun volume de leads n'est lisible.",
+        "campagnes_testees": [
+          "e634434b-604a-4ee5-84d7-2447264b5e07",
+          "4d25b6c7-ea0e-4648-b679-94ee8722df52",
+          "e540aac3-2140-4422-9fae-010fe7ec858f",
+          "6b39ddfe-cfc8-4746-a301-8ccd7e30d072"
+        ]
+      },
+      "campagnes_recentes_2026": [
+        {
+          "id": "11f4d014-ecdf-4aeb-92ca-d9559cdcc616",
+          "lemlistId": "cam_ZZRv2CSF2CtHwsX99",
+          "nom": "Guide Budget 2027 — Relance LinkedIn v2 — Léo",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "e48ab9c5-04a2-4a36-84c9-3aa04e8e6a66",
+          "lemlistId": "cam_tGkThCBafMZoeqHND",
+          "nom": "Guide Budget 2027 — Relance LinkedIn v2 — Enguerrand",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "0b2b9011-1795-401d-aef5-efb69178fc2d",
+          "lemlistId": "cam_Rry4mxtpdJzPyJpsi",
+          "nom": "Leads Guide Budget 2027 — LinkedIn invite + message — Léo",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "37b8b8af-8452-4dd7-86e4-d270857cf76d",
+          "lemlistId": "cam_MS5JaStC4RwNxq7dh",
+          "nom": "Leads Guide Budget 2027 — LinkedIn invite + message — Enguerrand",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "e66835d3-f4e7-486f-851e-1efbbabbb264",
+          "lemlistId": "cam_vKjkZ9zpdocW8j9hZ",
+          "nom": "TLA Jordan — Engageurs post VivaTech 22/06 (LinkedIn only)",
+          "statut": "draft",
+          "creee_le": "2026-08-24",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "b30688df-daab-4722-8e2f-5ed13c6c0821",
+          "lemlistId": "cam_vJxLGAszFpG8CnLAa",
+          "nom": "TEST MCP 22/07 - retest Bug 18 (0 lead, ne pas utiliser)",
+          "statut": "draft",
+          "creee_le": "2026-07-23",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "9bc2d12e-9488-40cd-86eb-e3a779d47185",
+          "lemlistId": "cam_eWxNuq8FwJq25cRjN",
+          "nom": "TEST MCP 22/07 - campagne de test technique (0 lead)",
+          "statut": "draft",
+          "creee_le": "2026-07-22",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "a0073a1c-958c-4cce-b46e-d259d66de097",
+          "lemlistId": "cam_z5kKnAj3ixPpeZwwi",
+          "nom": "test commentaire linkedin",
+          "statut": "draft",
+          "creee_le": "2026-07-15",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "juliano@bulldozer-collective.com"
+        }
+      ],
+      "toutes_les_campagnes_page0": [
+        {
+          "id": "11f4d014-ecdf-4aeb-92ca-d9559cdcc616",
+          "lemlistId": "cam_ZZRv2CSF2CtHwsX99",
+          "nom": "Guide Budget 2027 — Relance LinkedIn v2 — Léo",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "e48ab9c5-04a2-4a36-84c9-3aa04e8e6a66",
+          "lemlistId": "cam_tGkThCBafMZoeqHND",
+          "nom": "Guide Budget 2027 — Relance LinkedIn v2 — Enguerrand",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "0b2b9011-1795-401d-aef5-efb69178fc2d",
+          "lemlistId": "cam_Rry4mxtpdJzPyJpsi",
+          "nom": "Leads Guide Budget 2027 — LinkedIn invite + message — Léo",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "37b8b8af-8452-4dd7-86e4-d270857cf76d",
+          "lemlistId": "cam_MS5JaStC4RwNxq7dh",
+          "nom": "Leads Guide Budget 2027 — LinkedIn invite + message — Enguerrand",
+          "statut": "draft",
+          "creee_le": "2026-09-07",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "e66835d3-f4e7-486f-851e-1efbbabbb264",
+          "lemlistId": "cam_vKjkZ9zpdocW8j9hZ",
+          "nom": "TLA Jordan — Engageurs post VivaTech 22/06 (LinkedIn only)",
+          "statut": "draft",
+          "creee_le": "2026-08-24",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "b30688df-daab-4722-8e2f-5ed13c6c0821",
+          "lemlistId": "cam_vJxLGAszFpG8CnLAa",
+          "nom": "TEST MCP 22/07 - retest Bug 18 (0 lead, ne pas utiliser)",
+          "statut": "draft",
+          "creee_le": "2026-07-23",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "9bc2d12e-9488-40cd-86eb-e3a779d47185",
+          "lemlistId": "cam_eWxNuq8FwJq25cRjN",
+          "nom": "TEST MCP 22/07 - campagne de test technique (0 lead)",
+          "statut": "draft",
+          "creee_le": "2026-07-22",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "enguerrand@bulldozer-collective.com"
+        },
+        {
+          "id": "a0073a1c-958c-4cce-b46e-d259d66de097",
+          "lemlistId": "cam_z5kKnAj3ixPpeZwwi",
+          "nom": "test commentaire linkedin",
+          "statut": "draft",
+          "creee_le": "2026-07-15",
+          "sequenceId": null,
+          "hasError": false,
+          "createur": "juliano@bulldozer-collective.com"
+        },
+        {
+          "id": "94ee90d2-89d9-45a3-9dfa-6268a51de48d",
+          "lemlistId": "cam_J4xsTZhvkXW3wKPpQ",
+          "nom": "Changement de poste nouvelle boite  Copy",
+          "statut": "draft",
+          "creee_le": "2025-08-28",
+          "sequenceId": "seq_gzQS8k3ry6wzweRj7",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "e2b4961e-e3f9-4da0-8fc7-f19acf9903a9",
+          "lemlistId": "cam_NbvRnAg4hsAoEkPwH",
+          "nom": "anti no-show whatsapp",
+          "statut": "archived",
+          "creee_le": "2025-08-27",
+          "sequenceId": "seq_yFzBcoxbBvn7gqsvg",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "e634434b-604a-4ee5-84d7-2447264b5e07",
+          "lemlistId": "cam_QitFmXfmZoQxY4t6c",
+          "nom": "Campagne ICP1 Tiers 1",
+          "statut": "draft",
+          "creee_le": "2025-07-22",
+          "sequenceId": "seq_ncX76mQtXs7uxDxgk",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "1f5af8de-49d4-4c1b-9399-3aa8917bde37",
+          "lemlistId": "cam_k3FcNkyQNo7g85xrR",
+          "nom": "21/07/25 Changement de poste nouvelle boite Juillet Copy",
+          "statut": "archived",
+          "creee_le": "2025-07-21",
+          "sequenceId": "seq_TTk3QM8JveCWBzv2i",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "9bba29c0-6d17-4bbc-9087-1951a1d24ca1",
+          "lemlistId": "cam_C8W3SXf5tuYFnSvHW",
+          "nom": "Changement de poste nouvelle boite v3",
+          "statut": "archived",
+          "creee_le": "2025-06-25",
+          "sequenceId": "seq_vyKJfWLXXNXrPrkDv",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "2f28a82a-2221-422a-a229-4f67a6eceee8",
+          "lemlistId": "cam_epaJrnyJ9eGdxJNk6",
+          "nom": "1.1-A. Analyse de siteweb|Semaine-1",
+          "statut": "archived",
+          "creee_le": "2025-06-24",
+          "sequenceId": "seq_5rs7o8Hvatd8oRa8M",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "8bc42447-da3a-4036-94c2-a28701eaa93f",
+          "lemlistId": "cam_jckJwzXSs7dW4vcwK",
+          "nom": "Changement de poste nouvelle boite copy Copy",
+          "statut": "archived",
+          "creee_le": "2025-06-17",
+          "sequenceId": "seq_vPa3rT9RwdwyayyaY",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "1b9fa171-5346-408b-acb5-2328f104cafc",
+          "lemlistId": "cam_BtzXqJ9kLAirJnkzk",
+          "nom": "Changement de poste nouvelle boite",
+          "statut": "archived",
+          "creee_le": "2025-05-31",
+          "sequenceId": "seq_JDKbwx2hpwYE2tmvE",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "4d248afa-5951-467c-82c4-bb18826b8d07",
+          "lemlistId": "cam_XZyprXBrGprXR5EPg",
+          "nom": "1.1-A. Analyse de siteweb",
+          "statut": "archived",
+          "creee_le": "2025-02-18",
+          "sequenceId": "seq_W8rrPGW8zj39hnNw7",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "e540aac3-2140-4422-9fae-010fe7ec858f",
+          "lemlistId": "cam_oquuT6uw8hLHBndBk",
+          "nom": "[Marketing director][Outlook][February]",
+          "statut": "ended",
+          "creee_le": "2025-02-06",
+          "sequenceId": "seq_qyt53HRuPaHiBr6wN",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "4d25b6c7-ea0e-4648-b679-94ee8722df52",
+          "lemlistId": "cam_xK4SALtjMtAGumxmS",
+          "nom": "[Marketing director][Gmail][February]",
+          "statut": "ended",
+          "creee_le": "2025-02-06",
+          "sequenceId": "seq_HSK6XT7dqnD2LH95u",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "0e7eca35-c3e0-489a-8168-31376499d23b",
+          "lemlistId": "cam_ff4jicPBG2qBkwqPJ",
+          "nom": "[Marketing director][Other][January]",
+          "statut": "archived",
+          "creee_le": "2025-01-21",
+          "sequenceId": "seq_9aXfFhEMAvDca5rfv",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "c91eafd0-5656-4abc-b29b-892f3c9e9eec",
+          "lemlistId": "cam_iQ7qZBGc35PHJ7f3H",
+          "nom": "[Marketing director][Outlook][January]",
+          "statut": "ended",
+          "creee_le": "2025-01-21",
+          "sequenceId": "seq_w2QMEL8WkTLJWuAYi",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "1b10e73c-f250-4035-bb86-8e569046b58f",
+          "lemlistId": "cam_H5CspFdaBrJneGfFD",
+          "nom": "[Marketing director][Gmail][January]",
+          "statut": "ended",
+          "creee_le": "2025-01-21",
+          "sequenceId": "seq_SRtLGwRoAFGQTZdtM",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "cdb4bfdd-46d5-4506-b512-879ec39dcc9d",
+          "lemlistId": "cam_476TBbYTD8ahp68bX",
+          "nom": "Jordan's campaign (3)",
+          "statut": "draft",
+          "creee_le": "2024-12-11",
+          "sequenceId": "seq_8MGidTuDBM5BnpsJ4",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "fa868b46-ad2c-4ed3-9cbd-298cdd7db3d0",
+          "lemlistId": "cam_FSEWQK9GcGBk7aG5z",
+          "nom": "[Livre-Blanc][ABM subscribers]",
+          "statut": "archived",
+          "creee_le": "2024-12-09",
+          "sequenceId": "seq_rJWXPmJDoZrwgBKMh",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "fe166989-8190-45dc-8b69-de251edfb91f",
+          "lemlistId": "cam_oMQqhYTmc59nBftqM",
+          "nom": "Jordan's campaign (2)",
+          "statut": "draft",
+          "creee_le": "2024-12-05",
+          "sequenceId": "seq_qMAWHookRv4kgm9a7",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "324ad1ce-71d0-4ca3-9d05-113e9c50fa9e",
+          "lemlistId": "cam_3ssRLRurGrRrrNMKS",
+          "nom": "[Marketing Director][Europe][French Speakers][Gmail]",
+          "statut": "archived",
+          "creee_le": "2024-11-22",
+          "sequenceId": "seq_NtdTMBJpBkCo82Y6Y",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "96931965-9e3e-467e-8706-f3f96cc7a3a4",
+          "lemlistId": "cam_xj8H5gCof3DabxbNc",
+          "nom": "campagne de test technique",
+          "statut": "draft",
+          "creee_le": "2024-11-13",
+          "sequenceId": "seq_4vgaGNYf4jGCK2P8t",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "02ab2744-59c3-401f-84e6-df4787a998b1",
+          "lemlistId": "cam_n4DJzXhMQ3fcoQRvy",
+          "nom": "Changement de postes CMO-Salesnav Copy",
+          "statut": "archived",
+          "creee_le": "2024-11-09",
+          "sequenceId": "seq_AYvFRXGSDKsk84YXY",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "18087240-5a04-4bcd-9349-99333e855619",
+          "lemlistId": "cam_FiDzLr8EiNJEMsMPQ",
+          "nom": "[Marketing Manager][BENELUX-SWiSS][Analyse] Copy",
+          "statut": "archived",
+          "creee_le": "2024-11-08",
+          "sequenceId": "seq_eYBKpS5f2iXGPHH6b",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "83f8bb10-f4cc-4c38-9cea-9cb272daf905",
+          "lemlistId": "cam_FiFMH7S7AYFctmFfB",
+          "nom": "Test de script nouvelle variable",
+          "statut": "draft",
+          "creee_le": "2024-11-08",
+          "sequenceId": "seq_CZsqyXDCNR7jmn8wr",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "bd617924-380a-44e5-a4af-9a32d6dc5762",
+          "lemlistId": "cam_iJMRkS2nEZ2QR8rwA",
+          "nom": "[Marketing Director][BENELUX-SWiSS][Analyse]",
+          "statut": "archived",
+          "creee_le": "2024-11-08",
+          "sequenceId": "seq_5qzQoX5win3mwknqT",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "f068a7fb-6f47-4017-aaca-55f0e121c1ba",
+          "lemlistId": "cam_ewiCm6NspsQj86568",
+          "nom": "[CMO][Silicon Valley]",
+          "statut": "archived",
+          "creee_le": "2024-11-06",
+          "sequenceId": "seq_po6My6BMuwXCc93gb",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "96d0f2b8-1db1-4587-8e79-2a720a938a95",
+          "lemlistId": "cam_yHjipYwYKjtuwCvcv",
+          "nom": "[Website-Visitors][CEO-CMO]",
+          "statut": "archived",
+          "creee_le": "2024-10-31",
+          "sequenceId": "seq_9dg8oBEsDHNufszFS",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "11b20174-40d6-4a9f-bd7f-43e7c73804e4",
+          "lemlistId": "cam_DtnNux5gscgqreWmb",
+          "nom": "[Founders CEO]",
+          "statut": "archived",
+          "creee_le": "2024-10-29",
+          "sequenceId": "seq_eRsGy7vR8dFwPi3tK",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "49161390-5a8f-413d-912f-fb6ef0e7c792",
+          "lemlistId": "cam_FM8B28eSsemBKkkPp",
+          "nom": "[Followers Jordan][Linkedin]",
+          "statut": "draft",
+          "creee_le": "2024-10-29",
+          "sequenceId": "seq_PTTmJsah7G3ThTbHY",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "44952e51-af45-4336-8393-c4fd4695d0c2",
+          "lemlistId": "cam_jBPpvi7LDDYMZNqoY",
+          "nom": "[CMOs-Documents CMO et CFO][Octobre]",
+          "statut": "archived",
+          "creee_le": "2024-10-17",
+          "sequenceId": "seq_ByGYmJqPYRsMNiK7x",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "5d58fc7a-aac3-4427-9484-14950a8f0314",
+          "lemlistId": "cam_3ATGo5mn5EMyFHLJH",
+          "nom": "Respo Marketing Logistique",
+          "statut": "draft",
+          "creee_le": "2024-10-16",
+          "sequenceId": "seq_X4FZxGB3tsCcMi4TG",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "a3ea0fba-f958-48e4-99ac-bf47545f09e8",
+          "lemlistId": "cam_LqNKa3BiSDWGv3MTx",
+          "nom": "[Liste Thibault Renouf][2nde Partie][ 10 Octobre]",
+          "statut": "archived",
+          "creee_le": "2024-10-15",
+          "sequenceId": "seq_af4SKnZMp4E6QvgrP",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "1f574703-f34c-468d-8052-95449ac210f9",
+          "lemlistId": "cam_p7dx8TMT5v2cfxAoH",
+          "nom": "test page carrière recruteurs",
+          "statut": "draft",
+          "creee_le": "2024-10-10",
+          "sequenceId": "seq_rJdQPLuutq4GvNtnK",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "b2eef3fc-4a3c-414e-9fdb-1cb7b9845066",
+          "lemlistId": "cam_qzaAqEtiG3HfNZvH5",
+          "nom": "[Liste Thibault Renouf][Commerces de détail][ 10 Octobre]",
+          "statut": "archived",
+          "creee_le": "2024-10-10",
+          "sequenceId": "seq_z68JHwYt6kBkfmv7f",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "2e8055ab-b52a-45ad-adb9-42963a3b437a",
+          "lemlistId": "cam_XtbHm3LwpejsZ2row",
+          "nom": "Jordan's campaign (4)",
+          "statut": "draft",
+          "creee_le": "2024-10-10",
+          "sequenceId": "seq_WhR8ezRDmW63mecSx",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "c3dbed6d-4bf9-4375-8c2d-aa87efa1ab2c",
+          "lemlistId": "cam_QiKvz9iJqgALccqzc",
+          "nom": "[Participants BATIMAT][Commerce de gros][Octobre]",
+          "statut": "archived",
+          "creee_le": "2024-10-09",
+          "sequenceId": "seq_DYs4CzyS6gKNKTtaf",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "71973198-6bc0-423c-a403-79d168392a5b",
+          "lemlistId": "cam_P7ZYnyJ6TyDYHuFuQ",
+          "nom": "[Participants BATIMAT][Artisans-Fabricants][Octobre]",
+          "statut": "archived",
+          "creee_le": "2024-10-08",
+          "sequenceId": "seq_a7ESmZNp4XfSiCuRL",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "608cda58-40e7-4759-8eca-8a7a1327fde6",
+          "lemlistId": "cam_tvrn4jrknRpMpjv7e",
+          "nom": "[Recruteurs ETI-Grands Comptes]",
+          "statut": "draft",
+          "creee_le": "2024-10-04",
+          "sequenceId": "seq_XGtGgFmX37GaCswJp",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "93b900bc-3a79-4b27-84bd-0dbee4ec1065",
+          "lemlistId": "cam_zpL5D5sAxxJxR7y7N",
+          "nom": "[Recruteurs RH Retail][Octobre]",
+          "statut": "draft",
+          "creee_le": "2024-10-04",
+          "sequenceId": "seq_oK2EwNB2ys3FmcMMa",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "79d44b34-0e6e-46c1-93cf-169ee5e6c47d",
+          "lemlistId": "cam_2KbShQWggMe8yaFwo",
+          "nom": "[Resp Marketing Logistique & Transports] [Octobre]",
+          "statut": "draft",
+          "creee_le": "2024-10-03",
+          "sequenceId": "seq_JqZJY8tPgnopgefqQ",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "3875ed16-a9d7-4bd8-8565-9be10e10257c",
+          "lemlistId": "cam_YyqqWcXPCEmtp8vpm",
+          "nom": "[Changements de postes] [Octobre]",
+          "statut": "archived",
+          "creee_le": "2024-10-02",
+          "sequenceId": "seq_F7P66y8dZd2STYw5q",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "c0e143b7-4112-4a90-a19a-42744de5233c",
+          "lemlistId": "cam_LKtoTLhhsL9CenoTn",
+          "nom": "[Changement de postes CMO] [Octobre] [UK]",
+          "statut": "draft",
+          "creee_le": "2024-10-02",
+          "sequenceId": "seq_auAsDXykWsHnTSDrF",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "0fe24cf8-0b1a-427e-a1f4-b7a6e7bcb2bd",
+          "lemlistId": "cam_WryX5MaokA7PRYLap",
+          "nom": "Bulldozer- Technology Use YoastSEO [LinkedIn + Phone Number ]",
+          "statut": "draft",
+          "creee_le": "2024-09-18",
+          "sequenceId": "seq_i9xWpjuitc9WybKFr",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "814888b6-6781-43f1-bd10-98b0cd381703",
+          "lemlistId": "cam_ykfqceAg2qeS55x9k",
+          "nom": "Bulldozer- Technology Use Yoast SEO [LinkedIn Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-18",
+          "sequenceId": "seq_ukgeM7tpwz2GcZyaA",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "ef8d3b9c-4ba4-4573-b8e2-a1962df991ea",
+          "lemlistId": "cam_CakkQuiFS94KWDNEa",
+          "nom": "Bulldozer- Technology Use - YoastSEO [Email]",
+          "statut": "draft",
+          "creee_le": "2024-09-18",
+          "sequenceId": "seq_Wb8E9qPBqLiLdhaSk",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "cd561bf6-9224-4a6b-b145-f245820a5798",
+          "lemlistId": "cam_EKKZ4TZohjBzSChg7",
+          "nom": "Bulldozer-Lookalike [Phone Number + LinkedIn ]",
+          "statut": "draft",
+          "creee_le": "2024-09-18",
+          "sequenceId": "seq_f27huzwAEhcjuNhJa",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "3f7d52fe-9f5a-4cb0-9ec0-f3c26f8b3ab8",
+          "lemlistId": "cam_TzvMg8ooCPokSa36t",
+          "nom": "Bulldozer-Lookalike [LinkedIn Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-18",
+          "sequenceId": "seq_zHEnShfjNfZwEmsm6",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "ff36015e-93a6-482c-9e06-8b21a5ad7338",
+          "lemlistId": "cam_5xJftGzHv2xEr8LMK",
+          "nom": "Bulldozer-Lookalike [Email]",
+          "statut": "draft",
+          "creee_le": "2024-09-18",
+          "sequenceId": "seq_yF3j5ypHWg5ju33BE",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "5e9280cb-0f42-4f78-9a05-1687439b2fca",
+          "lemlistId": "cam_Epdd6DxQzWmqom6P2",
+          "nom": "[Liste générale CMO] [Septembre]",
+          "statut": "archived",
+          "creee_le": "2024-09-16",
+          "sequenceId": "seq_q9m2RhqZjz493ytLF",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "e617fddf-98c7-46ee-8574-ccbe4c91f539",
+          "lemlistId": "cam_mQPhPzEeoWgaDdKAd",
+          "nom": "Bulldozer-Suggestions Linkedin",
+          "statut": "archived",
+          "creee_le": "2024-09-13",
+          "sequenceId": "seq_oaBwa6wKiTqEagNwj",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "ef0a3cba-5826-4d6c-a343-f15c90e2608c",
+          "lemlistId": "cam_7GTdvkqE3xeNz2rFM",
+          "nom": "Bulldozer-Respo Market-Education",
+          "statut": "archived",
+          "creee_le": "2024-09-12",
+          "sequenceId": "seq_4Qz82ZTbuyP3273X6",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "20d41da2-92a9-4fae-abd2-599dbd0a6a9b",
+          "lemlistId": "cam_hcPvCuS66hAzFKnRf",
+          "nom": "Bulldozer-[CMO][Followers Partoo]",
+          "statut": "archived",
+          "creee_le": "2024-09-12",
+          "sequenceId": "seq_Z9xCYSzko5X8RMK7B",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "293a7433-29e6-4d99-af14-11a392efc1c5",
+          "lemlistId": "cam_wMeWARoPaRMzQHGFT",
+          "nom": "Bulldozer-Followers Fifty-five [Error Screenshot]",
+          "statut": "draft",
+          "creee_le": "2024-09-11",
+          "sequenceId": "seq_4yzRt6GKBfcmt69LS",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "6976b25d-bea5-47b5-ad07-1d4e48b3ec65",
+          "lemlistId": "cam_ctiMpw6tFtTX8pHp3",
+          "nom": "Bulldozer-Followers Fifty-five[Linkedin Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-10",
+          "sequenceId": "seq_FmaMHoS3BKXhxA2Wb",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "61b20727-3940-4e9d-932f-114df33f3591",
+          "lemlistId": "cam_pXYHhRGgksTaJ3ZKw",
+          "nom": "Bulldozer-Changements de postes larger scope",
+          "statut": "archived",
+          "creee_le": "2024-09-10",
+          "sequenceId": "seq_GpysqBT7nMA76Rkr5",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "82e05066-911e-4a9a-be52-a7f3385eafa7",
+          "lemlistId": "cam_zDzJ83Nf8ptJtDxDd",
+          "nom": "Bulldozer-Followers Publicis",
+          "statut": "archived",
+          "creee_le": "2024-09-10",
+          "sequenceId": "seq_b4YsLww69cptFQmEL",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "aa4865b6-cca4-469a-8b2e-5f8172699b52",
+          "lemlistId": "cam_4o4XPnB54du8vX996",
+          "nom": "Bulldozer-Followers FIfty-five",
+          "statut": "draft",
+          "creee_le": "2024-09-10",
+          "sequenceId": "seq_DMg8Q5LhyW37HmkTz",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "8b689675-787a-4a1d-af8b-2ffd882854a9",
+          "lemlistId": "cam_S8Zv34XkoFSpseFcQ",
+          "nom": "Bulldozer-CMO-Company Growth[Linkedin Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-06",
+          "sequenceId": "seq_SCNgiM6sHbvBiBck7",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "88dd8fcc-3f27-4b37-ad4c-bf30970e4004",
+          "lemlistId": "cam_ZF4k38E29oK6N7DDf",
+          "nom": "Bulldozer-CMO-Company Growth[Phone Number Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-06",
+          "sequenceId": "seq_hbYaiueqDotosKcHm",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "4a391b50-4d90-499e-9ac0-2fea63c3cd5e",
+          "lemlistId": "cam_iqjx6G978oRN2s4jx",
+          "nom": "Bulldozer-CMO-Company Growth[Email]",
+          "statut": "draft",
+          "creee_le": "2024-09-06",
+          "sequenceId": "seq_iY6nexdMRnG6JkBsP",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "13d1c8ce-2ab1-47b2-b4c8-4003c4c6be6f",
+          "lemlistId": "cam_FPTshyubCwaNRftuZ",
+          "nom": "Bulldozer-CMO-New Role [Email]",
+          "statut": "draft",
+          "creee_le": "2024-09-03",
+          "sequenceId": "seq_c3Xnxt72wEBZTC54a",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "7598ec3c-1cad-47e0-8f3c-956149beb46f",
+          "lemlistId": "cam_C9DqRjQgsJ25kLwrR",
+          "nom": "Bulldozer-CMO-New Role[Linkedin Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-03",
+          "sequenceId": "seq_pwnChm6cPNsjRnMYf",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "86b722bb-2761-43e2-b317-9a9055a4109b",
+          "lemlistId": "cam_cSsiqbCTFdpNNPu7X",
+          "nom": "Bulldozer-CMO-New Role[Phone Number Only]",
+          "statut": "draft",
+          "creee_le": "2024-09-03",
+          "sequenceId": "seq_3xa5CJbiff3ojnJh2",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "309c0dc6-ff54-4712-98a7-5c5ae303cbbd",
+          "lemlistId": "cam_vyRFLgkYvsXaT6TDq",
+          "nom": "Followers Publicis CMOs",
+          "statut": "archived",
+          "creee_le": "2024-09-02",
+          "sequenceId": "seq_3iXEEXfmXBGT67zXB",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "1bdf3be6-fb71-46a6-9fe8-a5daaa801e13",
+          "lemlistId": "cam_8b73bXCp3kr32GX2Q",
+          "nom": "Followers Publicis CROs",
+          "statut": "archived",
+          "creee_le": "2024-09-02",
+          "sequenceId": "seq_LnEQtT9wHgALTXHLb",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "6b39ddfe-cfc8-4746-a301-8ccd7e30d072",
+          "lemlistId": "cam_sda7giGGKzHYsHkjh",
+          "nom": "Followers CMO BTEC",
+          "statut": "ended",
+          "creee_le": "2024-09-02",
+          "sequenceId": "seq_LEbF7hJGmB8oWiEpy",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "5ea8a6af-49c3-4644-8f8f-dbbb6278fed6",
+          "lemlistId": "cam_bLdtaXFjwZmFSGmhz",
+          "nom": "Linkedin Only ØMail  ØPhone",
+          "statut": "draft",
+          "creee_le": "2024-08-28",
+          "sequenceId": "seq_pevHFiFc7tFJ8AZaQ",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "4a778940-7a1c-4e27-93c0-6aba0be67bbc",
+          "lemlistId": "cam_hhLxXexPf4crivSXc",
+          "nom": "Recruteurs Construction",
+          "statut": "draft",
+          "creee_le": "2024-08-27",
+          "sequenceId": "seq_LRmqEcyuHYrLjo57W",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "5d63e67c-b70d-4e31-9ab4-e18ce901b264",
+          "lemlistId": "cam_vj8Mm7cvtx3u2mJZQ",
+          "nom": "Adresses Emails Inexploitables/Risquées",
+          "statut": "draft",
+          "creee_le": "2024-08-21",
+          "sequenceId": "seq_2G73yQvgnMSg6djyD",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "7651c8cd-2403-480b-83ca-4e866c034113",
+          "lemlistId": "cam_cuCHm6J4dyqn2Zgq4",
+          "nom": "Changement de postes CMO-Salesnav",
+          "statut": "ended",
+          "creee_le": "2024-08-20",
+          "sequenceId": "seq_WYqmPyD9h3cFKHTvi",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "8ec0f25e-5226-4de2-8911-27bd65b30187",
+          "lemlistId": "cam_pKMnvMt6jKXpLC4QZ",
+          "nom": "Changement de postes CMO-Pharrow",
+          "statut": "archived",
+          "creee_le": "2024-08-20",
+          "sequenceId": "seq_tBECSJ4bX5Xy3F8cg",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "6e8e4b1b-192e-4035-8032-4c983777b0d6",
+          "lemlistId": "cam_3cdSb8jXc8Y8o7eer",
+          "nom": "recyclage leads à éviter",
+          "statut": "archived",
+          "creee_le": "2024-08-06",
+          "sequenceId": "seq_cm3f2SrLkgucvafG4",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "24b790b6-f1ce-4933-80d4-af0270fffeb1",
+          "lemlistId": "cam_dMQdPHTpmHJodYvpg",
+          "nom": "recyclage leads liste à éviter",
+          "statut": "archived",
+          "creee_le": "2024-08-05",
+          "sequenceId": "seq_jdJARDRxNMQjNiX6a",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "cf2f2c23-60da-4231-9440-eb15d9596d5d",
+          "lemlistId": "cam_jex95PEAAf897QHQN",
+          "nom": "Changement de postes CMO 31-07-24",
+          "statut": "draft",
+          "creee_le": "2024-07-30",
+          "sequenceId": "seq_C2zdMZuWntv5nJrAd",
+          "hasError": false,
+          "createur": null
+        },
+        {
+          "id": "940db02f-eb84-4e3a-be0b-3dd36186ff7b",
+          "lemlistId": "cam_bL9AhLDPjGPcrxEKE",
+          "nom": "Screenshot recyclage 1",
+          "statut": "archived",
+          "creee_le": "2024-07-08",
+          "sequenceId": "seq_TDQ3y9675oGQ3J95L",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "e6de461d-6638-49a2-a667-b02dda981fd5",
+          "lemlistId": "cam_rtPiKEXk3mYRgtxvb",
+          "nom": "Website Visitor 4",
+          "statut": "ended",
+          "creee_le": "2024-07-05",
+          "sequenceId": "seq_GMjaKSRYH3mRYNERt",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "33f9d7d7-7630-46a1-aaa8-1641f3b3e1b5",
+          "lemlistId": "cam_dhin6EugbnjZmyaHn",
+          "nom": "Velux-like + screenshot",
+          "statut": "archived",
+          "creee_le": "2024-07-03",
+          "sequenceId": "seq_R5ctSkqwhF7k5xbPE",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "06e64d13-3bd5-4c5f-a0e1-b598fe435d7b",
+          "lemlistId": "cam_B9edoXXTTazYquRko",
+          "nom": "Adecco-like + screenshot",
+          "statut": "archived",
+          "creee_le": "2024-07-03",
+          "sequenceId": "seq_9DKdvtuC59e4NWQHt",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "2770b1f6-ede2-4de6-ad30-a733cc4ab6c0",
+          "lemlistId": "cam_TPDTmsncoB4N3pyoX",
+          "nom": "Vivatech",
+          "statut": "draft",
+          "creee_le": "2024-07-03",
+          "sequenceId": "seq_msDrGeMRLK8qqFsLb",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "94ff7491-128b-434e-a1ac-0254c3b41019",
+          "lemlistId": "cam_JhFgTPEJRyrHzEKuL",
+          "nom": "CMO edu recyclage Février + screenshot",
+          "statut": "ended",
+          "creee_le": "2024-07-01",
+          "sequenceId": "seq_xtHSKKHTpdZvBPds4",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "6c6f520e-0c10-4fa1-9f5c-7c576685b039",
+          "lemlistId": "cam_yqSJ9vqAz9dyfwkYW",
+          "nom": "Website Visitor 3",
+          "statut": "ended",
+          "creee_le": "2024-06-18",
+          "sequenceId": "seq_BgTmrDH3pui7PiwKA",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "125f9e81-959c-4b3b-8cae-6e3330646ec3",
+          "lemlistId": "cam_DCFCdbeMoTYyaK87z",
+          "nom": "CMO + screenshot",
+          "statut": "ended",
+          "creee_le": "2024-06-18",
+          "sequenceId": "seq_BR9eZiJkWp6gBnfxT",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "eb11008a-eee7-45bb-8274-22050dc31717",
+          "lemlistId": "cam_2hcNMoRui2MePT4iA",
+          "nom": "vidéo + screenshot A",
+          "statut": "ended",
+          "creee_le": "2024-06-07",
+          "sequenceId": "seq_xQ5DN997n6ztCEupW",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "7cd19ab5-1b7d-4557-a8d8-ed0330749aea",
+          "lemlistId": "cam_GAsmekEhAhGB7tgwB",
+          "nom": "vidéo + screenshot B",
+          "statut": "archived",
+          "creee_le": "2024-06-07",
+          "sequenceId": "seq_6JHMzkWhGEiBrQNcr",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "4c4d4ab6-640a-4673-9412-e07e36890ae5",
+          "lemlistId": "cam_uBwPEQFdupYDSCsgX",
+          "nom": "Website Visitor 2",
+          "statut": "ended",
+          "creee_le": "2024-05-28",
+          "sequenceId": "seq_5rGHjSxmc9ZBXnmMA",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "2ff0ef38-3ec9-405a-80a2-d1258408720f",
+          "lemlistId": "cam_bttAQzusXiBDYHd6z",
+          "nom": "Website Visitor",
+          "statut": "ended",
+          "creee_le": "2024-05-07",
+          "sequenceId": "seq_aRFhRjnCt3ke3o2Ny",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "9aa3c223-385e-4f82-bf2b-47f0f3c6c5be",
+          "lemlistId": "cam_vAcDdnu8fDQCx5kH9",
+          "nom": "Screenshot + compte publicitaire 3/3",
+          "statut": "ended",
+          "creee_le": "2024-05-07",
+          "sequenceId": "seq_Qnzj2zzNpJCAMA9br",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "e0ac6e4f-69d3-4a8b-b616-17d3d7d465fe",
+          "lemlistId": "cam_R4GejXNKaLn9FBv4Q",
+          "nom": "Screenshot + compte publicitaire 2/3",
+          "statut": "ended",
+          "creee_le": "2024-05-06",
+          "sequenceId": "seq_RgnHXDhZDqHjC2hK8",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "7202f4d9-4f25-4d3a-a163-9814f700cb47",
+          "lemlistId": "cam_sDKQ7aBmiC25Acsah",
+          "nom": "Screenshot + compte publicitaire 1/3",
+          "statut": "archived",
+          "creee_le": "2024-05-02",
+          "sequenceId": "seq_YZoAJGrBkLCSDmn8M",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "128efaed-a0b5-481f-8538-1363e5cd5f1f",
+          "lemlistId": "cam_5zkSEg8oNyCSB8z44",
+          "nom": "CMO - Education #2",
+          "statut": "ended",
+          "creee_le": "2024-04-05",
+          "sequenceId": "seq_GgDBbjTk8DEKQGmHt",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "8464f5aa-4dfc-453f-813f-d51bc1a5e2ba",
+          "lemlistId": "cam_zarhM2EqBSfAnbHqF",
+          "nom": "développement durable + efffectif marketing",
+          "statut": "archived",
+          "creee_le": "2024-03-26",
+          "sequenceId": "seq_86o5phqSnmzyT5m8W",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "6939f2b1-12e7-40b2-8b02-3ff99a6c3592",
+          "lemlistId": "cam_zSSeJpwZdu9udcqgQ",
+          "nom": "SaaS + effectif marketing",
+          "statut": "archived",
+          "creee_le": "2024-03-26",
+          "sequenceId": "seq_2aN7BECRpNaTpueZd",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "2d89545d-b932-49b0-87b3-e051dee11f73",
+          "lemlistId": "cam_w3KwahEYzkmz2h7cu",
+          "nom": "SaaS + effectif + recrutement",
+          "statut": "ended",
+          "creee_le": "2024-03-26",
+          "sequenceId": "seq_99KqwMxqjvHZ6oimZ",
+          "hasError": true,
+          "createur": null
+        },
+        {
+          "id": "4e95fd25-6587-4d51-868e-5435f16a0512",
+          "lemlistId": "cam_YwgfCs47wZXjQNJNm",
+          "nom": "CMO - Formation",
+          "statut": "ended",
+          "creee_le": "2024-02-08",
+          "sequenceId": "seq_syQk7iQdjFCBZ2oCx",
+          "hasError": true,
+          "createur": null
+        }
+      ],
+      "campagnes_page1_8_restantes": [
+        {
+          "nom": "CMO - prise de poste 90 jours - FR (kd)",
+          "statut": "archived",
+          "creee_le": "2024-02-07",
+          "sequenceId": "seq_XAFa9wHmZPH4xMnHy"
+        },
+        {
+          "nom": "Intrapreneur",
+          "statut": "ended",
+          "creee_le": "2024-02-05",
+          "sequenceId": "seq_KJgRmoe6ibW9PSTqr"
+        },
+        {
+          "nom": "CMO - Education",
+          "statut": "ended",
+          "creee_le": "2024-02-05",
+          "sequenceId": "seq_fLJjHjCc4A7whbw28"
+        },
+        {
+          "nom": "CMO - prise de poste 90 jours - FR (email+Lkd)",
+          "statut": "archived",
+          "creee_le": "2024-01-24",
+          "sequenceId": "seq_2NkirtdfmhPcrzu7K"
+        },
+        {
+          "nom": "Recrutement Marketing - Collab. Marketing",
+          "statut": "archived",
+          "creee_le": "2024-01-23",
+          "sequenceId": "seq_jwRPCftZmrLuDphwk"
+        },
+        {
+          "nom": "Recrutement Marketing - CMO",
+          "statut": "archived",
+          "creee_le": "2024-01-23",
+          "sequenceId": "seq_fsSGgTW57mcZRPK3v"
+        },
+        {
+          "nom": "Recrutement Marketing - CEO",
+          "statut": "archived",
+          "creee_le": "2024-01-22",
+          "sequenceId": "seq_Bv4BNGuaXMustfJ7e"
+        },
+        {
+          "nom": "MKT Profil + Essec",
+          "statut": "archived",
+          "creee_le": "2024-01-04",
+          "sequenceId": "seq_e78PwLCgo3hn565Sr"
+        }
+      ]
+    },
+    "reserves": [
+      "Aucun volume de leads exploitable : l'export Lemlist renvoie 0 lead sur toutes les campagnes testees, y compris celles qui ont reellement tourne. Un ecran 'volume outbound' ne peut PAS etre alimente.",
+      "Aucune metrique de performance (envois, ouvertures, clics, reponses, rebonds, rendez-vous) n'est exposee par ces endpoints - la doc de l'outil le dit explicitement.",
+      "89 campagnes sur 108 portent hasError=true : le connecteur est degrade, la synchronisation ne remonte pas tout.",
+      "Aucune campagne n'est en cours : 42 draft, 40 archived, 18 ended sur la page 0 ; les 8 de la page 1 sont archived ou ended.",
+      "92 campagnes sur 100 (page 0) ont un createur null : l'attribution interne n'est pas exploitable.",
+      "Les 8 campagnes creees en 2026 sont toutes en 'draft' : 4 autour du 'Guide Budget 2027', 1 TLA Jordan (engageurs post VivaTech), 3 tests MCP/techniques explicitement marques '0 lead, ne pas utiliser'.",
+      "Le dernier envoi reel documente remonte a fevrier 2025 ([Marketing director][Gmail/Outlook][February])."
+    ]
+  },
+  "seo": {
+    "disponible": true,
+    "source": "Bulldozer OS - bdzGetSeoDomains, bdzGetSeoDomainOverview, bdzGetSeoDomainKeywords, bdzGetSeoGscDomains, bdzGetGscDomainAnalyticsSummary",
+    "periode_couverte": "Apercu domaine : instantane 09/2026 (source FRANCE). Mots-cles : instantane 06/2026. Search Console : 113 jours reellement stockes entre le 2026-05-19 et le 2026-09-18.",
+    "donnees": {
+      "domaine_configure": {
+        "confirme": "bulldozer-collective.com",
+        "domainId": "eaa8ca4a-4cf2-436d-8c81-33ec23089ea0",
+        "companyId": "405037f0-dd7b-4691-a039-69cbcd7ddf8e",
+        "cree_le": "2026-06-09T12:31:14Z",
+        "champ_sources": [],
+        "remarque": "Le champ `sources` du domaine est vide, mais les donnees repondent bien pour la source FRANCE. 70 domaines SEO sont enregistres sur le projet ; les 69 autres sont des clients, prospects ou concurrents (junto.fr, eskimoz.fr, primelis.com, growthroom.co, digimood.com, mysunbed.com, zazume.com, lockself.com...) et 2 domaines de test (test-mcp-2207-*.example.com). Un seul concerne Bulldozer."
+      },
+      "apercu_domaine": {
+        "analysisId": "e6d8b265-97aa-432c-a36d-f3b95371268e",
+        "mois": 9,
+        "annee": 2026,
+        "source": "FRANCE",
+        "trafic_organique_estime": 4659,
+        "nombre_mots_cles_organiques": 242,
+        "cout_organique_equivalent": 11529.19,
+        "brandedTrafficPercent": null,
+        "repartition_positions": {
+          "pos1": 6,
+          "pos2_3": 17,
+          "pos4_10": 63,
+          "pos11_20": 47,
+          "pos21_30": 49,
+          "pos31_40": 17,
+          "pos41_50": 19,
+          "pos51_60": 11,
+          "pos61_70": 4,
+          "pos71_80": 7,
+          "pos81_90": 1,
+          "pos91_100": 1
+        }
+      },
+      "mots_cles": {
+        "analysisId": "decd362e-4a29-49bf-beb8-eca15d0522b6",
+        "mois": 6,
+        "annee": 2026,
+        "source": "FRANCE",
+        "nombre_renvoye": 100,
+        "nombre_detaille_ici": 40,
+        "tri": "trafficPercent DESC",
+        "detail": [
+          {
+            "mot_cle": "growth hacking techniques",
+            "position": 2,
+            "volume": 12100,
+            "cpc": 0.0,
+            "part_trafic_pct": 22.39,
+            "marque": false,
+            "url": "/articles/growth-hacking"
+          },
+          {
+            "mot_cle": "strategie acquisition growthpath funnel conversion",
+            "position": 1,
+            "volume": 2400,
+            "cpc": 0.0,
+            "part_trafic_pct": 8.34,
+            "marque": false,
+            "url": "/articles/optimiser-funnel-marketing"
+          },
+          {
+            "mot_cle": "comment optimiser conversion funnelboost max",
+            "position": 1,
+            "volume": 1600,
+            "cpc": 0.0,
+            "part_trafic_pct": 5.55,
+            "marque": false,
+            "url": "/fr/articles/optimiser-funnel-marketing"
+          },
+          {
+            "mot_cle": "what is a landing page conversion",
+            "position": 2,
+            "volume": 8100,
+            "cpc": 0.0,
+            "part_trafic_pct": 3.96,
+            "marque": false,
+            "url": "/articles/comment-creer-une-landing-page-a-fort-taux-de-conversion"
+          },
+          {
+            "mot_cle": "tofu mofu bofu",
+            "position": 1,
+            "volume": 1000,
+            "cpc": 1.91,
+            "part_trafic_pct": 3.47,
+            "marque": false,
+            "url": "/articles/tofu-mofu-bofu"
+          },
+          {
+            "mot_cle": "agence google ads strasbourg",
+            "position": 1,
+            "volume": 880,
+            "cpc": 10.61,
+            "part_trafic_pct": 3.05,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "bulldozer",
+            "position": 2,
+            "volume": 9900,
+            "cpc": 0.13,
+            "part_trafic_pct": 3.04,
+            "marque": true,
+            "url": "/fr"
+          },
+          {
+            "mot_cle": "bulldozer collective",
+            "position": 1,
+            "volume": 170,
+            "cpc": 1.5,
+            "part_trafic_pct": 1.9,
+            "marque": true,
+            "url": "/fr"
+          },
+          {
+            "mot_cle": "buldozer",
+            "position": 1,
+            "volume": 1900,
+            "cpc": 0.11,
+            "part_trafic_pct": 1.72,
+            "marque": true,
+            "url": "/fr"
+          },
+          {
+            "mot_cle": "bulldozer agence",
+            "position": 1,
+            "volume": 140,
+            "cpc": 1.74,
+            "part_trafic_pct": 1.57,
+            "marque": true,
+            "url": "/fr"
+          },
+          {
+            "mot_cle": "agence seo nantes",
+            "position": 4,
+            "volume": 3600,
+            "cpc": 5.01,
+            "part_trafic_pct": 1.51,
+            "marque": false,
+            "url": "/agence/agence-seo-nantes"
+          },
+          {
+            "mot_cle": "agence seo lille",
+            "position": 2,
+            "volume": 2400,
+            "cpc": 4.71,
+            "part_trafic_pct": 1.47,
+            "marque": false,
+            "url": "/fr/articles/top-agence-seo-lille"
+          },
+          {
+            "mot_cle": "consultant seo lyon",
+            "position": 2,
+            "volume": 2400,
+            "cpc": 2.25,
+            "part_trafic_pct": 1.47,
+            "marque": false,
+            "url": "/consultant/consultant-seo-lyon"
+          },
+          {
+            "mot_cle": "agence google adwords strasbourg",
+            "position": 1,
+            "volume": 390,
+            "cpc": 10.61,
+            "part_trafic_pct": 1.34,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "consultant seo lille",
+            "position": 1,
+            "volume": 1300,
+            "cpc": 2.53,
+            "part_trafic_pct": 1.17,
+            "marque": false,
+            "url": "/consultant/consultant-seo-lille"
+          },
+          {
+            "mot_cle": "strategie growth hacking boostmatic 360 guide",
+            "position": 1,
+            "volume": 1900,
+            "cpc": 0.0,
+            "part_trafic_pct": 1.16,
+            "marque": false,
+            "url": "/articles/objectifs-croissance-growth-hacking"
+          },
+          {
+            "mot_cle": "agence sea nantes",
+            "position": 1,
+            "volume": 1000,
+            "cpc": 12.92,
+            "part_trafic_pct": 0.91,
+            "marque": false,
+            "url": "/agence/agence-sea-nantes"
+          },
+          {
+            "mot_cle": "audit adwords",
+            "position": 1,
+            "volume": 260,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.89,
+            "marque": false,
+            "url": "/articles/les-cles-pour-un-audit-google-ads-reussi"
+          },
+          {
+            "mot_cle": "expert google ads strasbourg",
+            "position": 1,
+            "volume": 260,
+            "cpc": 13.7,
+            "part_trafic_pct": 0.89,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "aida framework",
+            "position": 2,
+            "volume": 480,
+            "cpc": 0.71,
+            "part_trafic_pct": 0.88,
+            "marque": false,
+            "url": "/fr/articles/modele-de-copywriting-aida"
+          },
+          {
+            "mot_cle": "audit google ads",
+            "position": 3,
+            "volume": 720,
+            "cpc": 6.02,
+            "part_trafic_pct": 0.82,
+            "marque": false,
+            "url": "/articles/les-cles-pour-un-audit-google-ads-reussi"
+          },
+          {
+            "mot_cle": "agence seo montpellier",
+            "position": 6,
+            "volume": 2400,
+            "cpc": 3.88,
+            "part_trafic_pct": 0.79,
+            "marque": false,
+            "url": "/agence/agence-seo-montpellier"
+          },
+          {
+            "mot_cle": "strategie growth hacking boostmetrics framework",
+            "position": 2,
+            "volume": 2400,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.72,
+            "marque": false,
+            "url": "/articles/growth-hacking"
+          },
+          {
+            "mot_cle": "strategie marketing funnel optimizer avis utilisateurs",
+            "position": 6,
+            "volume": 2400,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.72,
+            "marque": false,
+            "url": "/articles/optimiser-funnel-marketing"
+          },
+          {
+            "mot_cle": "agence ia paris",
+            "position": 1,
+            "volume": 210,
+            "cpc": 3.3,
+            "part_trafic_pct": 0.72,
+            "marque": false,
+            "url": "/agence/agence-ia-paris"
+          },
+          {
+            "mot_cle": "agence google ads strasbourg crokseo flo 1",
+            "position": 2,
+            "volume": 390,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.71,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "consultant seo lille$",
+            "position": 1,
+            "volume": 720,
+            "cpc": 1.77,
+            "part_trafic_pct": 0.64,
+            "marque": false,
+            "url": "/consultant/consultant-seo-lille"
+          },
+          {
+            "mot_cle": "expert sea strasbourg",
+            "position": 2,
+            "volume": 320,
+            "cpc": 2.54,
+            "part_trafic_pct": 0.58,
+            "marque": false,
+            "url": "/fr/consultant/consultant-sea-strasbourg"
+          },
+          {
+            "mot_cle": "google ads strasbourg",
+            "position": 1,
+            "volume": 170,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.58,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "agence google ads toulouse",
+            "position": 3,
+            "volume": 480,
+            "cpc": 7.87,
+            "part_trafic_pct": 0.54,
+            "marque": false,
+            "url": "/fr/articles/agence-google-ads-toulouse"
+          },
+          {
+            "mot_cle": "agence seo nice",
+            "position": 5,
+            "volume": 1600,
+            "cpc": 3.73,
+            "part_trafic_pct": 0.53,
+            "marque": false,
+            "url": "/agence/agence-seo-nice"
+          },
+          {
+            "mot_cle": "consultant google ads strasbourg",
+            "position": 4,
+            "volume": 590,
+            "cpc": 5.93,
+            "part_trafic_pct": 0.53,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "agence referencement lyon",
+            "position": 2,
+            "volume": 880,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.53,
+            "marque": false,
+            "url": "/articles/meilleures-agences-seo-lyon"
+          },
+          {
+            "mot_cle": "agence google ads nice",
+            "position": 2,
+            "volume": 260,
+            "cpc": 10.03,
+            "part_trafic_pct": 0.47,
+            "marque": false,
+            "url": "/agence/agence-google-ads-nice"
+          },
+          {
+            "mot_cle": "technical seo audit",
+            "position": 1,
+            "volume": 140,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.47,
+            "marque": false,
+            "url": "/articles/audit-technique-seo"
+          },
+          {
+            "mot_cle": "strategie growth hacking boostmethod advanced",
+            "position": 1,
+            "volume": 720,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.43,
+            "marque": false,
+            "url": "/articles/growth-hacking"
+          },
+          {
+            "mot_cle": "agence referencement naturel nantes",
+            "position": 6,
+            "volume": 880,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.42,
+            "marque": false,
+            "url": "/agence/agence-seo-nantes"
+          },
+          {
+            "mot_cle": "agence certifiee google strasbourg",
+            "position": 1,
+            "volume": 110,
+            "cpc": 1.89,
+            "part_trafic_pct": 0.37,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "agence de google ads strasbourg",
+            "position": 1,
+            "volume": 110,
+            "cpc": 0.0,
+            "part_trafic_pct": 0.37,
+            "marque": false,
+            "url": "/agence/agence-google-ads-strasbourg"
+          },
+          {
+            "mot_cle": "product led growth",
+            "position": 2,
+            "volume": 210,
+            "cpc": 4.24,
+            "part_trafic_pct": 0.37,
+            "marque": false,
+            "url": "/articles/product-led-growth-comment-integrer-entreprise"
+          }
+        ]
+      },
+      "search_console": {
+        "gscDomainId": "80d382e3-326d-4e89-b5d9-d95cb64cf789",
+        "domaine": "sc-domain:bulldozer-collective.com",
+        "enregistre_le": "2026-05-20T08:39:11Z",
+        "plage_demandee": "2025-09-01 -> 2026-09-21",
+        "jours_reellement_stockes": 113,
+        "lignes_agregees": 208529,
+        "premier_jour_stocke": "2026-05-19",
+        "dernier_jour_stocke": "2026-09-18",
+        "totaux_par_dimension": {
+          "QUERY": {
+            "clics": 4400,
+            "impressions": 1473604,
+            "ctr": 0.0029859,
+            "position": 8.474,
+            "requetes_distinctes": 10380
+          },
+          "PAGE": {
+            "clics": 8488,
+            "impressions": 6331044,
+            "ctr": 0.0013407,
+            "position": 5.665,
+            "pages_distinctes": 2598
+          },
+          "COUNTRY": {
+            "clics": 8364,
+            "impressions": 6045492,
+            "ctr": 0.0013835,
+            "position": 5.521,
+            "pays_distincts": 237
+          },
+          "DEVICE": {
+            "clics": 8364,
+            "impressions": 6045492,
+            "ctr": 0.0013835,
+            "position": 5.521,
+            "detail": {
+              "DESKTOP": {
+                "clics": 6555,
+                "impressions": 5006503
+              },
+              "MOBILE": {
+                "clics": 1788,
+                "impressions": 917166
+              },
+              "TABLET": {
+                "clics": 21,
+                "impressions": 121823
+              }
+            }
+          }
+        },
+        "top_requetes": [
+          {
+            "requete": "bulldozer",
+            "clics": 1120,
+            "impressions": 23907,
+            "ctr": 0.0468,
+            "position": 6.59
+          },
+          {
+            "requete": "bulldozer collective",
+            "clics": 585,
+            "impressions": 892,
+            "ctr": 0.6558,
+            "position": 1.41
+          },
+          {
+            "requete": "bulldozer agence",
+            "clics": 323,
+            "impressions": 426,
+            "ctr": 0.7582,
+            "position": 1.05
+          },
+          {
+            "requete": "bulldozer marketing",
+            "clics": 253,
+            "impressions": 375,
+            "ctr": 0.6747,
+            "position": 2.57
+          },
+          {
+            "requete": "bulldozer entreprise",
+            "clics": 126,
+            "impressions": 277,
+            "ctr": 0.4549,
+            "position": 1.04
+          },
+          {
+            "requete": "agence bulldozer",
+            "clics": 84,
+            "impressions": 119,
+            "ctr": 0.7059,
+            "position": 1.27
+          },
+          {
+            "requete": "bulldozer ia",
+            "clics": 81,
+            "impressions": 104,
+            "ctr": 0.7788,
+            "position": 1.99
+          },
+          {
+            "requete": "buldozer",
+            "clics": 74,
+            "impressions": 3003,
+            "ctr": 0.0246,
+            "position": 6.4
+          },
+          {
+            "requete": "bulldozer growth",
+            "clics": 63,
+            "impressions": 78,
+            "ctr": 0.8077,
+            "position": 3.42
+          },
+          {
+            "requete": "bulldozer agency",
+            "clics": 61,
+            "impressions": 84,
+            "ctr": 0.7262,
+            "position": 1.83
+          },
+          {
+            "requete": "bulldozer agence marketing",
+            "clics": 60,
+            "impressions": 72,
+            "ctr": 0.8333,
+            "position": 1.22
+          },
+          {
+            "requete": "bulldozer ai",
+            "clics": 59,
+            "impressions": 109,
+            "ctr": 0.5413,
+            "position": 1.48
+          },
+          {
+            "requete": "growth hacking",
+            "clics": 44,
+            "impressions": 3610,
+            "ctr": 0.0122,
+            "position": 6.41
+          },
+          {
+            "requete": "bulldozer freelance",
+            "clics": 44,
+            "impressions": 65,
+            "ctr": 0.6769,
+            "position": 1.0
+          },
+          {
+            "requete": "bulldozer os",
+            "clics": 41,
+            "impressions": 62,
+            "ctr": 0.6613,
+            "position": 1.79
+          },
+          {
+            "requete": "digital marketing guide 2026",
+            "clics": 34,
+            "impressions": 27458,
+            "ctr": 0.0012,
+            "position": 5.96
+          },
+          {
+            "requete": "growth marketing",
+            "clics": 25,
+            "impressions": 1467,
+            "ctr": 0.017,
+            "position": 12.24
+          },
+          {
+            "requete": "agence google ads strasbourg crokseo flo 1",
+            "clics": 24,
+            "impressions": 932,
+            "ctr": 0.0258,
+            "position": 12.88
+          },
+          {
+            "requete": "agence ia",
+            "clics": 23,
+            "impressions": 1115,
+            "ctr": 0.0206,
+            "position": 22.83
+          },
+          {
+            "requete": "agence ia paris",
+            "clics": 20,
+            "impressions": 1329,
+            "ctr": 0.015,
+            "position": 6.27
+          }
+        ],
+        "top_pages": [
+          {
+            "url": "/fr",
+            "clics": 3224,
+            "impressions": 25945,
+            "ctr": 0.1243,
+            "position": 5.94
+          },
+          {
+            "url": "/",
+            "clics": 655,
+            "impressions": 17644,
+            "ctr": 0.0371,
+            "position": 7.21
+          },
+          {
+            "url": "/articles/growth-hacking",
+            "clics": 229,
+            "impressions": 4295007,
+            "ctr": 5.33e-05,
+            "position": 2.05
+          },
+          {
+            "url": "/articles/prompts-seo-chatgpt",
+            "clics": 166,
+            "impressions": 25000,
+            "ctr": 0.0066,
+            "position": 14.67
+          },
+          {
+            "url": "/articles/growth-marketing-guide",
+            "clics": 136,
+            "impressions": 30873,
+            "ctr": 0.0044,
+            "position": 10.3
+          },
+          {
+            "url": "/articles/ugc",
+            "clics": 132,
+            "impressions": 46496,
+            "ctr": 0.0028,
+            "position": 8.09
+          },
+          {
+            "url": "/articles/modele-aarrr",
+            "clics": 130,
+            "impressions": 26443,
+            "ctr": 0.0049,
+            "position": 7.11
+          },
+          {
+            "url": "/articles/tofu-mofu-bofu",
+            "clics": 99,
+            "impressions": 47900,
+            "ctr": 0.0021,
+            "position": 7.13
+          },
+          {
+            "url": "/agence/agence-ia-paris",
+            "clics": 88,
+            "impressions": 10344,
+            "ctr": 0.0085,
+            "position": 16.75
+          },
+          {
+            "url": "/articles/comment-creer-une-landing-page-a-fort-taux-de-conversion",
+            "clics": 70,
+            "impressions": 178777,
+            "ctr": 0.00039,
+            "position": 6.12
+          }
+        ],
+        "top_pays": [
+          {
+            "pays": "fra",
+            "clics": 5839,
+            "impressions": 891367
+          },
+          {
+            "pays": "usa",
+            "clics": 267,
+            "impressions": 619280
+          },
+          {
+            "pays": "ind",
+            "clics": 229,
+            "impressions": 388831
+          },
+          {
+            "pays": "bel",
+            "clics": 142,
+            "impressions": 34818
+          },
+          {
+            "pays": "gbr",
+            "clics": 126,
+            "impressions": 149749
+          },
+          {
+            "pays": "che",
+            "clics": 103,
+            "impressions": 16052
+          },
+          {
+            "pays": "can",
+            "clics": 96,
+            "impressions": 89898
+          },
+          {
+            "pays": "esp",
+            "clics": 84,
+            "impressions": 118385
+          }
+        ]
+      }
+    },
+    "reserves": [
+      "Les deux instantanes SEO ne sont pas du meme mois : whenLatest renvoie l'analyse 09/2026 pour l'apercu et l'analyse 06/2026 pour les mots-cles. Ne pas croiser les deux dans un meme ecran sans le dire.",
+      "L'apercu annonce 242 mots-cles organiques, la liste n'en renvoie que 100 : le detail est partiel.",
+      "Plusieurs mots-cles du jeu sont manifestement pollues / fabriques : 'strategie acquisition growthpath funnel conversion', 'comment optimiser conversion funnelboost max', 'strategie growth hacking boostmatic 360 guide', 'strategie growth hacking boostmethod advanced', 'agence google ads strasbourg crokseo flo 1', 'consultant seo lille$'. Ils portent a eux seuls plus de 17 % du trafic annonce. A ne pas publier tels quels.",
+      "Search Console : les totaux different selon la dimension (QUERY 4 400 clics, PAGE 8 488, COUNTRY/DEVICE 8 364). Chaque dimension est agregee differemment en amont : ne JAMAIS les additionner ni les presenter comme un meme total.",
+      "Search Console : 113 jours stockes seulement sur les 386 demandes, et rien avant le 2026-05-19. Toute comparaison annee sur annee est impossible.",
+      "Le trafic organique de 4 659 est une ESTIMATION du fournisseur SEO, pas une mesure. Les clics Search Console sont, eux, mesures.",
+      "La ligne /articles/growth-hacking affiche 4 295 007 impressions pour 229 clics (CTR 0,005 %) : ordre de grandeur a verifier avant toute publication.",
+      "Aucune donnee GA4 n'a ete relevee dans ce travail : le rapprochement trafic organique -> conversions site n'est pas couvert."
+    ]
+  },
+  "sea": {
+    "disponible": false,
+    "source": "Bulldozer OS - bdzListGoogleAdwordAccounts, bdzListSeaL1s",
+    "periode_couverte": null,
+    "donnees": {
+      "comptes_google_ads_rattaches_au_projet": [
+        {
+          "id": "8029fc66-632c-4b97-ba08-dab56efd1006",
+          "adwordCustomerId": 1923201425,
+          "nom": "Bulldozer",
+          "devise": "EUR",
+          "role": "compte de connexion (adwordLoginId de tous les autres)",
+          "campagnes_SEA": 0
+        },
+        {
+          "id": "44c8debc-e0f4-4c6f-a488-12290f84257e",
+          "adwordCustomerId": 9808244998,
+          "nom": "Bulldozer",
+          "devise": "EUR",
+          "campagnes_SEA": 0
+        },
+        {
+          "id": "a8b168fc-86fd-4c03-91f3-81976f0ce2e0",
+          "adwordCustomerId": 8709137258,
+          "nom": "Bulldozer [TEST]",
+          "devise": "EUR",
+          "campagnes_SEA": "non interroge (compte de test)"
+        },
+        {
+          "id": "b20b3fd4-c6ce-4e61-ac61-ade3bc54a06a",
+          "adwordCustomerId": 6752036174,
+          "nom": null,
+          "devise": null,
+          "remarque": "nom et devise null : aucun import n'a encore tourne"
+        },
+        {
+          "id": "cbf81382-64e5-4135-b09f-8137960d06aa",
+          "adwordCustomerId": 3003241264,
+          "nom": "Eden par Advenis",
+          "devise": "EUR",
+          "nature": "client"
+        },
+        {
+          "id": "a2b7de4e-d1bf-4a15-ab1a-b2e9c5acca63",
+          "adwordCustomerId": 5434706758,
+          "nom": "archi'v",
+          "devise": "EUR",
+          "nature": "client"
+        },
+        {
+          "id": "8fea84b2-2f0f-4747-b989-a2c4b6920b1b",
+          "adwordCustomerId": 9926087732,
+          "nom": "UPELA_FR_GOOGLE",
+          "devise": "EUR",
+          "nature": "client"
+        },
+        {
+          "id": "6c513193-d1ee-4981-ad8f-efece6beb1df",
+          "adwordCustomerId": 1915330586,
+          "nom": "Ad's up - AP - Carryboo",
+          "devise": null,
+          "nature": "client"
+        }
+      ],
+      "volumetrie": {
+        "campagnes": 0,
+        "impressions": null,
+        "clics": null,
+        "depense": null,
+        "constat": "bdzListSeaL1s renvoie totalElement=0 sur les DEUX comptes Bulldozer (1923201425 et 9808244998). Aucune campagne Google Ads n'est importee pour Bulldozer."
+      }
+    },
+    "reserves": [
+      "Levier declare NON DISPONIBLE : aucune campagne, aucune metrique. Rien a estimer, rien a extrapoler.",
+      "Le suivi GTM interne (objectifs du projet) retient pourtant Google Ads comme regie du cycle 1, avec le compte 'AR04892468311402479617' - identifiant qui ne correspond a aucun des comptes ci-dessus. La regie est prevue mais n'a jamais diffuse.",
+      "Les mots-cles SEO 'agence sea nantes' (CPC 12,92 EUR), 'expert google ads strasbourg' (13,70 EUR) et 'agence google ads strasbourg' (10,61 EUR) donnent une idee du cout du marche, mais ce ne sont PAS des depenses Bulldozer.",
+      "Un ecran SEA doit etre marque 'non branche' dans le cockpit."
+    ]
+  },
+  "cadrage": {
+    "disponible": true,
+    "source": "Bulldozer OS - bdzGetProjectObjectives, bdzListProjectIcpProfiles",
+    "periode_couverte": "Suivi GTM : run 3, mis a jour le 2026-08-12. Mission App : journal du 2026-09-15 au 2026-09-16.",
+    "donnees": {
+      "objectifs_du_projet": {
+        "types_renvoyes": [
+          "PROJECT_OBJECTIVE_TYPE_COMPANY_PURPOSE",
+          "PROJECT_OBJECTIVE_TYPE_PRIVATE_INSIGHTS"
+        ],
+        "COMPANY_PURPOSE": {
+          "rempli": false,
+          "valeur": ""
+        },
+        "types_absents": [
+          "TARGETS",
+          "STRATEGICAL_DECISIONS",
+          "CONSTRAINTS",
+          "BUYING_COMMITTEE",
+          "FINANCIALS",
+          "FUNNEL",
+          "SALES_CALL_OBJECTIONS",
+          "WIN_LOSS_REASON"
+        ],
+        "PRIVATE_INSIGHTS": {
+          "rempli": true,
+          "contenu": "JSON portant deux blocs : 'gtm-tracker' (suivi de la mission GTM interne) et 'mission-app' (configuration de l'application de mission deployee sur bulldozer.bulldozer-os.fr/mission/)",
+          "gtm_tracker": {
+            "run": 3,
+            "updatedAt": "2026-08-12",
+            "objectif": "Trouver la promesse qui declenche la prise de contact",
+            "regle_de_test": "5 promesses testees sur CHAQUE regie activee. 10 EUR/jour par promesse et par regie. 5 pages d'atterrissage, une par promesse, seule l'accroche change.",
+            "jalons": [
+              {
+                "titre": "Espace de suivi de la mission en ligne",
+                "statut": "Valide"
+              },
+              {
+                "titre": "Cible et profil client",
+                "statut": "Valide",
+                "detail": "Scale-up SaaS B2B de 30 a 300 salaries, validee le 11/08"
+              },
+              {
+                "titre": "5 promesses formulees",
+                "statut": "Valide"
+              },
+              {
+                "titre": "Validation des promesses",
+                "statut": "Valide"
+              },
+              {
+                "titre": "Production des pages et des visuels",
+                "statut": "A valider",
+                "detail": "5 pages en ligne, 15 visuels produits"
+              },
+              {
+                "titre": "Campagnes en diffusion",
+                "statut": "Non demarree"
+              }
+            ],
+            "cible_retenue": {
+              "id": "ICP-1",
+              "libelle": "Scale-up SaaS B2B en acceleration",
+              "criteres": "30 a 300 salaries - SaaS B2B, Software, HR Tech, Dev Tools, Cybersecurite - budget marketing > 15 K EUR/mois",
+              "interlocuteurs": "CMO, Head of Growth, VP Marketing, Growth Lead, Directeur Acquisition",
+              "exclusions": "< 15 salaries, > 5000 salaries, banque de detail, assurance grand public, telecoms, grande distribution",
+              "statut": "Valide"
+            },
+            "promesses": [
+              {
+                "libelle": "L'equipe senior que vous n'arrivez pas a recruter",
+                "angle": "Vitesse",
+                "statut": "Validee",
+                "lp": "https://bulldozer.bulldozer-os.fr/lp-pv1-vitesse/"
+              },
+              {
+                "libelle": "Du pipeline mesurable au 3e mois",
+                "angle": "Resultat chiffre",
+                "statut": "Validee",
+                "lp": "https://bulldozer.bulldozer-os.fr/lp-pv2-pipeline/"
+              },
+              {
+                "libelle": "Des seniors dans votre equipe, pas une agence",
+                "angle": "Identite",
+                "statut": "Validee",
+                "lp": "https://bulldozer.bulldozer-os.fr/lp-pv3-equipe/"
+              },
+              {
+                "libelle": "On construit votre moteur, puis on vous rend les cles",
+                "angle": "Transformation",
+                "statut": "Validee",
+                "lp": "https://bulldozer.bulldozer-os.fr/lp-pv4-autonomie/"
+              },
+              {
+                "libelle": "Le marketing augmente par l'IA, opere par des humains seniors",
+                "angle": "Exclusivite",
+                "statut": "Validee",
+                "lp": "https://bulldozer.bulldozer-os.fr/lp-pv5-ia/"
+              }
+            ],
+            "mix_regies": [
+              {
+                "regie": "Meta",
+                "statut": "Retenu",
+                "compte": "Bulldozer (231961352837525)"
+              },
+              {
+                "regie": "Google Ads",
+                "statut": "Retenu",
+                "compte": "AR04892468311402479617"
+              },
+              {
+                "regie": "LinkedIn Ads",
+                "statut": "Retenu",
+                "compte": "BULLDOZER (511718129)"
+              },
+              {
+                "regie": "Emailing sortant",
+                "statut": "Ecarte",
+                "compte": "Liste RISE 2026",
+                "raison": "la liste ne contient que 10 contacts dans l'OS alors que son intitule annonce 400 entreprises x 3 decideurs"
+              }
+            ],
+            "criteres_de_decision": [
+              {
+                "indicateur": "Cout par contact",
+                "seuil": "a etablir"
+              },
+              {
+                "indicateur": "Taux de clic",
+                "seuil": "signal precoce"
+              },
+              {
+                "indicateur": "Taux de conversion de la page",
+                "seuil": "signal precoce"
+              },
+              {
+                "indicateur": "Volume de contacts",
+                "seuil": ">= 30 par promesse"
+              }
+            ],
+            "points_ouverts": [
+              "Aucune cible de cout par contact n'est fixee.",
+              "Budget par regie a confirmer : 10 EUR/j par promesse et par regie, 50 EUR/j par regie, 150 EUR/j au total.",
+              "Aucun verbatim client : le workspace ne contient aucun transcript de call.",
+              "Liste 'RISE 2026' a reconstituer : 10 contacts dans l'OS contre 400 entreprises x 3 decideurs annonces.",
+              "Les 5 pages pointent vers le Typeform/HubSpot de Bulldozer, pas vers une lead list de l'OS.",
+              "Bulldozer Studio inexploitable pour les visuels (6 essais le 12/08).",
+              "API /hostings plafonnee a 20 resultats."
+            ]
+          },
+          "mission_app": {
+            "url": "https://bulldozer.bulldozer-os.fr/mission/",
+            "version_coquille": "1.5.2",
+            "deploye_le": "2026-09-16T08:50:00Z",
+            "deploye_par": "Gilles Santos",
+            "onglets_publies": [
+              "gtm.mission (playbook)",
+              "paid.dashboard (dashboard)",
+              "paid.creas (dashboard)"
+            ],
+            "connecteurs_paid_cables": [
+              "meta-ads",
+              "linkedin-ads"
+            ],
+            "comptes_lus_par_les_dashboards": [
+              "0ecad557-21bb-4f2a-bdd9-b99eda421e84 (Meta Bulldozer)",
+              "99567c90-5662-4568-aa1b-88fd727cbf1c (LinkedIn BULLDOZER)"
+            ],
+            "resultat_suivi": "conversion (evenements personnalises du compte Meta, pas de famille lead)",
+            "charte": {
+              "primary": "#1a1a19",
+              "accent": "#DDFF56",
+              "bg": "#F3F3F0",
+              "surface": "#FFFFFF",
+              "text": "#1a1a19"
+            },
+            "remarque_pour_le_cockpit": "Un dashboard paid et un dashboard creas existent deja et lisent exactement les deux memes comptes. A regarder avant de reconstruire les ecrans 'leviers'."
+          }
+        }
+      },
+      "profils_icp_enregistres": {
+        "nombre": 11,
+        "repartition": {
+          "ICP": 5,
+          "PRESCRIBER": 2,
+          "BLIND_SPOT": 2,
+          "ANTI_PERSONA": 2
+        },
+        "auto_generes": 9,
+        "saisis_a_la_main": 2,
+        "detail": [
+          {
+            "nom": "Tier 1+",
+            "type": "ICP",
+            "metiers": [
+              "CMO",
+              "Head of Growth",
+              "Head of Marketing",
+              "CRO"
+            ],
+            "secteurs": [
+              "SaaS B2B",
+              "Fintech",
+              "HR Tech",
+              "healthcare"
+            ],
+            "effectif_min": 51,
+            "effectif_max": 200,
+            "auto_genere": false,
+            "tier": null
+          },
+          {
+            "nom": "Tier 1",
+            "type": "ICP",
+            "metiers": [
+              "Head of Growth",
+              "CMO",
+              "Head of Marketing",
+              "CRO"
+            ],
+            "secteurs": [
+              "SaaS B2B",
+              "edtech"
+            ],
+            "effectif_min": 201,
+            "effectif_max": 1000,
+            "auto_genere": false,
+            "tier": null
+          },
+          {
+            "nom": "PME/ETI dans un secteur concurrentiel cherchant a digitaliser son acquisition",
+            "type": "ICP",
+            "metiers": [
+              "Directeur Marketing",
+              "Directeur Commercial",
+              "Responsable Digital",
+              "CEO",
+              "Directeur General"
+            ],
+            "secteurs": [
+              "Sante / Healthtech",
+              "Finance / Assurance",
+              "Immobilier",
+              "Education"
+            ],
+            "effectif_min": 50,
+            "effectif_max": 500,
+            "auto_genere": true,
+            "tier": 1
+          },
+          {
+            "nom": "Scale-up SaaS B2B en phase de croissance",
+            "type": "ICP",
+            "metiers": [
+              "Head of Growth",
+              "CMO",
+              "Directeur Marketing",
+              "VP Marketing",
+              "Growth Manager"
+            ],
+            "secteurs": [
+              "SaaS",
+              "Tech B2B",
+              "Logiciels d'entreprise"
+            ],
+            "effectif_min": 20,
+            "effectif_max": 250,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Startup en phase de go-to-market cherchant a valider ses canaux d'acquisition",
+            "type": "ICP",
+            "metiers": [
+              "CEO",
+              "Co-fondateur",
+              "Head of Growth",
+              "CMO"
+            ],
+            "secteurs": [
+              "SaaS",
+              "Fintech",
+              "Healthtech",
+              "EdTech",
+              "Marketplace B2B"
+            ],
+            "effectif_min": 5,
+            "effectif_max": 50,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Consultant en strategie / Cabinet de conseil en transformation digitale",
+            "type": "PRESCRIBER",
+            "metiers": [
+              "Consultant Senior",
+              "Manager",
+              "Directeur de mission",
+              "Associe"
+            ],
+            "secteurs": [
+              "Conseil en strategie",
+              "Conseil en transformation digitale",
+              "Integrateurs CRM/ERP"
+            ],
+            "effectif_min": null,
+            "effectif_max": null,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Investisseur / Fonds de Venture Capital",
+            "type": "PRESCRIBER",
+            "metiers": [
+              "Partner",
+              "Investment Manager",
+              "Venture Partner",
+              "Associate VC"
+            ],
+            "secteurs": [
+              "Capital-risque",
+              "Private Equity growth",
+              "Accelerateurs de startups"
+            ],
+            "effectif_min": null,
+            "effectif_max": null,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Acteur de l'immobilier digital et de la proptech",
+            "type": "BLIND_SPOT",
+            "metiers": [
+              "Directeur Marketing",
+              "Head of Growth",
+              "Responsable Acquisition",
+              "CEO"
+            ],
+            "secteurs": [
+              "Proptech",
+              "Immobilier residentiel et commercial",
+              "Gestion locative digitale",
+              "Construction & promotion immobiliere"
+            ],
+            "effectif_min": 20,
+            "effectif_max": 300,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Scale-up en phase d'internationalisation cherchant une expansion multimarche",
+            "type": "BLIND_SPOT",
+            "metiers": [
+              "VP International Growth",
+              "Head of Expansion",
+              "CMO",
+              "Country Manager"
+            ],
+            "secteurs": [
+              "SaaS B2B",
+              "E-commerce B2B",
+              "Fintech",
+              "Marketplaces"
+            ],
+            "effectif_min": 100,
+            "effectif_max": 600,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Grande entreprise avec equipe marketing interne complete et processus rigides",
+            "type": "ANTI_PERSONA",
+            "metiers": [
+              "Directeur Marketing Groupe",
+              "Chief Marketing Officer",
+              "Responsable Achats Marketing"
+            ],
+            "secteurs": [
+              "Grande distribution",
+              "Industrie lourde",
+              "Secteur public"
+            ],
+            "effectif_min": 1000,
+            "effectif_max": null,
+            "auto_genere": true,
+            "tier": null
+          },
+          {
+            "nom": "Tres petite structure sans budget marketing structure",
+            "type": "ANTI_PERSONA",
+            "metiers": [
+              "Auto-entrepreneur",
+              "Gerant",
+              "Fondateur solo"
+            ],
+            "secteurs": [
+              "Artisanat",
+              "Commerce local",
+              "Services a la personne"
+            ],
+            "effectif_min": 1,
+            "effectif_max": 9,
+            "auto_genere": true,
+            "tier": null
+          }
+        ]
+      }
+    },
+    "reserves": [
+      "Sur les 10 types d'objectifs que l'OS sait stocker, 2 seulement sont renvoyes et un seul est rempli. COMPANY_PURPOSE est une chaine vide. TARGETS, FINANCIALS, FUNNEL, WIN_LOSS_REASON, BUYING_COMMITTEE, CONSTRAINTS, STRATEGICAL_DECISIONS et SALES_CALL_OBJECTIONS sont absents : aucun objectif chiffre n'est enregistre dans l'OS.",
+      "Aucune cible de cout par contact / CPL / CAC n'existe nulle part. Un ecran 'objectif vs realise' ne peut pas etre alimente : il faudra saisir la cible a la main.",
+      "Le suivi GTM date du 2026-08-12 et affiche 'Campagnes en diffusion : Non demarree'. Or les comptes Meta et LinkedIn ont bien diffuse en aout et septembre 2026 : le tracker n'a pas ete mis a jour, ou ces diffusions relevent d'autres campagnes que celles du cycle GTM. Ne pas rapprocher les deux sans verification.",
+      "9 des 11 profils ICP sont auto-generes par l'OS (isAutoGenerated=true) et n'ont AUCUNE piece justificative (evidence=[] partout).",
+      "Les profils ICP se contredisent sur les effectifs : 'Tier 1+' vise 51-200 dans le champ structure mais 200-500 dans sa note libre ; 'Tier 1' vise 201-1000 dans le champ mais '100-250 OU 500-1000' dans sa note. Le champ structure et la note ne disent pas la meme chose.",
+      "La cible du tracker GTM (30-300 salaries, SaaS B2B) ne correspond a aucun des 11 profils ICP enregistres tels quels. Deux referentiels de cible coexistent.",
+      "Le contenu de PRIVATE_INSIGHTS est un JSON applicatif (etat d'une app de mission), pas un champ d'objectifs : il peut etre ecrase par l'application a tout moment."
+    ]
+  }
+}
